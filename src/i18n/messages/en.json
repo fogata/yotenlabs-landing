@@ -5,6 +5,10 @@
   },
   "header": {
     "brand": "Yoten Labs",
+    "languageSwitcher": {
+      "en": "EN",
+      "pt-br": "PT-BR"
+    },
     "nav": {
       "whatWeDo": "What we do",
       "howWeWork": "How we work",
@@ -41,6 +45,10 @@
         }
       ]
     }
+  },
+  "yoten": {
+    "label": "Yoten",
+    "description": "Yōten (要点) means 'key point' or 'essentials', a reminder to focus on what matters and ship with clarity."
   },
   "whatWeDo": {
     "kicker": "Capabilities",

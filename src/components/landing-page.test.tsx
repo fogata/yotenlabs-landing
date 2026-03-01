@@ -51,4 +51,14 @@ describe("LandingPage", () => {
     expect(screen.getByText("VoiceForge AI")).toBeInTheDocument();
     expect(screen.getByText("Platform Health.ai")).toBeInTheDocument();
   });
+
+  it("renders the Yoten meaning in both locales", () => {
+    const { rerender } = render(<LandingPage locale="en" messages={enMessages} />);
+
+    expect(screen.getByText(/Yōten \(要点\)/)).toBeInTheDocument();
+
+    rerender(<LandingPage locale="pt-br" messages={ptBrMessages} />);
+
+    expect(screen.getByText(/Yōten \(要点\)/)).toBeInTheDocument();
+  });
 });

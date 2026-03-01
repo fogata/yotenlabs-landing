@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { DynamicBackground } from "@/components/dynamic-background";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import type { Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/get-messages";
@@ -27,47 +28,67 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
 
   return (
     <main className="relative min-h-screen overflow-hidden">
-      <div className="absolute inset-x-0 top-[-16rem] h-[32rem] bg-[radial-gradient(circle,rgba(212,212,216,0.12),transparent_48%)] blur-3xl" />
+      <DynamicBackground />
 
       <header className="sticky top-0 z-30 border-b border-white/10 bg-zinc-950/72 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 lg:px-8">
-          <Link
-            href={`/${locale}`}
-            className="text-sm font-semibold uppercase tracking-[0.28em] text-white"
-          >
-            {messages.header.brand}
-          </Link>
-
-          <div className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
-            <nav className="flex items-center gap-6">
-              {navItems.map((item) => (
-                <a key={item.id} href={`#${item.id}`} className="hover:text-white">
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-            <a
-              href={`#${sectionIds.contact}`}
-              className="rounded-full border border-white/15 px-4 py-2 text-white hover:border-white/35 hover:bg-white/5"
+        <div className="mx-auto max-w-6xl px-6 py-4 lg:px-8">
+          <div className="flex items-center justify-between gap-6">
+            <Link
+              href={`/${locale}`}
+              className="text-sm font-semibold uppercase tracking-[0.28em] text-white"
             >
-              {messages.header.cta}
-            </a>
-            <LanguageSwitcher locale={locale} />
+              {messages.header.brand}
+            </Link>
+
+            <div className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
+              <nav className="flex items-center gap-6">
+                {navItems.map((item) => (
+                  <a key={item.id} href={`#${item.id}`} className="hover:text-white">
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+              <a
+                href={`#${sectionIds.contact}`}
+                className="rounded-full border border-white/15 px-4 py-2 text-white hover:border-white/35 hover:bg-white/5"
+              >
+                {messages.header.cta}
+              </a>
+              <LanguageSwitcher
+                locale={locale}
+                labels={messages.header.languageSwitcher}
+              />
+            </div>
+
+            <div className="flex items-center gap-3 md:hidden">
+              <a
+                href={`#${sectionIds.contact}`}
+                className="rounded-full border border-white/15 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-white"
+              >
+                {messages.header.cta}
+              </a>
+              <LanguageSwitcher
+                locale={locale}
+                labels={messages.header.languageSwitcher}
+              />
+            </div>
           </div>
 
-          <div className="flex items-center gap-3 md:hidden">
-            <a
-              href={`#${sectionIds.contact}`}
-              className="rounded-full border border-white/15 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-white"
-            >
-              {messages.header.cta}
-            </a>
-            <LanguageSwitcher locale={locale} />
-          </div>
+          <nav className="mt-4 flex gap-4 overflow-x-auto pb-1 text-xs uppercase tracking-[0.18em] text-zinc-400 md:hidden">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className="whitespace-nowrap rounded-full border border-white/10 px-3 py-2 hover:border-white/20 hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
         </div>
       </header>
 
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-24 px-6 pb-16 pt-16 lg:px-8 lg:pb-24 lg:pt-24">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-24 px-6 pb-16 pt-16 lg:px-8 lg:pb-24 lg:pt-24">
         <section className="grid gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-end">
           <div className="space-y-8">
             <p className="font-mono text-xs uppercase tracking-[0.32em] text-zinc-400">
@@ -123,6 +144,15 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
                 ))}
               </ul>
             </div>
+          </div>
+        </section>
+
+        <section aria-label={messages.yoten.label} className="-mt-10">
+          <div className="inline-flex max-w-3xl items-start gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm leading-6 text-zinc-300">
+            <span className="font-mono text-[11px] uppercase tracking-[0.28em] text-zinc-500">
+              {messages.yoten.label}
+            </span>
+            <p>{messages.yoten.description}</p>
           </div>
         </section>
 
