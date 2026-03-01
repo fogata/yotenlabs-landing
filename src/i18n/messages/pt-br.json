@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "title": "Yoten Labs | Estúdio de produtos AI-native",
+    "description": "A Yoten Labs desenha, constrói e opera software AI-native para times que precisam de clareza, confiança e resultados mensuráveis."
+  },
+  "header": {
+    "brand": "Yoten Labs",
+    "nav": {
+      "whatWeDo": "O que fazemos",
+      "howWeWork": "Como trabalhamos",
+      "projects": "Projetos",
+      "faq": "FAQ"
+    },
+    "cta": "Fale com a gente"
+  },
+  "hero": {
+    "eyebrow": "Estúdio de produtos AI-native",
+    "title": "Sistemas de IA feitos para virar produtos reais",
+    "description": "A Yoten Labs desenha, constrói e opera software em que a IA é o sistema central por trás da experiência e da operação. Unimos visão de produto, engenharia de produção e entrega disciplinada para times B2C e B2B.",
+    "primaryCta": "Fale com a gente",
+    "secondaryCta": "Ver nossa abordagem",
+    "panel": {
+      "label": "Posicionamento",
+      "description": "Priorizamos clareza, confiança e resultados mensuráveis em fluxos de dados, pipelines de retrieval e geração, guardrails, avaliação, monitoramento e entrega escalável.",
+      "metrics": [
+        {
+          "value": "AI-native",
+          "label": "Sistemas centrais desenhados em torno de IA desde o primeiro dia."
+        },
+        {
+          "value": "Entrega",
+          "label": "Produtos reais com controles operacionais e responsabilidade clara."
+        },
+        {
+          "value": "Confiança",
+          "label": "Avaliação, guardrails e confiabilidade embutidos na stack."
+        },
+        {
+          "value": "Resultados",
+          "label": "Entrega conectada a melhoria mensurável, não a métricas de vaidade."
+        }
+      ]
+    }
+  },
+  "whatWeDo": {
+    "kicker": "Capacidades",
+    "title": "O que fazemos",
+    "description": "O MVP permanece enxuto, mas o sistema central já nasce preparado para pressão de produção.",
+    "items": [
+      {
+        "title": "Desenvolvimento de produtos AI-native",
+        "description": "Estratégia de produto, UX e engenharia organizadas em torno da IA como sistema operacional, não como camada adicional."
+      },
+      {
+        "title": "Pipelines de RAG e geração",
+        "description": "Retrieval, orquestração, desenho de prompts e fluxos de geração pensados para utilidade real e operação estável."
+      },
+      {
+        "title": "Avaliação e monitoramento",
+        "description": "Instrumentamos qualidade, latência, custo e comportamento para que o time evolua com evidência."
+      },
+      {
+        "title": "Guardrails e segurança",
+        "description": "Controles para permissões, saídas arriscadas, limites de política e comportamento previsível na experiência final."
+      },
+      {
+        "title": "Custo, cotas e confiabilidade",
+        "description": "Aplicação de cotas, caminhos de fallback e limites operacionais para manter os recursos de IA economicamente viáveis."
+      },
+      {
+        "title": "Entrega B2C e B2B",
+        "description": "Produtos de consumo e enterprise entregues com escopo claro, execução confiável e espaço para escalar."
+      }
+    ]
+  },
+  "howWeWork": {
+    "kicker": "Processo",
+    "title": "Como trabalhamos",
+    "description": "O trabalho continua prático: alinhamos, construímos, avaliamos e operamos com o mesmo nível de rigor.",
+    "steps": [
+      {
+        "title": "Alinhar resultados",
+        "description": "Definimos o problema do usuário, o objetivo operacional e o resultado mensurável antes de construir."
+      },
+      {
+        "title": "Construir o sistema central",
+        "description": "Implementamos workflows, camadas de retrieval e geração, interfaces e controles que realmente importam."
+      },
+      {
+        "title": "Avaliar e reforçar",
+        "description": "Testamos prompts, saídas, latência, cotas e casos de borda antes de ampliar a exposição."
+      },
+      {
+        "title": "Lançar e operar",
+        "description": "Colocamos no ar com monitoramento, responsabilidade definida e ciclos de iteração que mantêm o produto evoluindo."
+      }
+    ]
+  },
+  "projects": {
+    "kicker": "Em desenvolvimento",
+    "title": "Projetos",
+    "description": "Produtos atualmente em desenvolvimento dentro da Yoten Labs.",
+    "cards": [
+      {
+        "name": "WearingDaily",
+        "tagline": "Monte um look em 30 segundos",
+        "description": "Aplicativo de moda para geração rápida de looks com fórmulas determinísticas, preenchimento curado de catálogo, salvamento de combinações, packs duas vezes por semana, try-on por foto opcional e try-on em vídeo como recurso premium pago.",
+        "status": "MVP",
+        "tags": [
+          "App mobile",
+          "Catálogo",
+          "Try-on por foto",
+          "Inserções patrocinadas",
+          "Try-on em vídeo premium"
+        ]
+      },
+      {
+        "name": "SkillTalk",
+        "tagline": "Roleplay e coaching em tempo real",
+        "description": "Plataforma voice-first para treinamentos por cenário e sessões ao vivo, com foco em ciclos mensuráveis de melhoria e controles de nível de produção.",
+        "status": "Em desenvolvimento",
+        "tags": [
+          "Tempo real",
+          "Cenários",
+          "Coaching",
+          "Monitoramento",
+          "Cotas"
+        ]
+      },
+      {
+        "name": "VoiceForge AI",
+        "tagline": "Ecossistema de coaching de voz AI-native",
+        "description": "Ecossistema multi-tenant de roleplay em tempo real com avaliação, guardrails e otimização iterativa de prompts.",
+        "status": "Em desenvolvimento",
+        "tags": [
+          "Multi-tenant",
+          "Guardrails",
+          "Avaliação",
+          "Otimização de prompts"
+        ]
+      },
+      {
+        "name": "Platform Health.ai",
+        "tagline": "Operações de plataforma para saúde",
+        "description": "Plataforma multi-tenant para operações em saúde com RBAC, documentos, agendamento, eventos de billing e fluxos de sessão em tempo real, desenhada para clareza, confiança e resultados mensuráveis.",
+        "status": "Em desenvolvimento",
+        "tags": [
+          "RBAC",
+          "Agendamento",
+          "Documentos",
+          "Eventos de billing",
+          "Sessões em tempo real"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "title": "Respostas diretas",
+    "items": [
+      {
+        "question": "Vocês fazem só MVP?",
+        "answer": "Não. Podemos definir o MVP, mas construímos o sistema central já considerando restrições reais de produção."
+      },
+      {
+        "question": "Vocês trabalham com times enterprise?",
+        "answer": "Sim. Construímos para contextos B2C e B2B, incluindo plataformas multi-tenant e operacionais."
+      },
+      {
+        "question": "Vocês cuidam de confiabilidade e controles?",
+        "answer": "Sim. Guardrails, monitoramento, cotas e controle de custo fazem parte do escopo de entrega."
+      },
+      {
+        "question": "Vocês atuam com voz e produtos em tempo real?",
+        "answer": "Sim. Sessões em tempo real, sistemas de roleplay e experiências voice-first estão entre nossos focos ativos."
+      }
+    ]
+  },
+  "contact": {
+    "kicker": "Contato",
+    "title": "Pronto para lançar um produto AI-native?",
+    "description": "Se você precisa de um time que vá do enquadramento do produto até a engenharia de produção sem perder clareza, fale com a gente.",
+    "cta": "Envie um e-mail"
+  },
+  "footer": {
+    "tagline": "Clareza, confiança, resultados mensuráveis.",
+    "copyright": "© Yoten Labs"
+  }
+}

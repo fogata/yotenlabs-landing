@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "title": "Yoten Labs | AI-native product studio",
+    "description": "Yoten Labs designs, builds, and operates AI-native software for teams that need clarity, trust, and measurable outcomes."
+  },
+  "header": {
+    "brand": "Yoten Labs",
+    "nav": {
+      "whatWeDo": "What we do",
+      "howWeWork": "How we work",
+      "projects": "Projects",
+      "faq": "FAQ"
+    },
+    "cta": "Talk to us"
+  },
+  "hero": {
+    "eyebrow": "AI-native product studio",
+    "title": "AI systems built to ship as real products",
+    "description": "Yoten Labs designs, builds, and operates software where AI is the core system behind the experience and the operation. We combine product thinking, production engineering, and disciplined delivery for B2C and B2B teams.",
+    "primaryCta": "Talk to us",
+    "secondaryCta": "See our approach",
+    "panel": {
+      "label": "Positioning",
+      "description": "We prioritize clarity, trust, and measurable outcomes across data workflows, retrieval and generation pipelines, guardrails, evaluation, monitoring, and scalable delivery.",
+      "metrics": [
+        {
+          "value": "AI-native",
+          "label": "Core systems designed around AI from day one."
+        },
+        {
+          "value": "Shipping",
+          "label": "Real products with operational controls and clear ownership."
+        },
+        {
+          "value": "Trust",
+          "label": "Evaluation, guardrails, and reliability built into the stack."
+        },
+        {
+          "value": "Outcomes",
+          "label": "Delivery tied to measurable improvement, not vanity metrics."
+        }
+      ]
+    }
+  },
+  "whatWeDo": {
+    "kicker": "Capabilities",
+    "title": "What we do",
+    "description": "The MVP stays focused, but the core system is built for production pressure from the start.",
+    "items": [
+      {
+        "title": "AI-native product development",
+        "description": "Product strategy, UX, and engineering shaped around AI as the operating system, not a feature layer."
+      },
+      {
+        "title": "RAG and generation pipelines",
+        "description": "Retrieval, orchestration, prompt design, and generation flows designed for useful outputs and stable operations."
+      },
+      {
+        "title": "Evaluation and monitoring",
+        "description": "We instrument quality, latency, cost, and behavior so teams can improve with evidence."
+      },
+      {
+        "title": "Guardrails and safety",
+        "description": "Controls for permissions, risky outputs, policy boundaries, and predictable user-facing behavior."
+      },
+      {
+        "title": "Cost, quotas, reliability",
+        "description": "Quota enforcement, fallback paths, and operational limits that keep AI features economically sane."
+      },
+      {
+        "title": "B2C and B2B delivery",
+        "description": "Consumer and enterprise products delivered with clear scope, reliable execution, and room to scale."
+      }
+    ]
+  },
+  "howWeWork": {
+    "kicker": "Process",
+    "title": "How we work",
+    "description": "The work stays practical: align, build, evaluate, and operate with the same level of discipline.",
+    "steps": [
+      {
+        "title": "Align on outcomes",
+        "description": "We define the user problem, the operational target, and the measurable result before building."
+      },
+      {
+        "title": "Build the core system",
+        "description": "We implement the workflows, retrieval and generation layers, interfaces, and controls that matter."
+      },
+      {
+        "title": "Evaluate and harden",
+        "description": "We pressure-test prompts, outputs, latency, quotas, and edge cases before widening exposure."
+      },
+      {
+        "title": "Ship and operate",
+        "description": "We launch with monitoring, ownership, and iteration loops that keep the product improving."
+      }
+    ]
+  },
+  "projects": {
+    "kicker": "In development",
+    "title": "Projects",
+    "description": "Current products being developed inside Yoten Labs.",
+    "cards": [
+      {
+        "name": "WearingDaily",
+        "tagline": "Build a look in 30 seconds",
+        "description": "Consumer fashion app for fast outfit generation using deterministic formulas, curated catalog completion, saved looks, packs twice a week, optional photo try-on, and video try-on as a paid premium feature.",
+        "status": "MVP",
+        "tags": [
+          "Mobile app",
+          "Catalog",
+          "Photo try-on",
+          "Sponsored placements",
+          "Premium video try-on"
+        ]
+      },
+      {
+        "name": "SkillTalk",
+        "tagline": "Real-time roleplay and coaching",
+        "description": "Voice-first platform for scenario-based training and live sessions, focused on measurable improvement loops and production-grade controls.",
+        "status": "Building",
+        "tags": [
+          "Realtime",
+          "Scenarios",
+          "Coaching",
+          "Monitoring",
+          "Quotas"
+        ]
+      },
+      {
+        "name": "VoiceForge AI",
+        "tagline": "AI-native voice coaching ecosystem",
+        "description": "Multi-tenant real-time roleplay ecosystem with evaluation, guardrails, and iterative prompt optimization.",
+        "status": "Building",
+        "tags": [
+          "Multi-tenant",
+          "Guardrails",
+          "Evaluation",
+          "Prompt optimization"
+        ]
+      },
+      {
+        "name": "Platform Health.ai",
+        "tagline": "Healthcare platform operations",
+        "description": "Multi-tenant healthcare operations platform with RBAC, documents, scheduling, billing events, and real-time session flows designed for clarity, trust, and measurable outcomes.",
+        "status": "Building",
+        "tags": [
+          "RBAC",
+          "Scheduling",
+          "Docs",
+          "Billing events",
+          "Realtime sessions"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "title": "Direct answers",
+    "items": [
+      {
+        "question": "Do you only build MVPs?",
+        "answer": "No. We can shape the MVP, but we build the core system with production constraints in mind."
+      },
+      {
+        "question": "Do you work with enterprise teams?",
+        "answer": "Yes. We build for both B2C and B2B contexts, including multi-tenant and operational platforms."
+      },
+      {
+        "question": "Do you handle reliability and controls?",
+        "answer": "Yes. Guardrails, monitoring, quotas, and cost controls are part of the delivery scope."
+      },
+      {
+        "question": "Can you work on voice and real-time products?",
+        "answer": "Yes. Real-time sessions, roleplay systems, and voice-first experiences are active areas for us."
+      }
+    ]
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Ready to ship an AI-native product?",
+    "description": "If you need a team that can move from product framing to production engineering without losing clarity, talk to us.",
+    "cta": "Email us"
+  },
+  "footer": {
+    "tagline": "Clarity, trust, measurable outcomes.",
+    "copyright": "© Yoten Labs"
+  }
+}
