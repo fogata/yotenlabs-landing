@@ -18,7 +18,7 @@ describe("LandingPage", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: "AI systems built to ship as real products",
+        name: "AI-native products, built for scale and reliability.",
       }),
     ).toBeInTheDocument();
   });
@@ -28,7 +28,7 @@ describe("LandingPage", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: "Sistemas de IA feitos para virar produtos reais",
+        name: "Produtos AI-native, desenhados para escala e confiabilidade.",
       }),
     ).toBeInTheDocument();
   });
