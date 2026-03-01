@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 
 import { locales, replaceLocaleInPathname, type Locale } from "@/i18n/config";
+import { setLocaleCookie } from "@/i18n/detect-locale";
 
 type LanguageSwitcherProps = {
   locale: Locale;
@@ -17,6 +18,8 @@ export function LanguageSwitcher({ locale, labels }: LanguageSwitcherProps) {
     if (targetLocale === locale) {
       return;
     }
+
+    setLocaleCookie(targetLocale);
 
     const hash = window.location.hash;
     const nextPathname = replaceLocaleInPathname(pathname, targetLocale);

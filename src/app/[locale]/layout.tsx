@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { HtmlLang } from "@/components/html-lang";
-import { isValidLocale, locales, type Locale } from "@/i18n/config";
+import { defaultLocale, isValidLocale, locales, type Locale } from "@/i18n/config";
 import { getMessages } from "@/i18n/get-messages";
 
 type LocaleLayoutProps = {
@@ -46,6 +46,7 @@ export async function generateMetadata({
       languages: {
         en: "/en",
         "pt-BR": "/pt-br",
+        "x-default": `/${defaultLocale}`,
       },
     },
     icons: {
