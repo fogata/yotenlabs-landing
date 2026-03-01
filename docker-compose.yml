@@ -1,0 +1,20 @@
+services:
+  landing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yotenlabs-landing
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    environment:
+      NODE_ENV: development
+      WATCHPACK_POLLING: "true"
+    volumes:
+      - .:/app
+      - landing_node_modules:/app/node_modules
+      - landing_next:/app/.next
+    command: npm run dev -- --hostname 0.0.0.0 --port 3000
+
+volumes:
+  landing_node_modules:
+  landing_next:

@@ -32,6 +32,22 @@ npm run test
 npm run lint
 ```
 
+## Revisao com Docker Compose
+
+Porta padrao: `3000`. Ela estava livre no momento da configuracao.
+
+```bash
+docker compose up --build
+```
+
+Se a porta `3000` estiver ocupada no seu WSL2 quando for subir:
+
+```bash
+APP_PORT=3001 docker compose up --build
+```
+
+Depois acesse `http://localhost:3000/en` ou a porta escolhida.
+
 ## Personalização rápida
 
 - Email de contato: altere `mailto:hello@yotenlabs.ai` em `src/components/landing-page.tsx`.
