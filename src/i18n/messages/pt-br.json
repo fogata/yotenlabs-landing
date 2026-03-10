@@ -123,28 +123,17 @@
         ]
       },
       {
-        "name": "SkillTalk",
-        "tagline": "Roleplay e coaching em tempo real",
-        "description": "Plataforma voice-first para treinamentos por cenário e sessões ao vivo, com foco em ciclos mensuráveis de melhoria e controles de nível de produção.",
+        "name": "Live-Drills",
+        "tagline": "Coaching com IA para treino prático real",
+        "description": "Plataforma de treinamentos com IA com avatar em vídeo/voz e sessões de role-play guiadas por coach para atendimento (CX), vendas/negociação e procedimentos/onboarding. Inclui rounds, pausas de coaching, re-runs e respostas bilíngues do coach (pt-BR/en-US). Usa manuais, documentos, vídeos e imagens da empresa como base de treino, permite reprodução de mídia durante a sessão, roda em tempo real com LiveKit Cloud e já nasce com arquitetura multi-tenant + RBAC, políticas de plano/feature e avaliação de qualidade de prompts.",
         "status": "Em desenvolvimento",
         "tags": [
-          "Tempo real",
-          "Cenários",
-          "Coaching",
-          "Monitoramento",
-          "Cotas"
-        ]
-      },
-      {
-        "name": "VoiceForge AI",
-        "tagline": "Ecossistema de coaching de voz AI-native",
-        "description": "Ecossistema multi-tenant de roleplay em tempo real com avaliação, guardrails e otimização iterativa de prompts.",
-        "status": "Em desenvolvimento",
-        "tags": [
+          "Treino por role-play",
+          "LiveKit Cloud",
           "Multi-tenant",
-          "Guardrails",
-          "Avaliação",
-          "Otimização de prompts"
+          "RBAC + feature flags",
+          "Avaliação no Prompt Lab",
+          "Caminho com DSPy"
         ]
       },
       {

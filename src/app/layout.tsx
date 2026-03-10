@@ -18,7 +18,9 @@ export const metadata: Metadata = {
   title: "Yoten Labs",
   description: "AI-native product studio focused on shipping real products.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.png",
   },
 };
 

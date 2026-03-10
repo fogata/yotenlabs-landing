@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { DynamicBackground } from "@/components/dynamic-background";
@@ -35,9 +36,16 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
           <div className="flex items-center justify-between gap-6">
             <Link
               href={`/${locale}`}
-              className="text-sm font-semibold uppercase tracking-[0.28em] text-white"
+              className="inline-flex items-center"
             >
-              {messages.header.brand}
+              <Image
+                src="/branding/yoten-logo.png"
+                alt={messages.header.brand}
+                width={300}
+                height={76}
+                priority
+                className="h-9 w-auto sm:h-10"
+              />
             </Link>
 
             <div className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
