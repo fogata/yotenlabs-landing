@@ -28,8 +28,10 @@ function createNonce() {
 function buildContentSecurityPolicy(nonce: string) {
   return [
     "default-src 'self'",
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://static.cloudflareinsights.com`,
-    `style-src 'self' 'nonce-${nonce}'`,
+    `script-src 'self' 'nonce-${nonce}' https://static.cloudflareinsights.com`,
+    "script-src-elem 'self' https://static.cloudflareinsights.com",
+    `style-src 'self' 'nonce-${nonce}' 'unsafe-inline'`,
+    "style-src-attr 'unsafe-inline'",
     "img-src 'self' data: blob:",
     "font-src 'self'",
     "connect-src 'self' https://cloudflareinsights.com",

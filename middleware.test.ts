@@ -59,6 +59,11 @@ describe("middleware", () => {
     expect(response.headers.get("x-nonce")).toBeTruthy();
     expect(contentSecurityPolicy).toContain("default-src 'self'");
     expect(contentSecurityPolicy).toContain("script-src 'self' 'nonce-");
+    expect(contentSecurityPolicy).not.toContain("'strict-dynamic'");
+    expect(contentSecurityPolicy).toContain("script-src-elem 'self' https://static.cloudflareinsights.com");
     expect(contentSecurityPolicy).toContain("https://static.cloudflareinsights.com");
+    expect(contentSecurityPolicy).toContain("style-src 'self' 'nonce-");
+    expect(contentSecurityPolicy).toContain("'unsafe-inline'");
+    expect(contentSecurityPolicy).toContain("style-src-attr 'unsafe-inline'");
   });
 });
