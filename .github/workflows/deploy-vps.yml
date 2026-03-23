@@ -43,8 +43,8 @@ jobs:
           script_stop: true
           script: |
             set -e
-            echo "VPS_APP_DIR=${{ vars.VPS_APP_DIR }}"
-            cd "${{ vars.VPS_APP_DIR }}"
+            echo "VPS_APP_DIR=${{ secrets.VPS_APP_DIR }}"
+            cd "${{ secrets.VPS_APP_DIR }}"
             pwd
             ls -la
             git status
@@ -57,7 +57,7 @@ jobs:
 
           # script: |
           #   set -e
-          #   cd "${{ vars.VPS_APP_DIR }}"
+          #   cd "${{ secrets.VPS_APP_DIR }}"
           #   git fetch origin main
           #   git checkout main
           #   git pull --ff-only origin main
