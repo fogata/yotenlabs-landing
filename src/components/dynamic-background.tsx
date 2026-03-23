@@ -198,10 +198,20 @@ export function DynamicBackground() {
     const verticalBound = 3.2;
 
     const resetLeaf = (index: number, initial = false) => {
-      const respawnFromLeft = Math.random() > 0.5 ? 1 : -1;
-      basePositionsX[index] = initial
-        ? (Math.random() - 0.5) * horizontalBound * 2
-        : respawnFromLeft * (horizontalBound * 0.72 + Math.random() * horizontalBound * 0.38);
+      if (initial) {
+        basePositionsX[index] = (Math.random() - 0.5) * horizontalBound * 2;
+      } else {
+        const respawnMode = Math.random();
+
+        if (respawnMode < 0.34) {
+          basePositionsX[index] = (Math.random() - 0.5) * horizontalBound * 0.9;
+        } else {
+          const side = respawnMode > 0.67 ? 1 : -1;
+          basePositionsX[index] =
+            side * (horizontalBound * 0.46 + Math.random() * horizontalBound * 0.62);
+        }
+      }
+
       positionsX[index] = basePositionsX[index];
       positionsY[index] = initial
         ? (Math.random() * 2 - 1) * verticalBound
