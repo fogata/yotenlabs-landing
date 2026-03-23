@@ -43,6 +43,32 @@ npm run lint
 - `npm run test`: Vitest em modo run.
 - `npm run test:watch`: Vitest em modo watch.
 
+## Contact form email
+
+To enable the contact form delivery, configure these environment variables:
+
+```text
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USER=
+SMTP_PASS=
+CONTACT_TO_EMAIL=
+CONTACT_FROM_EMAIL=
+```
+
+`CONTACT_FROM_EMAIL` is optional. If omitted, the app falls back to `CONTACT_TO_EMAIL`.
+
+Example for Zoho Mail:
+
+```text
+SMTP_HOST=smtp.zoho.com
+SMTP_PORT=465
+SMTP_USER=hello@yotenlabs.ai
+SMTP_PASS=your_zoho_app_password
+CONTACT_TO_EMAIL=hello@yotenlabs.ai
+CONTACT_FROM_EMAIL=hello@yotenlabs.ai
+```
+
 ## Personalização rápida
 
 - Email de contato: altere `mailto:hello@yotenlabs.ai` em `src/components/landing-page.tsx`.

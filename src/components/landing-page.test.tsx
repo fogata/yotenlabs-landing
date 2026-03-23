@@ -60,4 +60,18 @@ describe("LandingPage", () => {
 
     expect(screen.getByText(/Yōten \(要点\)/)).toBeInTheDocument();
   });
+
+  it("renders the contact form fields", () => {
+    render(<LandingPage locale="en" messages={enMessages} />);
+
+    expect(screen.getByLabelText("Your name")).toBeInTheDocument();
+    expect(screen.getByLabelText("Work email")).toBeInTheDocument();
+    expect(screen.getByLabelText("Company")).toBeInTheDocument();
+    expect(screen.getByLabelText("What are you building?")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", {
+        name: "Send message",
+      }),
+    ).toBeInTheDocument();
+  });
 });

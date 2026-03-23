@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { ContactForm } from "@/components/contact-form";
 import { DynamicBackground } from "@/components/dynamic-background";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import type { Locale } from "@/i18n/config";
@@ -327,29 +328,16 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
           className="scroll-mt-28"
           aria-labelledby="contact-title"
         >
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] px-6 py-10 sm:px-8 lg:px-10">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <div className="max-w-2xl space-y-4">
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-zinc-500">
-                  {messages.contact.kicker}
-                </p>
-                <h2
-                  id="contact-title"
-                  className="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl"
-                >
-                  {messages.contact.title}
-                </h2>
-                <p className="text-base leading-7 text-zinc-400 sm:text-lg">
-                  {messages.contact.description}
-                </p>
-              </div>
-              <a
-                href="mailto:hello@yotenlabs.ai"
-                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 hover:translate-y-[-1px] hover:bg-zinc-100"
-              >
-                {messages.contact.cta}
-              </a>
-            </div>
+          <div className="space-y-4">
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-zinc-500">
+              {messages.contact.kicker}
+            </p>
+            <ContactForm
+              titleId="contact-title"
+              title={messages.contact.title}
+              description={messages.contact.description}
+              labels={messages.contact}
+            />
           </div>
         </section>
       </div>

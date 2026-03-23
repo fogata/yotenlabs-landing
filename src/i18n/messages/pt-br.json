@@ -177,7 +177,26 @@
     "kicker": "Contato",
     "title": "Pronto para lançar um produto AI-native?",
     "description": "Se você precisa de um time que vá do enquadramento do produto até a engenharia de produção sem perder clareza, fale com a gente.",
-    "cta": "Envie um e-mail"
+    "eyebrow": "Resumo do projeto",
+    "availability": "Normalmente respondemos em até um dia útil",
+    "directLabel": "E-mail direto",
+    "directValue": "hello@yotenlabs.ai",
+    "fields": {
+      "name": "Seu nome",
+      "email": "E-mail de trabalho",
+      "company": "Empresa",
+      "message": "O que vocês estão construindo?"
+    },
+    "placeholders": {
+      "name": "Jane Doe",
+      "email": "jane@empresa.com",
+      "company": "Empresa ou time",
+      "message": "Conte o contexto do produto, em que estágio ele está e o que vocês querem colocar no ar agora."
+    },
+    "cta": "Enviar mensagem",
+    "sending": "Enviando...",
+    "success": "Mensagem enviada. Retornaremos em breve.",
+    "error": "Não foi possível enviar agora. Tente novamente ou fale com a gente por e-mail."
   },
   "footer": {
     "tagline": "Clareza, confiança, resultados mensuráveis.",
