@@ -13,8 +13,8 @@ type MotionPreference = {
 
 function createLeafTexture() {
   const canvas = document.createElement("canvas");
-  canvas.width = 96;
-  canvas.height = 128;
+  canvas.width = 128;
+  canvas.height = 160;
 
   const context = canvas.getContext("2d");
   if (!context) {
@@ -22,9 +22,10 @@ function createLeafTexture() {
   }
 
   const gradient = context.createLinearGradient(0, 0, 0, canvas.height);
-  gradient.addColorStop(0, "rgba(251, 191, 36, 0.95)");
-  gradient.addColorStop(0.5, "rgba(245, 158, 11, 0.88)");
-  gradient.addColorStop(1, "rgba(217, 119, 6, 0.9)");
+  gradient.addColorStop(0, "rgba(254, 240, 138, 0.98)");
+  gradient.addColorStop(0.2, "rgba(251, 191, 36, 0.96)");
+  gradient.addColorStop(0.62, "rgba(249, 115, 22, 0.92)");
+  gradient.addColorStop(1, "rgba(185, 28, 28, 0.92)");
 
   context.fillStyle = gradient;
   context.beginPath();
@@ -48,19 +49,46 @@ function createLeafTexture() {
   context.closePath();
   context.fill();
 
-  context.strokeStyle = "rgba(120, 53, 15, 0.32)";
-  context.lineWidth = 2.2;
+  const sheen = context.createRadialGradient(
+    canvas.width * 0.44,
+    canvas.height * 0.28,
+    4,
+    canvas.width * 0.5,
+    canvas.height * 0.42,
+    canvas.width * 0.34,
+  );
+  sheen.addColorStop(0, "rgba(255, 251, 235, 0.78)");
+  sheen.addColorStop(0.45, "rgba(254, 215, 170, 0.18)");
+  sheen.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+  context.fillStyle = sheen;
+  context.fill();
+
+  context.strokeStyle = "rgba(120, 53, 15, 0.38)";
+  context.lineWidth = 2.6;
   context.beginPath();
   context.moveTo(canvas.width * 0.5, canvas.height * 0.1);
   context.lineTo(canvas.width * 0.5, canvas.height * 0.92);
   context.stroke();
 
-  context.lineWidth = 1.25;
+  context.lineWidth = 1.4;
   context.beginPath();
   context.moveTo(canvas.width * 0.5, canvas.height * 0.34);
   context.lineTo(canvas.width * 0.68, canvas.height * 0.48);
   context.moveTo(canvas.width * 0.5, canvas.height * 0.5);
   context.lineTo(canvas.width * 0.32, canvas.height * 0.64);
+  context.stroke();
+
+  context.strokeStyle = "rgba(255, 251, 235, 0.26)";
+  context.lineWidth = 1;
+  context.beginPath();
+  context.moveTo(canvas.width * 0.46, canvas.height * 0.18);
+  context.quadraticCurveTo(
+    canvas.width * 0.58,
+    canvas.height * 0.44,
+    canvas.width * 0.42,
+    canvas.height * 0.78,
+  );
   context.stroke();
 
   return new THREE.CanvasTexture(canvas);
@@ -121,13 +149,13 @@ export function DynamicBackground() {
 
     leafTexture.colorSpace = THREE.SRGBColorSpace;
 
-    const leafCount = window.innerWidth < 768 ? 24 : 40;
+    const leafCount = window.innerWidth < 768 ? 34 : 56;
 
-    const geometry = new THREE.PlaneGeometry(0.3, 0.42);
+    const geometry = new THREE.PlaneGeometry(0.34, 0.48);
     const material = new THREE.MeshBasicMaterial({
       map: leafTexture,
       transparent: true,
-      opacity: 0.9,
+      opacity: 0.96,
       depthWrite: false,
       side: THREE.DoubleSide,
       vertexColors: true,
@@ -136,15 +164,27 @@ export function DynamicBackground() {
     const leaves = new THREE.InstancedMesh(geometry, material, leafCount);
     scene.add(leaves);
 
-    const amberPalette = ["#fbbf24", "#f59e0b", "#fcd34d", "#d97706"];
+    const amberPalette = [
+      "#fde68a",
+      "#fbbf24",
+      "#fb923c",
+      "#f97316",
+      "#ef4444",
+      "#fcd34d",
+    ];
 
     const positionsX = new Float32Array(leafCount);
     const positionsY = new Float32Array(leafCount);
     const positionsZ = new Float32Array(leafCount);
+    const basePositionsX = new Float32Array(leafCount);
     const scales = new Float32Array(leafCount);
     const fallSpeeds = new Float32Array(leafCount);
     const swaySpeeds = new Float32Array(leafCount);
     const swayPhases = new Float32Array(leafCount);
+    const driftSpeeds = new Float32Array(leafCount);
+    const driftOffsets = new Float32Array(leafCount);
+    const bobSpeeds = new Float32Array(leafCount);
+    const bobAmounts = new Float32Array(leafCount);
     const spinX = new Float32Array(leafCount);
     const spinY = new Float32Array(leafCount);
     const spinZ = new Float32Array(leafCount);
@@ -158,7 +198,11 @@ export function DynamicBackground() {
     const verticalBound = 3.2;
 
     const resetLeaf = (index: number, initial = false) => {
-      positionsX[index] = (Math.random() - 0.5) * horizontalBound * 2;
+      const respawnFromLeft = Math.random() > 0.5 ? 1 : -1;
+      basePositionsX[index] = initial
+        ? (Math.random() - 0.5) * horizontalBound * 2
+        : respawnFromLeft * (horizontalBound * 0.72 + Math.random() * horizontalBound * 0.38);
+      positionsX[index] = basePositionsX[index];
       positionsY[index] = initial
         ? (Math.random() * 2 - 1) * verticalBound
         : verticalBound + Math.random() * 0.65;
@@ -170,14 +214,18 @@ export function DynamicBackground() {
         1,
       );
 
-      scales[index] = 0.75 + depthFactor * 0.95;
-      fallSpeeds[index] = 0.14 + depthFactor * 0.36;
-      swaySpeeds[index] = 0.5 + Math.random() * 0.8;
+      scales[index] = 0.66 + depthFactor * 1.12;
+      fallSpeeds[index] = 0.2 + depthFactor * 0.48;
+      swaySpeeds[index] = 0.72 + Math.random() * 1.2;
       swayPhases[index] = Math.random() * Math.PI * 2;
-      swayAmount[index] = 0.22 + depthFactor * 0.22;
-      spinX[index] = 0.35 + Math.random() * 0.7;
-      spinY[index] = 0.15 + Math.random() * 0.45;
-      spinZ[index] = (Math.random() - 0.5) * 1.35;
+      swayAmount[index] = 0.26 + depthFactor * 0.34;
+      driftSpeeds[index] = 0.12 + Math.random() * 0.3;
+      driftOffsets[index] = Math.random() * Math.PI * 2;
+      bobSpeeds[index] = 1.2 + Math.random() * 1.7;
+      bobAmounts[index] = 0.04 + depthFactor * 0.12;
+      spinX[index] = 0.5 + Math.random() * 1.1;
+      spinY[index] = 0.2 + Math.random() * 0.75;
+      spinZ[index] = (Math.random() - 0.5) * 2;
       rotationsX[index] = Math.random() * Math.PI;
       rotationsY[index] = Math.random() * Math.PI * 2;
       rotationsZ[index] = Math.random() * Math.PI * 2;
@@ -240,24 +288,31 @@ export function DynamicBackground() {
       elapsedTime += delta;
       const motionFactor = shouldReduceMotion ? 0.18 : 1;
       const gust =
-        Math.sin(elapsedTime * 0.22) * 0.18 + Math.sin(elapsedTime * 0.71) * 0.08;
+        Math.sin(elapsedTime * 0.22) * 0.24 +
+        Math.sin(elapsedTime * 0.68) * 0.12 +
+        Math.sin(elapsedTime * 1.4) * 0.05;
 
       for (let i = 0; i < leafCount; i += 1) {
         positionsY[i] -= fallSpeeds[i] * delta * motionFactor;
 
         const sway =
           Math.sin(elapsedTime * swaySpeeds[i] + swayPhases[i]) * swayAmount[i];
-        const x = positionsX[i] + (sway + gust) * motionFactor;
+        const drift =
+          Math.cos(elapsedTime * driftSpeeds[i] + driftOffsets[i]) *
+          (0.08 + scales[i] * 0.04);
+        const lift =
+          Math.sin(elapsedTime * bobSpeeds[i] + swayPhases[i] * 0.7) * bobAmounts[i];
+        const x = basePositionsX[i] + (sway + gust + drift) * motionFactor;
 
         rotationsX[i] += spinX[i] * delta * motionFactor;
         rotationsY[i] += spinY[i] * delta * motionFactor;
         rotationsZ[i] += spinZ[i] * delta * motionFactor;
 
-        tempObject.position.set(x, positionsY[i], positionsZ[i]);
+        tempObject.position.set(x, positionsY[i] + lift * motionFactor, positionsZ[i]);
         tempObject.rotation.set(
-          rotationsX[i] + Math.sin(elapsedTime * 1.3 + swayPhases[i]) * 0.2,
-          rotationsY[i],
-          rotationsZ[i],
+          rotationsX[i] + Math.sin(elapsedTime * 1.6 + swayPhases[i]) * 0.28,
+          rotationsY[i] + Math.cos(elapsedTime * 1.1 + driftOffsets[i]) * 0.12,
+          rotationsZ[i] + Math.sin(elapsedTime * 0.85 + swayPhases[i]) * 0.18,
         );
         tempObject.scale.setScalar(scales[i]);
         tempObject.updateMatrix();
@@ -310,6 +365,7 @@ export function DynamicBackground() {
       className="pointer-events-none absolute inset-0 overflow-hidden"
     >
       <div ref={mountRef} className="absolute inset-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(254,215,170,0.16),transparent_28%),radial-gradient(circle_at_78%_10%,rgba(251,191,36,0.14),transparent_24%),radial-gradient(circle_at_58%_42%,rgba(249,115,22,0.08),transparent_32%)]" />
       <div className="dynamic-noise" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,9,11,0.14)_0%,rgba(9,9,11,0.68)_38%,rgba(9,9,11,0.97)_100%)]" />
     </div>
