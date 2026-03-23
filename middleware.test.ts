@@ -22,6 +22,9 @@ describe("middleware", () => {
 
     expect(response.status).toBe(307);
     expect(response.headers.get("location")).toBe("https://yotenlabs.ai/pt-br");
+    expect(response.headers.get("Content-Security-Policy")).toContain(
+      "script-src 'self' 'nonce-",
+    );
   });
 
   it("redirects to pt-br from accept-language when no cookie is set", () => {
@@ -44,5 +47,18 @@ describe("middleware", () => {
 
     expect(response.status).toBe(307);
     expect(response.headers.get("location")).toBe("https://yotenlabs.ai/en");
+  });
+
+  it("adds a nonce-based CSP when the locale is already present", () => {
+    const request = createRequest("/pt-br");
+
+    const response = middleware(request);
+    const contentSecurityPolicy = response.headers.get("Content-Security-Policy");
+
+    expect(response.status).toBe(200);
+    expect(response.headers.get("x-nonce")).toBeTruthy();
+    expect(contentSecurityPolicy).toContain("default-src 'self'");
+    expect(contentSecurityPolicy).toContain("script-src 'self' 'nonce-");
+    expect(contentSecurityPolicy).toContain("https://static.cloudflareinsights.com");
   });
 });
