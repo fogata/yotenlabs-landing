@@ -22,9 +22,7 @@ describe("middleware", () => {
 
     expect(response.status).toBe(307);
     expect(response.headers.get("location")).toBe("https://yotenlabs.ai/pt-br");
-    expect(response.headers.get("Content-Security-Policy")).toContain(
-      "script-src 'self' 'nonce-",
-    );
+    expect(response.headers.get("Content-Security-Policy")).toBeNull();
   });
 
   it("redirects to pt-br from accept-language when no cookie is set", () => {
@@ -49,21 +47,18 @@ describe("middleware", () => {
     expect(response.headers.get("location")).toBe("https://yotenlabs.ai/en");
   });
 
-  it("adds a nonce-based CSP when the locale is already present", () => {
+  it("does not add application-level security headers when the locale is already present", () => {
     const request = createRequest("/pt-br");
 
     const response = middleware(request);
-    const contentSecurityPolicy = response.headers.get("Content-Security-Policy");
 
     expect(response.status).toBe(200);
-    expect(response.headers.get("x-nonce")).toBeTruthy();
-    expect(contentSecurityPolicy).toContain("default-src 'self'");
-    expect(contentSecurityPolicy).toContain("script-src 'self' 'nonce-");
-    expect(contentSecurityPolicy).not.toContain("'strict-dynamic'");
-    expect(contentSecurityPolicy).toContain("script-src-elem 'self' https://static.cloudflareinsights.com");
-    expect(contentSecurityPolicy).toContain("https://static.cloudflareinsights.com");
-    expect(contentSecurityPolicy).toContain("style-src 'self' 'nonce-");
-    expect(contentSecurityPolicy).toContain("'unsafe-inline'");
-    expect(contentSecurityPolicy).toContain("style-src-attr 'unsafe-inline'");
+    expect(response.headers.get("Content-Security-Policy")).toBeNull();
+    expect(response.headers.get("Referrer-Policy")).toBeNull();
+    expect(response.headers.get("X-Content-Type-Options")).toBeNull();
+    expect(response.headers.get("X-Frame-Options")).toBeNull();
+    expect(response.headers.get("Permissions-Policy")).toBeNull();
+    expect(response.headers.get("Strict-Transport-Security")).toBeNull();
+    expect(response.headers.get("x-nonce")).toBeNull();
   });
 });

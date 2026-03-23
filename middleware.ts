@@ -21,55 +21,11 @@ function buildLocalizedPathname(pathname: string, locale: string) {
   return `/${locale}${pathname}`;
 }
 
-function createNonce() {
-  return btoa(crypto.randomUUID());
-}
-
-function buildContentSecurityPolicy(nonce: string) {
-  return [
-    "default-src 'self'",
-    `script-src 'self' 'nonce-${nonce}' https://static.cloudflareinsights.com`,
-    "script-src-elem 'self' https://static.cloudflareinsights.com",
-    `style-src 'self' 'nonce-${nonce}' 'unsafe-inline'`,
-    "style-src-attr 'unsafe-inline'",
-    "img-src 'self' data: blob:",
-    "font-src 'self'",
-    "connect-src 'self' https://cloudflareinsights.com",
-    "media-src 'self'",
-    "object-src 'none'",
-    "base-uri 'self'",
-    "form-action 'self'",
-    "frame-ancestors 'none'",
-    "upgrade-insecure-requests",
-  ].join("; ");
-}
-
-function withSecurityHeaders(
-  request: NextRequest,
-  nonce = createNonce(),
-) {
-  const contentSecurityPolicy = buildContentSecurityPolicy(nonce);
-  const requestHeaders = new Headers(request.headers);
-
-  requestHeaders.set("x-nonce", nonce);
-  requestHeaders.set("Content-Security-Policy", contentSecurityPolicy);
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
-
-  response.headers.set("x-nonce", nonce);
-  response.headers.set("Content-Security-Policy", contentSecurityPolicy);
-
-  return response;
-}
-
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (pathnameHasLocale(pathname)) {
-    return withSecurityHeaders(request);
+    return NextResponse.next();
   }
 
   const locale = resolvePreferredLocale({
@@ -80,14 +36,7 @@ export function middleware(request: NextRequest) {
   const redirectUrl = request.nextUrl.clone();
   redirectUrl.pathname = buildLocalizedPathname(pathname, locale);
 
-  const redirectResponse = NextResponse.redirect(redirectUrl);
-  const nonce = createNonce();
-  const contentSecurityPolicy = buildContentSecurityPolicy(nonce);
-
-  redirectResponse.headers.set("x-nonce", nonce);
-  redirectResponse.headers.set("Content-Security-Policy", contentSecurityPolicy);
-
-  return redirectResponse;
+  return NextResponse.redirect(redirectUrl);
 }
 
 export const config = {
