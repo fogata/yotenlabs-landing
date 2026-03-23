@@ -4,6 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: yotenlabs-landing
+    env_file:
+      - .env
     ports:
       - "${APP_PORT:-3003}:3000"
     environment:
