@@ -107,3 +107,51 @@ gh repo create yotenlabs-landing --public
 git remote add origin https://github.com/SEU_USUARIO/yotenlabs-landing.git
 git push -u origin main
 ```
+
+## Deploy automatico na VPS com GitHub Actions
+
+O repositório inclui o workflow [deploy-vps.yml](/c:/Projetos%20-%20Enterprise/yotenlabs-landing/.github/workflows/deploy-vps.yml).
+
+Ele faz:
+
+- `npm ci`
+- `npm test`
+- `npm run build`
+- conexão SSH na VPS
+- `git pull` no diretório da aplicação
+- `docker compose build --pull`
+- `docker compose up -d --force-recreate`
+
+### Secrets necessários
+
+Configure em `Settings > Secrets and variables > Actions`:
+
+- `VPS_HOST`: IP ou domínio da VPS
+- `VPS_USER`: usuário SSH
+- `VPS_SSH_KEY`: chave privada SSH usada pelo GitHub Actions
+- `VPS_PORT`: porta SSH, normalmente `22`
+
+### Variable necessária
+
+Configure em `Settings > Secrets and variables > Actions > Variables`:
+
+- `VPS_APP_DIR`: caminho absoluto do repositório na VPS
+
+Exemplo:
+
+```text
+/opt/yotenlabs-landing
+```
+
+### Pré-requisitos na VPS
+
+- Git instalado
+- Docker e Docker Compose instalados
+- repositório já clonado em `VPS_APP_DIR`
+- o usuário SSH precisa conseguir rodar `docker compose`
+
+### Fluxo de uso
+
+Cada `push` para `main` dispara o deploy automaticamente.
+
+Se quiser disparar manualmente, use `Actions > Deploy to VPS > Run workflow`.

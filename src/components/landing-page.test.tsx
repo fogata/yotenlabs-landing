@@ -43,12 +43,11 @@ describe("LandingPage", () => {
     ).toBeInTheDocument();
   });
 
-  it("renders all four project cards", () => {
+  it("renders all current project cards", () => {
     render(<LandingPage locale="en" messages={enMessages} />);
 
     expect(screen.getByText("WearingDaily")).toBeInTheDocument();
-    expect(screen.getByText("SkillTalk")).toBeInTheDocument();
-    expect(screen.getByText("VoiceForge AI")).toBeInTheDocument();
+    expect(screen.getByText("Live-Drills")).toBeInTheDocument();
     expect(screen.getByText("Platform Health.ai")).toBeInTheDocument();
   });
 
