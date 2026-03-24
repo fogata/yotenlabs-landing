@@ -196,7 +196,9 @@
     "cta": "Enviar mensagem",
     "sending": "Enviando...",
     "success": "Mensagem enviada. Retornaremos em breve.",
-    "error": "Não foi possível enviar agora. Tente novamente ou fale com a gente por e-mail."
+    "error": "Não foi possível enviar agora. Tente novamente ou fale com a gente por e-mail.",
+    "verificationRequired": "Conclua a verificação antes de enviar sua mensagem.",
+    "verificationError": "A verificação falhou. Tente o desafio novamente."
   },
   "footer": {
     "tagline": "Clareza, confiança, resultados mensuráveis.",

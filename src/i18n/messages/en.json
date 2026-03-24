@@ -196,7 +196,9 @@
     "cta": "Send message",
     "sending": "Sending...",
     "success": "Message sent. We will get back to you soon.",
-    "error": "Message could not be sent right now. Please try again or email us directly."
+    "error": "Message could not be sent right now. Please try again or email us directly.",
+    "verificationRequired": "Complete the verification before sending your message.",
+    "verificationError": "Verification failed. Please try the challenge again."
   },
   "footer": {
     "tagline": "Clarity, trust, measurable outcomes.",

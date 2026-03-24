@@ -7,6 +7,7 @@ type ContactPayload = {
   email?: string;
   message?: string;
   name?: string;
+  turnstileToken?: string;
   website?: string;
 };
 
@@ -46,6 +47,81 @@ function getClientAddress(request: Request) {
   }
 
   return request.headers.get("x-real-ip")?.trim() || "unknown";
+}
+
+async function verifyTurnstileToken(token: string, clientAddress: string) {
+  const turnstileSecret = getRequiredEnv("TURNSTILE_SECRET_KEY");
+  const turnstileSiteKey = getRequiredEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY");
+
+  if (!turnstileSecret && !turnstileSiteKey) {
+    return {
+      enabled: false,
+      success: true,
+    };
+  }
+
+  if (!turnstileSecret || !turnstileSiteKey) {
+    console.error("Turnstile is partially configured in the runtime environment.");
+
+    return {
+      enabled: true,
+      success: false,
+      status: 503,
+    };
+  }
+
+  if (!token) {
+    return {
+      enabled: true,
+      success: false,
+      status: 400,
+    };
+  }
+
+  const response = await fetch(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        secret: turnstileSecret,
+        response: token,
+        remoteip: clientAddress,
+      }),
+      cache: "no-store",
+    },
+  );
+
+  if (!response.ok) {
+    console.error("Turnstile verification request failed.", {
+      status: response.status,
+    });
+
+    return {
+      enabled: true,
+      success: false,
+      status: 503,
+    };
+  }
+
+  const result = (await response.json()) as {
+    "error-codes"?: string[];
+    success?: boolean;
+  };
+
+  if (!result.success) {
+    console.error("Turnstile verification rejected the request.", {
+      errors: result["error-codes"] ?? [],
+    });
+  }
+
+  return {
+    enabled: true,
+    success: Boolean(result.success),
+    status: result.success ? 200 : 403,
+  };
 }
 
 function isRateLimited(clientAddress: string) {
@@ -129,6 +205,7 @@ export async function POST(request: Request) {
     const email = payload.email?.trim() ?? "";
     const company = payload.company?.trim() ?? "";
     const message = payload.message?.trim() ?? "";
+    const turnstileToken = payload.turnstileToken?.trim() ?? "";
     const website = payload.website?.trim() ?? "";
     const clientAddress = getClientAddress(request);
 
@@ -140,6 +217,23 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { error: "Rate limit exceeded." },
         { status: 429 },
+      );
+    }
+
+    const turnstileCheck = await verifyTurnstileToken(
+      turnstileToken,
+      clientAddress,
+    );
+
+    if (!turnstileCheck.success) {
+      return NextResponse.json(
+        {
+          error:
+            turnstileCheck.status === 503
+              ? "Turnstile is not configured."
+              : "Turnstile verification failed.",
+        },
+        { status: turnstileCheck.status },
       );
     }
 

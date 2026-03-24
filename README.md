@@ -54,11 +54,14 @@ SMTP_USER=
 SMTP_PASS=
 CONTACT_TO_EMAIL=
 CONTACT_FROM_EMAIL=
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=
+TURNSTILE_SECRET_KEY=
 REDIS_URL=
 REDIS_PREFIX=
 ```
 
 `CONTACT_FROM_EMAIL` is optional. If omitted, the app falls back to `CONTACT_TO_EMAIL`.
+`NEXT_PUBLIC_TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY` enable Cloudflare Turnstile protection on the contact form.
 `REDIS_URL` is optional. If omitted, the contact rate limit falls back to in-memory storage.
 On the VPS, this project can share the existing `health-platform` Docker network and use `redis://health-redis:6379`.
 
@@ -71,6 +74,8 @@ SMTP_USER=hello@yotenlabs.ai
 SMTP_PASS=your_zoho_app_password
 CONTACT_TO_EMAIL=hello@yotenlabs.ai
 CONTACT_FROM_EMAIL=hello@yotenlabs.ai
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_turnstile_site_key
+TURNSTILE_SECRET_KEY=your_turnstile_secret_key
 REDIS_URL=redis://health-redis:6379
 REDIS_PREFIX=yotenlabs-contact
 ```

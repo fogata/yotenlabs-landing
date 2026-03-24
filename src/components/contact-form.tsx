@@ -1,6 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import Script from "next/script";
+import { useEffect, useRef, useState } from "react";
+
+type TurnstileInstance = {
+  remove?: (widgetId?: string) => void;
+  render: (
+    container: HTMLElement,
+    options: {
+      callback?: (token: string) => void;
+      "error-callback"?: () => void;
+      "expired-callback"?: () => void;
+      sitekey: string;
+      size?: "compact" | "flexible" | "normal";
+      theme?: "auto" | "dark" | "light";
+    },
+  ) => string;
+  reset: (widgetId?: string) => void;
+};
+
+declare global {
+  interface Window {
+    turnstile?: TurnstileInstance;
+  }
+}
 
 type ContactFormLabels = {
   availability: string;
@@ -9,6 +32,8 @@ type ContactFormLabels = {
   directValue: string;
   error: string;
   eyebrow: string;
+  verificationError: string;
+  verificationRequired: string;
   fields: {
     company: string;
     email: string;
@@ -38,6 +63,7 @@ type FormState = {
   website: string;
   message: string;
   name: string;
+  turnstileToken: string;
 };
 
 const initialState: FormState = {
@@ -46,7 +72,12 @@ const initialState: FormState = {
   company: "",
   website: "",
   message: "",
+  turnstileToken: "",
 };
+
+const turnstileSiteKey =
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim() ?? "";
+const isTurnstileEnabled = turnstileSiteKey.length > 0;
 
 export function ContactForm({
   description,
@@ -56,10 +87,66 @@ export function ContactForm({
 }: ContactFormProps) {
   const [formState, setFormState] = useState<FormState>(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isTurnstileReady, setIsTurnstileReady] = useState(!isTurnstileEnabled);
   const [status, setStatus] = useState<{
     kind: "error" | "success";
     message: string;
   } | null>(null);
+  const turnstileContainerRef = useRef<HTMLDivElement | null>(null);
+  const turnstileWidgetIdRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (
+      !isTurnstileEnabled ||
+      !isTurnstileReady ||
+      !turnstileContainerRef.current ||
+      !window.turnstile ||
+      turnstileWidgetIdRef.current
+    ) {
+      return;
+    }
+
+    turnstileWidgetIdRef.current = window.turnstile.render(
+      turnstileContainerRef.current,
+      {
+        sitekey: turnstileSiteKey,
+        theme: "dark",
+        size: "flexible",
+        callback: (token) => {
+          setFormState((current) => ({
+            ...current,
+            turnstileToken: token,
+          }));
+          setStatus(null);
+        },
+        "expired-callback": () => {
+          setFormState((current) => ({
+            ...current,
+            turnstileToken: "",
+          }));
+        },
+        "error-callback": () => {
+          setFormState((current) => ({
+            ...current,
+            turnstileToken: "",
+          }));
+          setStatus({
+            kind: "error",
+            message: labels.verificationError,
+          });
+        },
+      },
+    );
+
+    return () => {
+      const widgetId = turnstileWidgetIdRef.current;
+
+      if (widgetId) {
+        window.turnstile?.remove?.(widgetId);
+        turnstileWidgetIdRef.current = null;
+      }
+    };
+  }, [isTurnstileReady, labels.verificationError]);
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -74,6 +161,15 @@ export function ContactForm({
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (isTurnstileEnabled && !formState.turnstileToken) {
+      setStatus({
+        kind: "error",
+        message: labels.verificationRequired,
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setStatus(null);
 
@@ -85,12 +181,31 @@ export function ContactForm({
         },
         body: JSON.stringify(formState),
       });
+      const payload = (await response.json().catch(() => null)) as
+        | { error?: string }
+        | null;
 
       if (!response.ok) {
-        throw new Error("Request failed");
+        if (response.status === 400 || response.status === 403) {
+          setStatus({
+            kind: "error",
+            message: labels.verificationError,
+          });
+          window.turnstile?.reset(turnstileWidgetIdRef.current ?? undefined);
+          setFormState((current) => ({
+            ...current,
+            turnstileToken: "",
+          }));
+          return;
+        }
+
+        throw new Error(payload?.error ?? "Request failed");
       }
 
-      setFormState(initialState);
+      setFormState({
+        ...initialState,
+      });
+      window.turnstile?.reset(turnstileWidgetIdRef.current ?? undefined);
       setStatus({
         kind: "success",
         message: labels.success,
@@ -107,6 +222,16 @@ export function ContactForm({
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+      {isTurnstileEnabled ? (
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          strategy="afterInteractive"
+          onLoad={() => {
+            setIsTurnstileReady(true);
+          }}
+        />
+      ) : null}
+
       <div className="rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] sm:p-8">
         <div className="space-y-4">
           <p className="font-mono text-xs uppercase tracking-[0.28em] text-amber-300/70">
@@ -223,6 +348,16 @@ export function ContactForm({
             />
           </label>
         </div>
+
+        {isTurnstileEnabled ? (
+          <div className="mt-4 rounded-[1.5rem] border border-white/10 bg-black/20 p-4">
+            <div
+              ref={turnstileContainerRef}
+              className="min-h-[72px]"
+              data-testid="turnstile-widget"
+            />
+          </div>
+        ) : null}
 
         <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <button
