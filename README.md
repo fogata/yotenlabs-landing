@@ -54,9 +54,13 @@ SMTP_USER=
 SMTP_PASS=
 CONTACT_TO_EMAIL=
 CONTACT_FROM_EMAIL=
+REDIS_URL=
+REDIS_PREFIX=
 ```
 
 `CONTACT_FROM_EMAIL` is optional. If omitted, the app falls back to `CONTACT_TO_EMAIL`.
+`REDIS_URL` is optional. If omitted, the contact rate limit falls back to in-memory storage.
+On the VPS, this project can share the existing `health-platform` Docker network and use `redis://health-redis:6379`.
 
 Example for Zoho Mail:
 
@@ -67,6 +71,8 @@ SMTP_USER=hello@yotenlabs.ai
 SMTP_PASS=your_zoho_app_password
 CONTACT_TO_EMAIL=hello@yotenlabs.ai
 CONTACT_FROM_EMAIL=hello@yotenlabs.ai
+REDIS_URL=redis://health-redis:6379
+REDIS_PREFIX=yotenlabs-contact
 ```
 
 ## Personalização rápida

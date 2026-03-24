@@ -68,6 +68,7 @@ describe("LandingPage", () => {
     expect(screen.getByLabelText("Work email")).toBeInTheDocument();
     expect(screen.getByLabelText("Company")).toBeInTheDocument();
     expect(screen.getByLabelText("What are you building?")).toBeInTheDocument();
+    expect(screen.getByLabelText("Website")).toBeInTheDocument();
     expect(
       screen.getByRole("button", {
         name: "Send message",

@@ -10,3 +10,11 @@ services:
       - "${APP_PORT:-3003}:3000"
     environment:
       NODE_ENV: production
+    networks:
+      - default
+      - health-platform
+
+networks:
+  health-platform:
+    external: true
+    name: health-platform

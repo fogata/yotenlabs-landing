@@ -35,6 +35,7 @@ type ContactFormProps = {
 type FormState = {
   company: string;
   email: string;
+  website: string;
   message: string;
   name: string;
 };
@@ -43,6 +44,7 @@ const initialState: FormState = {
   name: "",
   email: "",
   company: "",
+  website: "",
   message: "",
 };
 
@@ -176,6 +178,20 @@ export function ContactForm({
         </div>
 
         <div className="mt-4">
+          <div className="hidden" aria-hidden="true">
+            <label>
+              <span>Website</span>
+              <input
+                name="website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={formState.website}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+
           <label className="space-y-2">
             <span className="text-sm font-medium text-zinc-200">
               {labels.fields.company}
