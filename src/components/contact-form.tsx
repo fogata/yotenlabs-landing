@@ -221,7 +221,7 @@ export function ContactForm({
   };
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+    <div className="overflow-hidden rounded-sm bg-[var(--surface-low)] lg:grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
       {isTurnstileEnabled ? (
         <Script
           src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
@@ -232,35 +232,35 @@ export function ContactForm({
         />
       ) : null}
 
-      <div className="rounded-lg border border-[var(--border)] bg-[linear-gradient(180deg,rgba(53,53,53,0.8),rgba(31,32,32,0.56))] p-6 shadow-[0_32px_80px_rgba(177,197,255,0.06)] sm:p-8">
+      <div className="bg-[linear-gradient(135deg,#151d26,#0b1219)] p-8 sm:p-12 lg:p-14">
         <div className="space-y-4">
-          <p className="font-mono text-xs uppercase text-[var(--primary)]">
+          <p className="font-mono text-[10px] uppercase text-[var(--muted-dim)]">
             {labels.eyebrow}
           </p>
           <h2
             id={titleId}
-            className="text-3xl font-semibold text-white sm:text-4xl"
+            className="max-w-md text-4xl font-semibold text-white"
           >
             {title}
           </h2>
-          <p className="max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg">
+          <p className="max-w-md text-sm leading-7 text-[var(--muted)]">
             {description}
           </p>
         </div>
 
-        <div className="mt-8 space-y-4 rounded-lg bg-[var(--surface-low)] p-5">
+        <div className="mt-10 space-y-5">
           <div>
-            <p className="font-mono text-[11px] uppercase text-[var(--primary)]">
+            <p className="font-mono text-[10px] uppercase text-[var(--muted-dim)]">
               {labels.directLabel}
             </p>
             <a
               href={`mailto:${labels.directValue}`}
-              className="mt-2 inline-flex text-sm font-medium text-zinc-100 underline decoration-[var(--primary)]/40 underline-offset-4 hover:text-white"
+              className="mt-2 inline-flex text-sm font-medium text-zinc-100 underline decoration-[var(--accent-cyan)]/40 underline-offset-4 hover:text-white"
             >
               {labels.directValue}
             </a>
           </div>
-          <div className="rounded-lg bg-[rgba(177,197,255,0.12)] px-4 py-2 text-sm text-[var(--primary)]">
+          <div className="inline-flex rounded-sm bg-[rgba(194,255,95,0.1)] px-4 py-2 text-xs text-[var(--accent-lime)]">
             {labels.availability}
           </div>
         </div>
@@ -268,11 +268,11 @@ export function ContactForm({
 
       <form
         onSubmit={handleSubmit}
-        className="rounded-lg border border-[var(--border)] bg-[var(--panel)] p-6 shadow-[0_32px_80px_rgba(177,197,255,0.05)] backdrop-blur-2xl sm:p-8"
+        className="bg-[#090f15] p-8 sm:p-12 lg:p-14"
       >
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="space-y-2">
-            <span className="text-sm font-medium text-zinc-200">
+            <span className="font-mono text-[10px] uppercase text-[var(--muted-dim)]">
               {labels.fields.name}
             </span>
             <input
@@ -282,12 +282,12 @@ export function ContactForm({
               onChange={handleChange}
               required
               placeholder={labels.placeholders.name}
-              className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-high)] px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-[var(--primary)] focus:bg-[var(--surface-highest)]"
+              className="w-full border-0 border-b border-[var(--border)] bg-transparent px-0 py-3 text-sm text-white outline-none placeholder:text-[var(--muted-dim)] focus:border-[var(--accent-cyan)]"
             />
           </label>
 
           <label className="space-y-2">
-            <span className="text-sm font-medium text-zinc-200">
+            <span className="font-mono text-[10px] uppercase text-[var(--muted-dim)]">
               {labels.fields.email}
             </span>
             <input
@@ -297,7 +297,7 @@ export function ContactForm({
               onChange={handleChange}
               required
               placeholder={labels.placeholders.email}
-              className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-high)] px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-[var(--primary)] focus:bg-[var(--surface-highest)]"
+              className="w-full border-0 border-b border-[var(--border)] bg-transparent px-0 py-3 text-sm text-white outline-none placeholder:text-[var(--muted-dim)] focus:border-[var(--accent-cyan)]"
             />
           </label>
         </div>
@@ -318,7 +318,7 @@ export function ContactForm({
           </div>
 
           <label className="space-y-2">
-            <span className="text-sm font-medium text-zinc-200">
+            <span className="font-mono text-[10px] uppercase text-[var(--muted-dim)]">
               {labels.fields.company}
             </span>
             <input
@@ -327,14 +327,14 @@ export function ContactForm({
               value={formState.company}
               onChange={handleChange}
               placeholder={labels.placeholders.company}
-              className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-high)] px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-[var(--primary)] focus:bg-[var(--surface-highest)]"
+              className="w-full border-0 border-b border-[var(--border)] bg-transparent px-0 py-3 text-sm text-white outline-none placeholder:text-[var(--muted-dim)] focus:border-[var(--accent-cyan)]"
             />
           </label>
         </div>
 
         <div className="mt-4">
           <label className="space-y-2">
-            <span className="text-sm font-medium text-zinc-200">
+            <span className="font-mono text-[10px] uppercase text-[var(--muted-dim)]">
               {labels.fields.message}
             </span>
             <textarea
@@ -344,13 +344,13 @@ export function ContactForm({
               required
               rows={6}
               placeholder={labels.placeholders.message}
-              className="min-h-40 w-full rounded-lg border border-[var(--border)] bg-[var(--surface-high)] px-4 py-3 text-sm leading-7 text-white outline-none placeholder:text-zinc-500 focus:border-[var(--primary)] focus:bg-[var(--surface-highest)]"
+              className="min-h-32 w-full resize-none border-0 border-b border-[var(--border)] bg-transparent px-0 py-3 text-sm leading-7 text-white outline-none placeholder:text-[var(--muted-dim)] focus:border-[var(--accent-cyan)]"
             />
           </label>
         </div>
 
         {isTurnstileEnabled ? (
-          <div className="mt-4 rounded-lg border border-[var(--border)] bg-[var(--surface-high)] p-4">
+          <div className="mt-4 rounded-sm border border-[var(--border)] bg-[var(--surface-low)] p-4">
             <div
               ref={turnstileContainerRef}
               className="min-h-[72px]"
@@ -363,7 +363,7 @@ export function ContactForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex items-center justify-center rounded-lg bg-[linear-gradient(135deg,var(--primary),var(--primary-strong))] px-6 py-3 text-sm font-semibold text-[#001947] hover:translate-y-[-1px] disabled:cursor-wait disabled:opacity-70"
+            className="inline-flex items-center justify-center rounded-sm bg-[var(--accent-cyan)] px-8 py-3 text-xs font-semibold text-[#031014] hover:translate-y-[-1px] disabled:cursor-wait disabled:opacity-70"
           >
             {isSubmitting ? labels.sending : labels.cta}
           </button>

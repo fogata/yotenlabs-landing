@@ -1,18 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0e0e0e;
-  --foreground: #e4e2e1;
-  --muted: #c3c6d6;
-  --primary: #b1c5ff;
-  --primary-strong: #0051c3;
-  --surface: #131313;
-  --surface-low: #1b1c1c;
-  --surface-high: #2a2a2a;
-  --surface-highest: #353535;
-  --border: rgba(177, 197, 255, 0.16);
-  --panel: rgba(31, 32, 32, 0.72);
-  --ring: rgba(177, 197, 255, 0.46);
+  --background: #0a1016;
+  --foreground: #f0f4f8;
+  --muted: #c7d0da;
+  --muted-dim: #71808d;
+  --primary: #6bf3ff;
+  --primary-strong: #26dbe8;
+  --accent-cyan: #6bf3ff;
+  --accent-lime: #c2ff5f;
+  --surface: #0d141b;
+  --surface-low: #151c24;
+  --surface-high: #1d2630;
+  --surface-highest: #26313c;
+  --border: rgba(199, 208, 218, 0.1);
+  --panel: rgba(13, 20, 27, 0.86);
+  --ring: rgba(107, 243, 255, 0.45);
 }
 
 @theme inline {
@@ -35,9 +38,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   background-image:
-    radial-gradient(circle at 16% 8%, rgba(0, 81, 195, 0.2), transparent 28%),
-    radial-gradient(circle at 84% 20%, rgba(177, 197, 255, 0.13), transparent 26%),
-    linear-gradient(180deg, #0e0e0e 0%, #131313 44%, #0e0e0e 100%);
+    radial-gradient(circle at 82% 10%, rgba(107, 243, 255, 0.11), transparent 22%),
+    linear-gradient(180deg, #0a1016 0%, #0c1218 44%, #090f15 100%);
 }
 
 h1,
@@ -50,13 +52,13 @@ h3 {
   display: block;
   height: 100%;
   width: 100%;
-  opacity: 0.72;
+  opacity: 0.34;
 }
 
 .dynamic-noise {
   position: absolute;
   inset: 0;
-  opacity: 0.05;
+  opacity: 0.08;
   mix-blend-mode: soft-light;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
 }
@@ -73,7 +75,7 @@ h3 {
 }
 
 ::selection {
-  background: rgba(177, 197, 255, 0.26);
+  background: rgba(107, 243, 255, 0.24);
 }
 
 a,

@@ -95,11 +95,11 @@ Direção visual:
 
 - Estética dark Deep Tech / Professional Futurism.
 - Headlines em Space Grotesk, corpo em Inter e dados curtos em IBM Plex Mono.
-- Paleta com base grafite (`#0E0E0E`, `#131313`, `#1B1C1C`) e acentos azuis (`#0051C3`, `#B1C5FF`).
-- Navegação glass com `backdrop-blur`, superfícies tonais e bordas fantasma com baixa opacidade.
-- CTAs primários com gradiente azul e cards com camadas `surface-low`/`surface-high`.
+- Paleta com base quase preta (`#0A1016`, `#0D141B`, `#151C24`), acento ciano (`#6BF3FF`) e sinalização lima (`#C2FF5F`).
+- Navegação compacta em barra escura, superfícies tonais, bordas fantasma e componentes com raio mínimo.
+- Hero com painel técnico à direita, seção de competências em mosaico e bloco de contato dividido.
 
-Ao alterar a identidade, mantenha os tokens CSS centralizados em `src/app/globals.css` e evite introduzir acentos âmbar ou o visual sazonal anterior.
+Ao alterar a identidade, mantenha os tokens CSS centralizados em `src/app/globals.css` e evite reintroduzir o visual SaaS azul/glass genérico ou os acentos âmbar sazonais anteriores.
 
 ## Adicionar um novo idioma
 
@@ -111,7 +111,7 @@ Ao alterar a identidade, mantenha os tokens CSS centralizados em `src/app/global
 
 ## Animated background
 
-O fundo dinâmico usa Three.js para renderizar uma malha abstrata de nós azuis, com grid CSS, blobs difusos e um noise overlay leve.
+O fundo dinâmico usa Three.js para renderizar uma malha abstrata discreta de nós ciano/lima, com grid CSS e noise overlay leve.
 
 Se o usuário tiver `prefers-reduced-motion: reduce`, o movimento é reduzido e o visual permanece funcional.
 

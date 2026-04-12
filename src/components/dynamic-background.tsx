@@ -29,10 +29,10 @@ function createNodeTexture() {
     canvas.height * 0.5,
     canvas.width * 0.48,
   );
-  glow.addColorStop(0, "rgba(255, 255, 255, 0.96)");
-  glow.addColorStop(0.2, "rgba(177, 197, 255, 0.82)");
-  glow.addColorStop(0.52, "rgba(0, 81, 195, 0.38)");
-  glow.addColorStop(1, "rgba(0, 81, 195, 0)");
+  glow.addColorStop(0, "rgba(255, 255, 255, 0.88)");
+  glow.addColorStop(0.22, "rgba(107, 243, 255, 0.62)");
+  glow.addColorStop(0.52, "rgba(107, 243, 255, 0.2)");
+  glow.addColorStop(1, "rgba(107, 243, 255, 0)");
 
   context.fillStyle = glow;
   context.fillRect(0, 0, canvas.width, canvas.height);
@@ -95,13 +95,13 @@ export function DynamicBackground() {
 
     nodeTexture.colorSpace = THREE.SRGBColorSpace;
 
-    const nodeCount = window.innerWidth < 768 ? 42 : 72;
+    const nodeCount = window.innerWidth < 768 ? 24 : 42;
 
     const geometry = new THREE.PlaneGeometry(0.18, 0.18);
     const material = new THREE.MeshBasicMaterial({
       map: nodeTexture,
       transparent: true,
-      opacity: 0.78,
+      opacity: 0.42,
       depthWrite: false,
       side: THREE.DoubleSide,
       vertexColors: true,
@@ -111,9 +111,9 @@ export function DynamicBackground() {
     scene.add(nodes);
 
     const lineMaterial = new THREE.LineBasicMaterial({
-      color: 0x2f6fff,
+      color: 0x6bf3ff,
       transparent: true,
-      opacity: 0.16,
+      opacity: 0.06,
     });
     const lineGeometry = new THREE.BufferGeometry();
     const linePositions = new Float32Array(nodeCount * 2 * 3);
@@ -121,7 +121,7 @@ export function DynamicBackground() {
     lineGeometry.setAttribute("position", new THREE.BufferAttribute(linePositions, 3));
     scene.add(lines);
 
-    const bluePalette = ["#b1c5ff", "#7fa4ff", "#0051c3", "#d7e0ff"];
+    const bluePalette = ["#6bf3ff", "#c2ff5f", "#d9f8ff", "#4adce8"];
 
     const positionsX = new Float32Array(nodeCount);
     const positionsY = new Float32Array(nodeCount);
@@ -280,10 +280,10 @@ export function DynamicBackground() {
       className="pointer-events-none absolute inset-0 overflow-hidden"
     >
       <div ref={mountRef} className="absolute inset-0" />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(177,197,255,0.055)_1px,transparent_1px),linear-gradient(180deg,rgba(177,197,255,0.045)_1px,transparent_1px)] bg-[size:72px_72px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_14%,rgba(0,81,195,0.28),transparent_28%),radial-gradient(circle_at_78%_12%,rgba(177,197,255,0.16),transparent_24%),radial-gradient(circle_at_58%_48%,rgba(0,81,195,0.12),transparent_34%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(199,208,218,0.035)_1px,transparent_1px),linear-gradient(180deg,rgba(199,208,218,0.025)_1px,transparent_1px)] bg-[size:72px_72px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_12%,rgba(107,243,255,0.1),transparent_24%),radial-gradient(circle_at_58%_48%,rgba(194,255,95,0.035),transparent_34%)]" />
       <div className="dynamic-noise" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,14,14,0.08)_0%,rgba(19,19,19,0.74)_42%,rgba(14,14,14,0.98)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,16,22,0.2)_0%,rgba(10,16,22,0.78)_42%,rgba(9,15,21,0.98)_100%)]" />
     </div>
   );
 }
