@@ -121,7 +121,7 @@ export function DynamicBackground() {
     lineGeometry.setAttribute("position", new THREE.BufferAttribute(linePositions, 3));
     scene.add(lines);
 
-    const bluePalette = ["#6bf3ff", "#c2ff5f", "#d9f8ff", "#4adce8"];
+    const bluePalette = ["#6bf3ff", "#7c3cff", "#d9f8ff", "#4adce8"];
 
     const positionsX = new Float32Array(nodeCount);
     const positionsY = new Float32Array(nodeCount);
@@ -281,7 +281,7 @@ export function DynamicBackground() {
     >
       <div ref={mountRef} className="absolute inset-0" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(199,208,218,0.035)_1px,transparent_1px),linear-gradient(180deg,rgba(199,208,218,0.025)_1px,transparent_1px)] bg-[size:72px_72px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_12%,rgba(107,243,255,0.1),transparent_24%),radial-gradient(circle_at_58%_48%,rgba(194,255,95,0.035),transparent_34%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_12%,rgba(107,243,255,0.1),transparent_24%),radial-gradient(circle_at_58%_48%,rgba(124,60,255,0.05),transparent_34%)]" />
       <div className="dynamic-noise" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,16,22,0.2)_0%,rgba(10,16,22,0.78)_42%,rgba(9,15,21,0.98)_100%)]" />
     </div>

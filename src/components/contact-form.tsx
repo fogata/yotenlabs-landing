@@ -53,6 +53,7 @@ type ContactFormLabels = {
 type ContactFormProps = {
   description: string;
   labels: ContactFormLabels;
+  protocolSteps: [string, string];
   title: string;
   titleId: string;
 };
@@ -82,6 +83,7 @@ const isTurnstileEnabled = turnstileSiteKey.length > 0;
 export function ContactForm({
   description,
   labels,
+  protocolSteps,
   title,
   titleId,
 }: ContactFormProps) {
@@ -221,7 +223,7 @@ export function ContactForm({
   };
 
   return (
-    <div className="overflow-hidden rounded-sm bg-[var(--surface-low)] lg:grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+    <div className="overflow-hidden border border-[#202938] bg-[#111827] lg:grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
       {isTurnstileEnabled ? (
         <Script
           src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
@@ -232,35 +234,33 @@ export function ContactForm({
         />
       ) : null}
 
-      <div className="bg-[linear-gradient(135deg,#151d26,#0b1219)] p-8 sm:p-12 lg:p-14">
+      <div className="bg-[#151d2a] p-8 sm:p-12 lg:p-14">
         <div className="space-y-4">
-          <p className="font-mono text-[10px] uppercase text-[var(--muted-dim)]">
-            {labels.eyebrow}
-          </p>
           <h2
             id={titleId}
-            className="max-w-md text-4xl font-semibold text-white"
+            className="max-w-sm text-4xl font-black uppercase italic leading-none text-white"
           >
             {title}
           </h2>
-          <p className="max-w-md text-sm leading-7 text-[var(--muted)]">
+          <p className="max-w-md text-sm leading-7 text-white/78">
             {description}
           </p>
         </div>
 
-        <div className="mt-10 space-y-5">
-          <div>
-            <p className="font-mono text-[10px] uppercase text-[var(--muted-dim)]">
-              {labels.directLabel}
-            </p>
-            <a
-              href={`mailto:${labels.directValue}`}
-              className="mt-2 inline-flex text-sm font-medium text-zinc-100 underline decoration-[var(--accent-cyan)]/40 underline-offset-4 hover:text-white"
-            >
-              {labels.directValue}
-            </a>
+        <div className="mt-10 space-y-4">
+          <div className="flex items-center gap-3 font-mono text-[10px] uppercase text-white">
+            <span className="grid h-5 w-5 place-items-center bg-[rgba(107,243,255,0.12)] text-[var(--accent-cyan)]">
+              0
+            </span>
+            {protocolSteps[0]}
           </div>
-          <div className="inline-flex rounded-sm bg-[rgba(194,255,95,0.1)] px-4 py-2 text-xs text-[var(--accent-lime)]">
+          <div className="flex items-center gap-3 font-mono text-[10px] uppercase text-white">
+            <span className="grid h-5 w-5 place-items-center bg-[rgba(124,60,255,0.18)] text-[var(--accent-purple)]">
+              1
+            </span>
+            {protocolSteps[1]}
+          </div>
+          <div className="inline-flex rounded-sm bg-[rgba(107,243,255,0.08)] px-4 py-2 text-xs text-[var(--accent-cyan)]">
             {labels.availability}
           </div>
         </div>
@@ -268,8 +268,12 @@ export function ContactForm({
 
       <form
         onSubmit={handleSubmit}
-        className="bg-[#090f15] p-8 sm:p-12 lg:p-14"
+        className="relative bg-[#0c121d] p-8 sm:p-12 lg:p-14"
       >
+        <div
+          aria-hidden="true"
+          className="absolute right-8 top-8 h-24 w-14 bg-[var(--accent-cyan)]/35 [clip-path:polygon(54%_0,100%_0,68%_38%,100%_38%,28%_100%,45%_55%,0_55%)]"
+        />
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="space-y-2">
             <span className="font-mono text-[10px] uppercase text-[var(--muted-dim)]">

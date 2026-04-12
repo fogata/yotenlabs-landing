@@ -96,8 +96,8 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col px-5 pb-16 lg:px-8">
         <section className="grid min-h-[720px] gap-14 pt-32 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.78fr)] lg:items-center lg:pt-24">
           <div>
-            <div className="mb-8 inline-flex items-center gap-2 rounded-sm bg-[rgba(194,255,95,0.08)] px-2 py-1 font-mono text-[10px] uppercase text-[var(--accent-lime)]">
-              <span className="h-1.5 w-1.5 bg-[var(--accent-lime)]" />
+            <div className="mb-8 inline-flex items-center gap-2 rounded-sm bg-[rgba(107,243,255,0.08)] px-2 py-1 font-mono text-[10px] uppercase text-[var(--accent-cyan)]">
+              <span className="h-1.5 w-1.5 bg-[var(--accent-purple)]" />
               {messages.hero.eyebrow}
             </div>
             <h1 className="max-w-3xl text-balance text-5xl font-bold leading-[0.98] text-white sm:text-6xl lg:text-[4.35rem]">
@@ -185,7 +185,7 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
                 key={item.title}
                 className={`rounded-sm bg-[var(--surface-low)] p-7 transition hover:bg-[var(--surface-high)] ${
                   index === 0 ? "lg:col-span-2" : ""
-                } ${index === 1 ? "border-t-2 border-[var(--accent-lime)]" : ""}`}
+                } ${index === 1 ? "border-t-2 border-[var(--accent-purple)]" : ""}`}
               >
                 <div className="mb-8 flex items-start justify-between">
                   <span className="grid h-8 w-8 place-items-center rounded-sm bg-[rgba(107,243,255,0.12)] font-mono text-[11px] text-[var(--accent-cyan)]">
@@ -247,34 +247,39 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
           </ol>
         </section>
 
-        <section aria-label={messages.yoten.label} className="grid gap-16 py-24 lg:grid-cols-2 lg:items-center">
-          <div className="relative min-h-[330px] bg-black">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_48%,rgba(255,255,255,0.3),rgba(107,243,255,0.16)_20%,rgba(255,255,255,0.04)_38%,transparent_58%)]" />
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px]" />
-            <div className="absolute bottom-6 left-6 right-6 rounded-sm border border-[var(--border)] bg-[#151d27] p-5 text-sm italic leading-6 text-white">
+        <section aria-label={messages.yoten.label} className="grid gap-16 bg-[#101725] px-6 py-28 lg:grid-cols-[minmax(0,0.95fr)_minmax(420px,1.05fr)] lg:items-center lg:px-8">
+          <div>
+            <p className="text-2xl font-black uppercase italic text-white">
+              {locale === "pt-br" ? "Quem somos." : "Who we are."}
+            </p>
+            <p className="mt-8 max-w-xl text-sm leading-7 text-white/80">
+              {messages.hero.panel.description}
+            </p>
+            <p className="mt-5 max-w-xl text-xs leading-6 text-[var(--muted)]">
               {messages.yoten.description}
+            </p>
+            <div className="mt-10 grid max-w-sm grid-cols-2 gap-8">
+              <div>
+                <p className="text-4xl font-black text-[var(--accent-cyan)]">150+</p>
+                <p className="mt-2 font-mono text-[9px] uppercase text-[var(--muted-dim)]">
+                  AI assets launched
+                </p>
+              </div>
+              <div>
+                <p className="text-4xl font-black text-[var(--accent-purple)]">40+</p>
+                <p className="mt-2 font-mono text-[9px] uppercase text-[var(--muted-dim)]">
+                  AI systems shipped
+                </p>
+              </div>
             </div>
           </div>
 
-          <div>
-            <p className="font-mono text-[10px] uppercase text-[var(--muted-dim)]">
-              {messages.yoten.label}
-            </p>
-            <h2 className="mt-4 text-4xl font-semibold text-white">
-              {locale === "pt-br" ? "Quem Somos" : "About Us"}
-            </h2>
-            <p className="mt-6 max-w-xl text-sm leading-7 text-[var(--muted)]">
-              {messages.hero.panel.description}
-            </p>
-            <div className="mt-10 grid max-w-lg grid-cols-2 gap-8">
-              {messages.hero.panel.metrics.slice(2, 4).map((metric) => (
-                <div key={metric.value}>
-                  <p className="text-sm font-semibold text-white">{metric.value}</p>
-                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
-                    {metric.label}
-                  </p>
-                </div>
-              ))}
+          <div className="relative min-h-[330px] border border-[#2a3341] bg-black">
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(107,243,255,0.08)_1px,transparent_1px),linear-gradient(180deg,rgba(107,243,255,0.06)_1px,transparent_1px)] bg-[size:18px_18px]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.55),rgba(107,243,255,0.24)_10%,rgba(124,60,255,0.16)_20%,transparent_44%)]" />
+            <div className="absolute inset-10 bg-[conic-gradient(from_90deg,transparent,rgba(255,255,255,0.4),transparent,rgba(107,243,255,0.35),transparent)] blur-sm" />
+            <div className="absolute bottom-4 right-4 rounded-sm bg-[#071018] px-3 py-2 font-mono text-[8px] uppercase text-white">
+              System status: nominal
             </div>
           </div>
         </section>
@@ -285,7 +290,7 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
           aria-labelledby="projects-title"
         >
           <div className="mb-12 max-w-3xl">
-            <p className="font-mono text-[10px] uppercase text-[var(--accent-lime)]">
+            <p className="font-mono text-[10px] uppercase text-[var(--accent-purple)]">
               {messages.projects.kicker}
             </p>
             <h2 id="projects-title" className="mt-4 text-4xl font-semibold text-white">
@@ -300,7 +305,7 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
               <article key={project.name} className="rounded-sm bg-[var(--surface-low)] p-7">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-2xl font-semibold text-white">{project.name}</h3>
-                  <span className="rounded-sm bg-[rgba(194,255,95,0.1)] px-2 py-1 font-mono text-[9px] uppercase text-[var(--accent-lime)]">
+                  <span className="rounded-sm bg-[rgba(124,60,255,0.14)] px-2 py-1 font-mono text-[9px] uppercase text-[var(--accent-purple)]">
                     {project.status}
                   </span>
                 </div>
@@ -347,9 +352,14 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
         >
           <ContactForm
             titleId="contact-title"
-            title={messages.contact.title}
+            title={locale === "pt-br" ? "Inicializar protocolo." : "Initialize protocol."}
             description={messages.contact.description}
             labels={messages.contact}
+            protocolSteps={
+              locale === "pt-br"
+                ? ["Prontidão de deploy imediato", "Auditoria arquitetural inclusa"]
+                : ["Immediate deployment readiness", "Architectural audit included"]
+            }
           />
         </section>
       </div>
