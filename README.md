@@ -85,6 +85,21 @@ REDIS_PREFIX=yotenlabs-contact
 - Email de contato: altere `mailto:hello@yotenlabs.ai` em `src/components/landing-page.tsx`.
 - Copy, metadata e labels: altere `src/i18n/messages/en.json` e `src/i18n/messages/pt-br.json`.
 - Navegação e âncoras: ajuste `src/components/landing-page.tsx`.
+- Identidade visual: tokens globais em `src/app/globals.css`, componentes em `src/components/landing-page.tsx` e `src/components/contact-form.tsx`, fundo 3D em `src/components/dynamic-background.tsx`.
+
+## Identidade visual
+
+A identidade atual segue o projeto Stitch `YotenLabs Landingpage 2.0`.
+
+Direção visual:
+
+- Estética dark Deep Tech / Professional Futurism.
+- Headlines em Space Grotesk, corpo em Inter e dados curtos em IBM Plex Mono.
+- Paleta com base grafite (`#0E0E0E`, `#131313`, `#1B1C1C`) e acentos azuis (`#0051C3`, `#B1C5FF`).
+- Navegação glass com `backdrop-blur`, superfícies tonais e bordas fantasma com baixa opacidade.
+- CTAs primários com gradiente azul e cards com camadas `surface-low`/`surface-high`.
+
+Ao alterar a identidade, mantenha os tokens CSS centralizados em `src/app/globals.css` e evite introduzir acentos âmbar ou o visual sazonal anterior.
 
 ## Adicionar um novo idioma
 
@@ -96,9 +111,9 @@ REDIS_PREFIX=yotenlabs-contact
 
 ## Animated background
 
-O fundo dinâmico é CSS-only, com blobs difusos e um noise overlay leve.
+O fundo dinâmico usa Three.js para renderizar uma malha abstrata de nós azuis, com grid CSS, blobs difusos e um noise overlay leve.
 
-Se o usuário tiver `prefers-reduced-motion: reduce`, as animações são desativadas e o visual permanece estático.
+Se o usuário tiver `prefers-reduced-motion: reduce`, o movimento é reduzido e o visual permanece funcional.
 
 ## Estrutura principal
 

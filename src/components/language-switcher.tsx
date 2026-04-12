@@ -30,7 +30,7 @@ export function LanguageSwitcher({ locale, labels }: LanguageSwitcherProps) {
   return (
     <div
       aria-label="Language switcher"
-      className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 text-xs font-medium tracking-[0.2em] text-zinc-300"
+      className="inline-flex items-center gap-1 rounded-lg border border-[var(--border)] bg-white/5 p-1 text-xs font-medium text-zinc-300"
     >
       {locales.map((targetLocale) => (
         <button
@@ -38,9 +38,9 @@ export function LanguageSwitcher({ locale, labels }: LanguageSwitcherProps) {
           type="button"
           aria-pressed={targetLocale === locale}
           onClick={() => handleLocaleChange(targetLocale)}
-          className={`rounded-full px-3 py-2 ${
+          className={`rounded-lg px-3 py-2 ${
             targetLocale === locale
-              ? "bg-white text-zinc-950"
+              ? "bg-[var(--primary)] text-[#001947]"
               : "text-zinc-300 hover:text-white"
           }`}
         >

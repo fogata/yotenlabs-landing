@@ -32,7 +32,7 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
     <main className="relative min-h-screen overflow-hidden">
       <DynamicBackground />
 
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-zinc-950/72 backdrop-blur-md">
+      <header className="sticky top-0 z-30 border-b border-[var(--border)] bg-[rgba(27,28,28,0.62)] backdrop-blur-3xl">
         <div className="mx-auto max-w-6xl px-6 py-4 lg:px-8">
           <div className="flex items-center justify-between gap-6">
             <Link
@@ -49,7 +49,7 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
               />
             </Link>
 
-            <div className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
+            <div className="hidden items-center gap-8 text-sm text-[var(--muted)] md:flex">
               <nav className="flex items-center gap-6">
                 {navItems.map((item) => (
                   <a key={item.id} href={`#${item.id}`} className="hover:text-white">
@@ -59,7 +59,7 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
               </nav>
               <a
                 href={`#${sectionIds.contact}`}
-                className="rounded-full border border-white/15 px-4 py-2 text-white hover:border-white/35 hover:bg-white/5"
+                className="rounded-lg border border-[var(--border)] px-4 py-2 text-white hover:border-[var(--primary)] hover:bg-white/5"
               >
                 {messages.header.cta}
               </a>
@@ -72,7 +72,7 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
             <div className="flex items-center gap-3 md:hidden">
               <a
                 href={`#${sectionIds.contact}`}
-                className="rounded-full border border-white/15 px-4 py-2 text-xs font-medium uppercase tracking-[0.16em] text-white"
+                className="rounded-lg border border-[var(--border)] px-4 py-2 text-xs font-medium uppercase text-white"
               >
                 {messages.header.cta}
               </a>
@@ -83,12 +83,12 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
             </div>
           </div>
 
-          <nav className="mt-4 flex gap-4 overflow-x-auto pb-1 text-xs uppercase tracking-[0.18em] text-zinc-400 md:hidden">
+          <nav className="mt-4 flex gap-4 overflow-x-auto pb-1 text-xs uppercase text-[var(--muted)] md:hidden">
             {navItems.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className="whitespace-nowrap rounded-full border border-white/10 px-3 py-2 hover:border-white/20 hover:text-white"
+                className="whitespace-nowrap rounded-lg border border-[var(--border)] px-3 py-2 hover:border-[var(--primary)] hover:text-white"
               >
                 {item.label}
               </a>
@@ -100,37 +100,37 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-24 px-6 pb-16 pt-16 lg:px-8 lg:pb-24 lg:pt-24">
         <section className="grid gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:items-end">
           <div className="space-y-8">
-            <p className="font-mono text-xs uppercase tracking-[0.32em] text-zinc-400">
+            <p className="font-mono text-xs uppercase text-[var(--primary)]">
               {messages.hero.eyebrow}
             </p>
             <div className="space-y-6">
-              <h1 className="max-w-4xl text-balance text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
+              <h1 className="max-w-4xl text-balance text-5xl font-semibold text-white sm:text-6xl lg:text-7xl">
                 {messages.hero.title}
               </h1>
-              <p className="max-w-3xl text-balance text-lg leading-8 text-zinc-300 sm:text-xl">
+              <p className="max-w-3xl text-balance text-lg leading-8 text-[var(--muted)] sm:text-xl">
                 {messages.hero.description}
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
                 href={`#${sectionIds.contact}`}
-                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 hover:translate-y-[-1px] hover:bg-zinc-100"
+                className="inline-flex items-center justify-center rounded-lg bg-[linear-gradient(135deg,var(--primary),var(--primary-strong))] px-6 py-3 text-sm font-semibold text-[#001947] hover:translate-y-[-1px]"
               >
                 {messages.hero.primaryCta}
               </a>
               <a
                 href={`#${sectionIds.howWeWork}`}
-                className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white hover:border-white/35 hover:bg-white/5"
+                className="inline-flex items-center justify-center rounded-lg border border-[var(--border)] px-6 py-3 text-sm font-semibold text-white hover:border-[var(--primary)] hover:bg-white/5"
               >
                 {messages.hero.secondaryCta}
               </a>
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.03)]">
+          <div className="rounded-lg border border-[var(--border)] bg-[var(--panel)] p-8 shadow-[0_32px_80px_rgba(177,197,255,0.06)] backdrop-blur-2xl">
             <div className="space-y-8">
               <div className="space-y-3">
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-zinc-500">
+                <p className="font-mono text-xs uppercase text-[var(--primary)]">
                   {messages.hero.panel.label}
                 </p>
                 <p className="text-lg leading-8 text-zinc-200">
@@ -141,12 +141,12 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
                 {messages.hero.panel.metrics.map((metric) => (
                   <li
                     key={metric.label}
-                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-4"
+                    className="rounded-lg bg-[var(--surface-high)] p-4"
                   >
-                    <p className="text-2xl font-semibold tracking-[-0.03em] text-white">
+                    <p className="text-2xl font-semibold text-white">
                       {metric.value}
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-zinc-400">
+                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
                       {metric.label}
                     </p>
                   </li>
@@ -157,8 +157,8 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
         </section>
 
         <section aria-label={messages.yoten.label} className="-mt-10">
-          <div className="inline-flex max-w-3xl items-start gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm leading-6 text-zinc-300">
-            <span className="font-mono text-[11px] uppercase tracking-[0.28em] text-zinc-500">
+          <div className="inline-flex max-w-3xl items-start gap-3 rounded-lg bg-[var(--surface-low)] px-5 py-3 text-sm leading-6 text-[var(--muted)]">
+            <span className="font-mono text-[11px] uppercase text-[var(--primary)]">
               {messages.yoten.label}
             </span>
             <p>{messages.yoten.description}</p>
@@ -171,16 +171,16 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
           aria-labelledby="what-we-do-title"
         >
           <div className="max-w-3xl space-y-3">
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-zinc-500">
+            <p className="font-mono text-xs uppercase text-[var(--primary)]">
               {messages.whatWeDo.kicker}
             </p>
             <h2
               id="what-we-do-title"
-              className="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl"
+              className="text-3xl font-semibold text-white sm:text-4xl"
             >
               {messages.whatWeDo.title}
             </h2>
-            <p className="text-base leading-7 text-zinc-400 sm:text-lg">
+            <p className="text-base leading-7 text-[var(--muted)] sm:text-lg">
               {messages.whatWeDo.description}
             </p>
           </div>
@@ -188,10 +188,10 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
             {messages.whatWeDo.items.map((item) => (
               <article
                 key={item.title}
-                className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6"
+                className="rounded-lg bg-[var(--surface-low)] p-6 hover:bg-[var(--surface-high)]"
               >
                 <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-zinc-400">
+                <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
                   {item.description}
                 </p>
               </article>
@@ -205,16 +205,16 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
           aria-labelledby="how-we-work-title"
         >
           <div className="max-w-3xl space-y-3">
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-zinc-500">
+            <p className="font-mono text-xs uppercase text-[var(--primary)]">
               {messages.howWeWork.kicker}
             </p>
             <h2
               id="how-we-work-title"
-              className="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl"
+              className="text-3xl font-semibold text-white sm:text-4xl"
             >
               {messages.howWeWork.title}
             </h2>
-            <p className="text-base leading-7 text-zinc-400 sm:text-lg">
+            <p className="text-base leading-7 text-[var(--muted)] sm:text-lg">
               {messages.howWeWork.description}
             </p>
           </div>
@@ -222,13 +222,13 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
             {messages.howWeWork.steps.map((step, index) => (
               <li
                 key={step.title}
-                className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6"
+                className="rounded-lg bg-[var(--surface-low)] p-6 hover:bg-[var(--surface-high)]"
               >
-                <p className="font-mono text-xs uppercase tracking-[0.28em] text-zinc-500">
+                <p className="font-mono text-xs uppercase text-[var(--primary)]">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-4 text-lg font-semibold text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-zinc-400">
+                <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
                   {step.description}
                 </p>
               </li>
@@ -242,16 +242,16 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
           aria-labelledby="projects-title"
         >
           <div className="max-w-3xl space-y-3">
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-zinc-500">
+            <p className="font-mono text-xs uppercase text-[var(--primary)]">
               {messages.projects.kicker}
             </p>
             <h2
               id="projects-title"
-              className="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl"
+              className="text-3xl font-semibold text-white sm:text-4xl"
             >
               {messages.projects.title}
             </h2>
-            <p className="text-base leading-7 text-zinc-400 sm:text-lg">
+            <p className="text-base leading-7 text-[var(--muted)] sm:text-lg">
               {messages.projects.description}
             </p>
           </div>
@@ -259,29 +259,29 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
             {messages.projects.cards.map((project) => (
               <article
                 key={project.name}
-                className="flex h-full flex-col rounded-[1.85rem] border border-white/10 bg-white/[0.04] p-6"
+                className="flex h-full flex-col rounded-lg bg-[var(--surface-low)] p-6 hover:bg-[var(--surface-high)]"
               >
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
-                    <h3 className="text-2xl font-semibold tracking-[-0.03em] text-white">
+                    <h3 className="text-2xl font-semibold text-white">
                       {project.name}
                     </h3>
-                    <p className="mt-2 text-sm font-medium uppercase tracking-[0.18em] text-zinc-400">
+                    <p className="mt-2 text-sm font-medium uppercase text-[var(--muted)]">
                       {project.tagline}
                     </p>
                   </div>
-                  <span className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-200">
+                  <span className="rounded-lg bg-[rgba(177,197,255,0.12)] px-3 py-1 text-xs font-semibold uppercase text-[var(--primary)]">
                     {project.status}
                   </span>
                 </div>
-                <p className="mt-5 text-sm leading-7 text-zinc-400 sm:text-base">
+                <p className="mt-5 text-sm leading-7 text-[var(--muted)] sm:text-base">
                   {project.description}
                 </p>
                 <ul className="mt-6 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <li
                       key={tag}
-                      className="rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-300"
+                      className="rounded-lg border border-[var(--border)] px-3 py-1 text-xs text-zinc-300"
                     >
                       {tag}
                     </li>
@@ -298,12 +298,12 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
           aria-labelledby="faq-title"
         >
           <div className="max-w-3xl space-y-3">
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-zinc-500">
+            <p className="font-mono text-xs uppercase text-[var(--primary)]">
               {messages.faq.kicker}
             </p>
             <h2
               id="faq-title"
-              className="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl"
+              className="text-3xl font-semibold text-white sm:text-4xl"
             >
               {messages.faq.title}
             </h2>
@@ -312,10 +312,10 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
             {messages.faq.items.map((item) => (
               <article
                 key={item.question}
-                className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6"
+                className="rounded-lg bg-[var(--surface-low)] p-6 hover:bg-[var(--surface-high)]"
               >
                 <h3 className="text-lg font-semibold text-white">{item.question}</h3>
-                <p className="mt-3 text-sm leading-7 text-zinc-400">
+                <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
                   {item.answer}
                 </p>
               </article>
@@ -329,7 +329,7 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
           aria-labelledby="contact-title"
         >
           <div className="space-y-4">
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-zinc-500">
+            <p className="font-mono text-xs uppercase text-[var(--primary)]">
               {messages.contact.kicker}
             </p>
             <ContactForm
@@ -342,8 +342,8 @@ export function LandingPage({ locale, messages }: LandingPageProps) {
         </section>
       </div>
 
-      <footer className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-6 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <footer className="border-t border-[var(--border)]">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-6 text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>{messages.footer.tagline}</p>
           <p>{messages.footer.copyright}</p>
         </div>

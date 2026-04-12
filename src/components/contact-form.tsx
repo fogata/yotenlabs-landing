@@ -232,35 +232,35 @@ export function ContactForm({
         />
       ) : null}
 
-      <div className="rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-6 shadow-[0_18px_70px_rgba(0,0,0,0.24)] sm:p-8">
+      <div className="rounded-lg border border-[var(--border)] bg-[linear-gradient(180deg,rgba(53,53,53,0.8),rgba(31,32,32,0.56))] p-6 shadow-[0_32px_80px_rgba(177,197,255,0.06)] sm:p-8">
         <div className="space-y-4">
-          <p className="font-mono text-xs uppercase tracking-[0.28em] text-amber-300/70">
+          <p className="font-mono text-xs uppercase text-[var(--primary)]">
             {labels.eyebrow}
           </p>
           <h2
             id={titleId}
-            className="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl"
+            className="text-3xl font-semibold text-white sm:text-4xl"
           >
             {title}
           </h2>
-          <p className="max-w-xl text-base leading-7 text-zinc-300 sm:text-lg">
+          <p className="max-w-xl text-base leading-7 text-[var(--muted)] sm:text-lg">
             {description}
           </p>
         </div>
 
-        <div className="mt-8 space-y-4 rounded-[1.5rem] border border-white/10 bg-black/20 p-5">
+        <div className="mt-8 space-y-4 rounded-lg bg-[var(--surface-low)] p-5">
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-zinc-500">
+            <p className="font-mono text-[11px] uppercase text-[var(--primary)]">
               {labels.directLabel}
             </p>
             <a
               href={`mailto:${labels.directValue}`}
-              className="mt-2 inline-flex text-sm font-medium text-zinc-100 underline decoration-white/20 underline-offset-4 hover:text-white"
+              className="mt-2 inline-flex text-sm font-medium text-zinc-100 underline decoration-[var(--primary)]/40 underline-offset-4 hover:text-white"
             >
               {labels.directValue}
             </a>
           </div>
-          <div className="rounded-full border border-amber-300/10 bg-amber-300/8 px-4 py-2 text-sm text-amber-100/90">
+          <div className="rounded-lg bg-[rgba(177,197,255,0.12)] px-4 py-2 text-sm text-[var(--primary)]">
             {labels.availability}
           </div>
         </div>
@@ -268,7 +268,7 @@ export function ContactForm({
 
       <form
         onSubmit={handleSubmit}
-        className="rounded-[1.85rem] border border-white/10 bg-white/[0.045] p-6 shadow-[0_18px_70px_rgba(0,0,0,0.28)] backdrop-blur-sm sm:p-8"
+        className="rounded-lg border border-[var(--border)] bg-[var(--panel)] p-6 shadow-[0_32px_80px_rgba(177,197,255,0.05)] backdrop-blur-2xl sm:p-8"
       >
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="space-y-2">
@@ -282,7 +282,7 @@ export function ContactForm({
               onChange={handleChange}
               required
               placeholder={labels.placeholders.name}
-              className="w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-amber-300/40 focus:bg-black/25"
+              className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-high)] px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-[var(--primary)] focus:bg-[var(--surface-highest)]"
             />
           </label>
 
@@ -297,7 +297,7 @@ export function ContactForm({
               onChange={handleChange}
               required
               placeholder={labels.placeholders.email}
-              className="w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-amber-300/40 focus:bg-black/25"
+              className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-high)] px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-[var(--primary)] focus:bg-[var(--surface-highest)]"
             />
           </label>
         </div>
@@ -327,7 +327,7 @@ export function ContactForm({
               value={formState.company}
               onChange={handleChange}
               placeholder={labels.placeholders.company}
-              className="w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-amber-300/40 focus:bg-black/25"
+              className="w-full rounded-lg border border-[var(--border)] bg-[var(--surface-high)] px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-[var(--primary)] focus:bg-[var(--surface-highest)]"
             />
           </label>
         </div>
@@ -344,13 +344,13 @@ export function ContactForm({
               required
               rows={6}
               placeholder={labels.placeholders.message}
-              className="min-h-40 w-full rounded-[1.5rem] border border-white/10 bg-black/20 px-4 py-3 text-sm leading-7 text-white outline-none placeholder:text-zinc-500 focus:border-amber-300/40 focus:bg-black/25"
+              className="min-h-40 w-full rounded-lg border border-[var(--border)] bg-[var(--surface-high)] px-4 py-3 text-sm leading-7 text-white outline-none placeholder:text-zinc-500 focus:border-[var(--primary)] focus:bg-[var(--surface-highest)]"
             />
           </label>
         </div>
 
         {isTurnstileEnabled ? (
-          <div className="mt-4 rounded-[1.5rem] border border-white/10 bg-black/20 p-4">
+          <div className="mt-4 rounded-lg border border-[var(--border)] bg-[var(--surface-high)] p-4">
             <div
               ref={turnstileContainerRef}
               className="min-h-[72px]"
@@ -363,7 +363,7 @@ export function ContactForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 hover:translate-y-[-1px] hover:bg-zinc-100 disabled:cursor-wait disabled:opacity-70"
+            className="inline-flex items-center justify-center rounded-lg bg-[linear-gradient(135deg,var(--primary),var(--primary-strong))] px-6 py-3 text-sm font-semibold text-[#001947] hover:translate-y-[-1px] disabled:cursor-wait disabled:opacity-70"
           >
             {isSubmitting ? labels.sending : labels.cta}
           </button>

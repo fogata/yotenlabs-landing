@@ -11,85 +11,31 @@ type MotionPreference = {
   removeEventListener: (type: "change", listener: (event: MediaQueryListEvent) => void) => void;
 };
 
-function createLeafTexture() {
+function createNodeTexture() {
   const canvas = document.createElement("canvas");
   canvas.width = 128;
-  canvas.height = 160;
+  canvas.height = 128;
 
   const context = canvas.getContext("2d");
   if (!context) {
     return null;
   }
 
-  const gradient = context.createLinearGradient(0, 0, 0, canvas.height);
-  gradient.addColorStop(0, "rgba(254, 240, 138, 0.98)");
-  gradient.addColorStop(0.2, "rgba(251, 191, 36, 0.96)");
-  gradient.addColorStop(0.62, "rgba(249, 115, 22, 0.92)");
-  gradient.addColorStop(1, "rgba(185, 28, 28, 0.92)");
-
-  context.fillStyle = gradient;
-  context.beginPath();
-  context.moveTo(canvas.width * 0.5, canvas.height * 0.06);
-  context.bezierCurveTo(
-    canvas.width * 0.9,
-    canvas.height * 0.22,
-    canvas.width * 0.92,
-    canvas.height * 0.7,
+  const glow = context.createRadialGradient(
     canvas.width * 0.5,
-    canvas.height * 0.96,
-  );
-  context.bezierCurveTo(
-    canvas.width * 0.08,
-    canvas.height * 0.7,
-    canvas.width * 0.1,
-    canvas.height * 0.22,
+    canvas.height * 0.5,
+    2,
     canvas.width * 0.5,
-    canvas.height * 0.06,
+    canvas.height * 0.5,
+    canvas.width * 0.48,
   );
-  context.closePath();
-  context.fill();
+  glow.addColorStop(0, "rgba(255, 255, 255, 0.96)");
+  glow.addColorStop(0.2, "rgba(177, 197, 255, 0.82)");
+  glow.addColorStop(0.52, "rgba(0, 81, 195, 0.38)");
+  glow.addColorStop(1, "rgba(0, 81, 195, 0)");
 
-  const sheen = context.createRadialGradient(
-    canvas.width * 0.44,
-    canvas.height * 0.28,
-    4,
-    canvas.width * 0.5,
-    canvas.height * 0.42,
-    canvas.width * 0.34,
-  );
-  sheen.addColorStop(0, "rgba(255, 251, 235, 0.78)");
-  sheen.addColorStop(0.45, "rgba(254, 215, 170, 0.18)");
-  sheen.addColorStop(1, "rgba(255, 255, 255, 0)");
-
-  context.fillStyle = sheen;
-  context.fill();
-
-  context.strokeStyle = "rgba(120, 53, 15, 0.38)";
-  context.lineWidth = 2.6;
-  context.beginPath();
-  context.moveTo(canvas.width * 0.5, canvas.height * 0.1);
-  context.lineTo(canvas.width * 0.5, canvas.height * 0.92);
-  context.stroke();
-
-  context.lineWidth = 1.4;
-  context.beginPath();
-  context.moveTo(canvas.width * 0.5, canvas.height * 0.34);
-  context.lineTo(canvas.width * 0.68, canvas.height * 0.48);
-  context.moveTo(canvas.width * 0.5, canvas.height * 0.5);
-  context.lineTo(canvas.width * 0.32, canvas.height * 0.64);
-  context.stroke();
-
-  context.strokeStyle = "rgba(255, 251, 235, 0.26)";
-  context.lineWidth = 1;
-  context.beginPath();
-  context.moveTo(canvas.width * 0.46, canvas.height * 0.18);
-  context.quadraticCurveTo(
-    canvas.width * 0.58,
-    canvas.height * 0.44,
-    canvas.width * 0.42,
-    canvas.height * 0.78,
-  );
-  context.stroke();
+  context.fillStyle = glow;
+  context.fillRect(0, 0, canvas.width, canvas.height);
 
   return new THREE.CanvasTexture(canvas);
 }
@@ -139,83 +85,63 @@ export function DynamicBackground() {
     renderer.domElement.className = "three-canvas";
     mountElement.appendChild(renderer.domElement);
 
-    const leafTexture = createLeafTexture();
+    const nodeTexture = createNodeTexture();
 
-    if (!leafTexture) {
+    if (!nodeTexture) {
       renderer.dispose();
       mountElement.removeChild(renderer.domElement);
       return;
     }
 
-    leafTexture.colorSpace = THREE.SRGBColorSpace;
+    nodeTexture.colorSpace = THREE.SRGBColorSpace;
 
-    const leafCount = window.innerWidth < 768 ? 34 : 56;
+    const nodeCount = window.innerWidth < 768 ? 42 : 72;
 
-    const geometry = new THREE.PlaneGeometry(0.34, 0.48);
+    const geometry = new THREE.PlaneGeometry(0.18, 0.18);
     const material = new THREE.MeshBasicMaterial({
-      map: leafTexture,
+      map: nodeTexture,
       transparent: true,
-      opacity: 0.96,
+      opacity: 0.78,
       depthWrite: false,
       side: THREE.DoubleSide,
       vertexColors: true,
     });
 
-    const leaves = new THREE.InstancedMesh(geometry, material, leafCount);
-    scene.add(leaves);
+    const nodes = new THREE.InstancedMesh(geometry, material, nodeCount);
+    scene.add(nodes);
 
-    const amberPalette = [
-      "#fde68a",
-      "#fbbf24",
-      "#fb923c",
-      "#f97316",
-      "#ef4444",
-      "#fcd34d",
-    ];
+    const lineMaterial = new THREE.LineBasicMaterial({
+      color: 0x2f6fff,
+      transparent: true,
+      opacity: 0.16,
+    });
+    const lineGeometry = new THREE.BufferGeometry();
+    const linePositions = new Float32Array(nodeCount * 2 * 3);
+    const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+    lineGeometry.setAttribute("position", new THREE.BufferAttribute(linePositions, 3));
+    scene.add(lines);
 
-    const positionsX = new Float32Array(leafCount);
-    const positionsY = new Float32Array(leafCount);
-    const positionsZ = new Float32Array(leafCount);
-    const basePositionsX = new Float32Array(leafCount);
-    const scales = new Float32Array(leafCount);
-    const fallSpeeds = new Float32Array(leafCount);
-    const swaySpeeds = new Float32Array(leafCount);
-    const swayPhases = new Float32Array(leafCount);
-    const driftSpeeds = new Float32Array(leafCount);
-    const driftOffsets = new Float32Array(leafCount);
-    const bobSpeeds = new Float32Array(leafCount);
-    const bobAmounts = new Float32Array(leafCount);
-    const spinX = new Float32Array(leafCount);
-    const spinY = new Float32Array(leafCount);
-    const spinZ = new Float32Array(leafCount);
-    const rotationsX = new Float32Array(leafCount);
-    const rotationsY = new Float32Array(leafCount);
-    const rotationsZ = new Float32Array(leafCount);
-    const swayAmount = new Float32Array(leafCount);
+    const bluePalette = ["#b1c5ff", "#7fa4ff", "#0051c3", "#d7e0ff"];
+
+    const positionsX = new Float32Array(nodeCount);
+    const positionsY = new Float32Array(nodeCount);
+    const positionsZ = new Float32Array(nodeCount);
+    const basePositionsX = new Float32Array(nodeCount);
+    const basePositionsY = new Float32Array(nodeCount);
+    const scales = new Float32Array(nodeCount);
+    const orbitSpeeds = new Float32Array(nodeCount);
+    const orbitPhases = new Float32Array(nodeCount);
+    const driftAmounts = new Float32Array(nodeCount);
 
     const tempObject = new THREE.Object3D();
     let horizontalBound = 3.8;
     const verticalBound = 3.2;
 
-    const resetLeaf = (index: number, initial = false) => {
-      if (initial) {
-        basePositionsX[index] = (Math.random() - 0.5) * horizontalBound * 2;
-      } else {
-        const respawnMode = Math.random();
-
-        if (respawnMode < 0.34) {
-          basePositionsX[index] = (Math.random() - 0.5) * horizontalBound * 0.9;
-        } else {
-          const side = respawnMode > 0.67 ? 1 : -1;
-          basePositionsX[index] =
-            side * (horizontalBound * 0.46 + Math.random() * horizontalBound * 0.62);
-        }
-      }
-
+    const resetNode = (index: number) => {
+      basePositionsX[index] = (Math.random() - 0.5) * horizontalBound * 2;
+      basePositionsY[index] = (Math.random() - 0.5) * verticalBound * 2;
       positionsX[index] = basePositionsX[index];
-      positionsY[index] = initial
-        ? (Math.random() * 2 - 1) * verticalBound
-        : verticalBound + Math.random() * 0.65;
+      positionsY[index] = basePositionsY[index];
       positionsZ[index] = -2.8 + Math.random() * 3.9;
 
       const depthFactor = THREE.MathUtils.clamp(
@@ -224,33 +150,22 @@ export function DynamicBackground() {
         1,
       );
 
-      scales[index] = 0.66 + depthFactor * 1.12;
-      fallSpeeds[index] = 0.2 + depthFactor * 0.48;
-      swaySpeeds[index] = 0.72 + Math.random() * 1.2;
-      swayPhases[index] = Math.random() * Math.PI * 2;
-      swayAmount[index] = 0.26 + depthFactor * 0.34;
-      driftSpeeds[index] = 0.12 + Math.random() * 0.3;
-      driftOffsets[index] = Math.random() * Math.PI * 2;
-      bobSpeeds[index] = 1.2 + Math.random() * 1.7;
-      bobAmounts[index] = 0.04 + depthFactor * 0.12;
-      spinX[index] = 0.5 + Math.random() * 1.1;
-      spinY[index] = 0.2 + Math.random() * 0.75;
-      spinZ[index] = (Math.random() - 0.5) * 2;
-      rotationsX[index] = Math.random() * Math.PI;
-      rotationsY[index] = Math.random() * Math.PI * 2;
-      rotationsZ[index] = Math.random() * Math.PI * 2;
+      scales[index] = 0.7 + depthFactor * 1.35;
+      orbitSpeeds[index] = 0.12 + Math.random() * 0.28;
+      orbitPhases[index] = Math.random() * Math.PI * 2;
+      driftAmounts[index] = 0.04 + depthFactor * 0.18;
 
-      const color = new THREE.Color(amberPalette[Math.floor(Math.random() * amberPalette.length)]);
-      leaves.setColorAt(index, color);
+      const color = new THREE.Color(bluePalette[Math.floor(Math.random() * bluePalette.length)]);
+      nodes.setColorAt(index, color);
     };
 
-    for (let i = 0; i < leafCount; i += 1) {
-      resetLeaf(i, true);
+    for (let i = 0; i < nodeCount; i += 1) {
+      resetNode(i);
     }
 
-    leaves.instanceMatrix.needsUpdate = true;
-    if (leaves.instanceColor) {
-      leaves.instanceColor.needsUpdate = true;
+    nodes.instanceMatrix.needsUpdate = true;
+    if (nodes.instanceColor) {
+      nodes.instanceColor.needsUpdate = true;
     }
 
     const updateBounds = () => {
@@ -297,46 +212,34 @@ export function DynamicBackground() {
       const delta = Math.min(clock.getDelta(), 0.05);
       elapsedTime += delta;
       const motionFactor = shouldReduceMotion ? 0.18 : 1;
-      const gust =
-        Math.sin(elapsedTime * 0.22) * 0.24 +
-        Math.sin(elapsedTime * 0.68) * 0.12 +
-        Math.sin(elapsedTime * 1.4) * 0.05;
 
-      for (let i = 0; i < leafCount; i += 1) {
-        positionsY[i] -= fallSpeeds[i] * delta * motionFactor;
+      for (let i = 0; i < nodeCount; i += 1) {
+        const phase = elapsedTime * orbitSpeeds[i] + orbitPhases[i];
 
-        const sway =
-          Math.sin(elapsedTime * swaySpeeds[i] + swayPhases[i]) * swayAmount[i];
-        const drift =
-          Math.cos(elapsedTime * driftSpeeds[i] + driftOffsets[i]) *
-          (0.08 + scales[i] * 0.04);
-        const lift =
-          Math.sin(elapsedTime * bobSpeeds[i] + swayPhases[i] * 0.7) * bobAmounts[i];
-        const x = basePositionsX[i] + (sway + gust + drift) * motionFactor;
+        positionsX[i] = basePositionsX[i] + Math.sin(phase) * driftAmounts[i] * motionFactor;
+        positionsY[i] = basePositionsY[i] + Math.cos(phase * 0.8) * driftAmounts[i] * motionFactor;
 
-        rotationsX[i] += spinX[i] * delta * motionFactor;
-        rotationsY[i] += spinY[i] * delta * motionFactor;
-        rotationsZ[i] += spinZ[i] * delta * motionFactor;
-
-        tempObject.position.set(x, positionsY[i] + lift * motionFactor, positionsZ[i]);
-        tempObject.rotation.set(
-          rotationsX[i] + Math.sin(elapsedTime * 1.6 + swayPhases[i]) * 0.28,
-          rotationsY[i] + Math.cos(elapsedTime * 1.1 + driftOffsets[i]) * 0.12,
-          rotationsZ[i] + Math.sin(elapsedTime * 0.85 + swayPhases[i]) * 0.18,
-        );
+        tempObject.position.set(positionsX[i], positionsY[i], positionsZ[i]);
+        tempObject.rotation.set(0, 0, phase * 0.4);
         tempObject.scale.setScalar(scales[i]);
         tempObject.updateMatrix();
 
-        leaves.setMatrixAt(i, tempObject.matrix);
+        nodes.setMatrixAt(i, tempObject.matrix);
 
-        if (positionsY[i] < -verticalBound - 0.75) {
-          resetLeaf(i);
-        }
+        const next = (i + 7) % nodeCount;
+        const offset = i * 6;
+        linePositions[offset] = positionsX[i];
+        linePositions[offset + 1] = positionsY[i];
+        linePositions[offset + 2] = positionsZ[i] - 0.12;
+        linePositions[offset + 3] = positionsX[next];
+        linePositions[offset + 4] = positionsY[next];
+        linePositions[offset + 5] = positionsZ[next] - 0.12;
       }
 
-      leaves.instanceMatrix.needsUpdate = true;
-      if (leaves.instanceColor) {
-        leaves.instanceColor.needsUpdate = true;
+      nodes.instanceMatrix.needsUpdate = true;
+      lineGeometry.attributes.position.needsUpdate = true;
+      if (nodes.instanceColor) {
+        nodes.instanceColor.needsUpdate = true;
       }
 
       renderer.render(scene, camera);
@@ -360,7 +263,9 @@ export function DynamicBackground() {
 
       geometry.dispose();
       material.dispose();
-      leafTexture.dispose();
+      lineGeometry.dispose();
+      lineMaterial.dispose();
+      nodeTexture.dispose();
       renderer.dispose();
 
       if (mountElement.contains(renderer.domElement)) {
@@ -375,9 +280,10 @@ export function DynamicBackground() {
       className="pointer-events-none absolute inset-0 overflow-hidden"
     >
       <div ref={mountRef} className="absolute inset-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_18%,rgba(254,215,170,0.16),transparent_28%),radial-gradient(circle_at_78%_10%,rgba(251,191,36,0.14),transparent_24%),radial-gradient(circle_at_58%_42%,rgba(249,115,22,0.08),transparent_32%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(177,197,255,0.055)_1px,transparent_1px),linear-gradient(180deg,rgba(177,197,255,0.045)_1px,transparent_1px)] bg-[size:72px_72px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_14%,rgba(0,81,195,0.28),transparent_28%),radial-gradient(circle_at_78%_12%,rgba(177,197,255,0.16),transparent_24%),radial-gradient(circle_at_58%_48%,rgba(0,81,195,0.12),transparent_34%)]" />
       <div className="dynamic-noise" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,9,11,0.14)_0%,rgba(9,9,11,0.68)_38%,rgba(9,9,11,0.97)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,14,14,0.08)_0%,rgba(19,19,19,0.74)_42%,rgba(14,14,14,0.98)_100%)]" />
     </div>
   );
 }
