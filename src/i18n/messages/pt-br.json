@@ -200,6 +200,122 @@
     "verificationRequired": "Conclua a verificação antes de enviar sua mensagem.",
     "verificationError": "A verificação falhou. Tente o desafio novamente."
   },
+  "pitchDeck": {
+    "metadata": {
+      "title": "Pitch Deck Yoten Labs | Estúdio de produtos AI-native",
+      "description": "Pitch deck para investidores da Yoten Labs, um estúdio de produtos AI-native que constrói sistemas confiáveis em torno de IA."
+    },
+    "header": {
+      "back": "Voltar ao site",
+      "cta": "Contato investidor"
+    },
+    "hero": {
+      "eyebrow": "Pitch deck para investidores",
+      "title": "A Yoten Labs constrói produtos AI-native onde a inteligência é o núcleo operacional.",
+      "description": "Desenhamos, construímos e operamos sistemas de IA confiáveis para fluxos B2C e B2B, unindo estratégia de produto, engenharia de produção, avaliação, guardrails e entrega disciplinada.",
+      "primaryCta": "Iniciar conversa",
+      "secondaryCta": "Ler a tese",
+      "panelLabel": "Tese de investimento",
+      "signals": [
+        {
+          "value": "AI-native",
+          "label": "Produtos desenhados em torno de inteligência desde o primeiro dia."
+        },
+        {
+          "value": "Produção",
+          "label": "Arquitetura, monitoramento, controle de custo e confiabilidade dentro da entrega."
+        },
+        {
+          "value": "Portfólio",
+          "label": "Múltiplas superfícies de produto avançando em ciclos focados de construção."
+        }
+      ]
+    },
+    "sections": {
+      "problem": {
+        "kicker": "Problema",
+        "title": "Features com IA não são suficientes.",
+        "description": "A maioria das empresas adiciona IA como uma camada fina sobre fluxos existentes. O resultado é qualidade inconsistente, responsabilidade difusa, custos sem controle e pouca confiança na experiência final.",
+        "points": [
+          "Times precisam de sistemas que raciocinem, recuperem contexto, gerem e atuem com controles operacionais.",
+          "Confiabilidade, avaliação e segurança precisam fazer parte da arquitetura do produto.",
+          "A lacuna não é acesso a modelos; é colocar workflows úteis de IA em produção."
+        ]
+      },
+      "opportunity": {
+        "kicker": "Oportunidade",
+        "title": "A próxima onda de software será construída com IA como infraestrutura.",
+        "description": "Produtos B2C e B2B estão saindo de interfaces estáticas para fluxos adaptativos com retrieval, geração, agentes, mídia em tempo real e automação. Quem entregar sistemas AI-native confiáveis tende a acumular vantagem mais rápido.",
+        "points": [
+          "Produtos verticais ficam mais úteis quando a inteligência faz parte do fluxo central.",
+          "Compradores enterprise precisam de prova de que sistemas de IA podem ser governados, medidos e operados.",
+          "Estúdios que unem julgamento de produto e engenharia de produção conseguem avançar mais rápido que modelos tradicionais."
+        ]
+      },
+      "solution": {
+        "kicker": "Solução",
+        "title": "A Yoten Labs constrói o sistema central, não a camada de demo.",
+        "description": "Conectamos estratégia, UX, arquitetura, orquestração de modelos, retrieval, avaliação e operação em um mesmo movimento de entrega. O resultado é software que pode lançar, aprender e escalar com responsabilidade.",
+        "points": [
+          "O enquadramento de produto começa por resultados de usuário e restrições operacionais.",
+          "A engenharia inclui fluxos de dados, prompts, ferramentas, permissões e caminhos de fallback.",
+          "O lançamento já nasce com monitoramento, checks de qualidade e ownership definido."
+        ]
+      },
+      "differentiation": {
+        "kicker": "Diferenciação",
+        "title": "A vantagem está na entrega disciplinada de IA.",
+        "description": "A Yoten Labs foca nos detalhes de produção que tornam produtos com IA utilizáveis: ciclos de avaliação, guardrails, controle de custo, atenção a latência e arquitetura pragmática.",
+        "points": [
+          "Mantemos o escopo focado enquanto desenhamos o sistema central para pressão de produção.",
+          "Tratamos qualidade, segurança e confiabilidade como requisitos de produto.",
+          "Construímos para polimento B2C e padrões operacionais enterprise."
+        ]
+      },
+      "businessModel": {
+        "kicker": "Modelo de negócio",
+        "title": "Modelo de estúdio com caminho para ativos próprios.",
+        "description": "A empresa pode gerar valor por builds de produto, parcerias estratégicas e produtos proprietários desenvolvidos dentro do estúdio. Este deck v1 evita intencionalmente projeções de receita ou números de captação.",
+        "points": [
+          "Serviços e builds de produto criam contato de mercado e alavancagem técnica no curto prazo.",
+          "Produtos internos criam sistemas reutilizáveis, padrões e propriedade intelectual.",
+          "Parcerias podem transformar workflows provados em oportunidades escaláveis de produto."
+        ]
+      },
+      "roadmap": {
+        "kicker": "Roadmap",
+        "title": "Construir produtos focados, validar workflows e acumular sistemas reutilizáveis.",
+        "description": "O roadmap é qualitativo: lançar superfícies de produto focadas, provar workflows centrais, reforçar camadas de confiabilidade e expandir o portfólio quando uso e demanda de parceiros justificarem.",
+        "points": [
+          "Curto prazo: afinar posicionamento de produto e fluxos prontos para lançamento.",
+          "Médio prazo: aprofundar avaliação, monitoramento e infraestrutura reutilizável de IA.",
+          "Longo prazo: expandir produtos próprios e distribuição via parceiros."
+        ]
+      },
+      "team": {
+        "kicker": "Modelo operacional",
+        "title": "Um time enxuto para clareza de produto e profundidade de engenharia.",
+        "description": "A Yoten Labs opera como um estúdio focado de produto e engenharia, priorizando ownership claro, iteração rápida e decisões arquiteturais que reduzem atrito de longo prazo.",
+        "points": [
+          "Times pequenos mantêm comunicação direta e entrega responsável.",
+          "Decisões de arquitetura favorecem KISS, DRY, manutenibilidade e visibilidade em produção.",
+          "A execução equilibra critério de produto com qualidade técnica mensurável."
+        ]
+      }
+    },
+    "products": {
+      "kicker": "Portfólio",
+      "title": "Produtos em desenvolvimento",
+      "description": "O portfólio atual mostra como a Yoten Labs aplica os mesmos princípios de entrega AI-native em contextos de consumo, treinamento e operações em saúde."
+    },
+    "cta": {
+      "kicker": "Contato para investidores e parceiros",
+      "title": "Vamos conversar sobre a oportunidade por trás de produtos AI-native confiáveis.",
+      "description": "Para conversas com investidores, parceiros ou estratégia, fale diretamente com a Yoten Labs. Este deck público evita intencionalmente detalhes financeiros sensíveis.",
+      "primary": "Enviar e-mail",
+      "secondary": "Usar o formulário"
+    }
+  },
   "footer": {
     "tagline": "Clareza, confiança, resultados mensuráveis.",
     "copyright": "© Yoten Labs"

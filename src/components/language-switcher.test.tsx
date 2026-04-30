@@ -5,9 +5,10 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { LanguageSwitcher } from "@/components/language-switcher";
 
 const push = vi.fn();
+let pathname = "/en";
 
 vi.mock("next/navigation", () => ({
-  usePathname: () => "/en",
+  usePathname: () => pathname,
   useRouter: () => ({
     push,
   }),
@@ -16,6 +17,7 @@ vi.mock("next/navigation", () => ({
 describe("LanguageSwitcher", () => {
   beforeEach(() => {
     push.mockReset();
+    pathname = "/en";
     document.cookie = "yoten_locale=; path=/; max-age=0";
     window.location.hash = "";
   });
@@ -36,5 +38,21 @@ describe("LanguageSwitcher", () => {
 
     expect(document.cookie).toContain("yoten_locale=pt-br");
     expect(push).toHaveBeenCalledWith("/pt-br#projects");
+  });
+
+  it("preserves the current subroute when switching locales", async () => {
+    const user = userEvent.setup();
+    pathname = "/en/pitch-deck";
+
+    render(
+      <LanguageSwitcher
+        locale="en"
+        labels={{ en: "EN", "pt-br": "PT-BR" }}
+      />,
+    );
+
+    await user.click(screen.getByRole("button", { name: "PT-BR" }));
+
+    expect(push).toHaveBeenCalledWith("/pt-br/pitch-deck");
   });
 });

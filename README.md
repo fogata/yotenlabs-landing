@@ -24,6 +24,8 @@ Abra:
 
 - `http://localhost:3000/en`
 - `http://localhost:3000/pt-br`
+- `http://localhost:3000/en/pitch-deck`
+- `http://localhost:3000/pt-br/pitch-deck`
 
 A rota `/` redireciona para `/en`.
 
@@ -87,6 +89,31 @@ REDIS_PREFIX=yotenlabs-contact
 - Navegação e âncoras: ajuste `src/components/landing-page.tsx`.
 - Identidade visual: tokens globais em `src/app/globals.css`, componentes em `src/components/landing-page.tsx` e `src/components/contact-form.tsx`, fundo 3D em `src/components/dynamic-background.tsx`.
 
+## Pitch deck
+
+A página pública de pitch deck fica em:
+
+- `/en/pitch-deck`
+- `/pt-br/pitch-deck`
+
+Ela foi criada para conversas iniciais com investidores e parceiros, em formato de deck web responsivo. A primeira versão evita números sensíveis como valuation, receita, cap table, CAC, LTV, projeções financeiras ou valor de captação.
+
+Estrutura atual:
+
+- Hero com tese de investimento e CTA direto por e-mail.
+- Problema, oportunidade, solução, diferenciação, modelo de negócio, roadmap e modelo operacional.
+- Portfólio com os projetos já cadastrados na landing: WearingDaily, Live-Drills e Platform Health.ai.
+- CTA final para e-mail direto ou formulário de contato da landing.
+
+Arquivos principais:
+
+- `src/app/[locale]/pitch-deck/page.tsx`: rota localizada e metadata da página.
+- `src/components/pitch-deck-page.tsx`: layout e composição visual do deck.
+- `src/i18n/messages/en.json` e `src/i18n/messages/pt-br.json`: conteúdo bilíngue na chave `pitchDeck`.
+- `src/components/pitch-deck-page.test.tsx`: cobertura de renderização das seções e projetos.
+
+Ao adicionar dados sensíveis no futuro, prefira uma versão privada ou protegida por acesso. A página atual é pública e indexável via sitemap.
+
 ## Identidade visual
 
 A identidade atual segue o projeto Stitch `YotenLabs Landingpage 2.0`.
@@ -124,6 +151,8 @@ public/
 src/
   app/
     [locale]/
+      pitch-deck/
+        page.tsx
       layout.tsx
       page.tsx
     globals.css
@@ -136,6 +165,8 @@ src/
     landing-page.test.tsx
     landing-page.tsx
     language-switcher.tsx
+    pitch-deck-page.test.tsx
+    pitch-deck-page.tsx
   i18n/
     messages/
       en.json
