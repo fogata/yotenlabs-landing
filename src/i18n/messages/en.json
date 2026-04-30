@@ -105,15 +105,17 @@
     ]
   },
   "projects": {
-    "kicker": "In development",
+    "kicker": "Product portfolio",
     "title": "Projects",
-    "description": "Current products being developed inside Yoten Labs.",
+    "description": "Products and ventures built or operated inside Yoten Labs.",
+    "visitLabel": "Official site",
     "cards": [
       {
         "name": "WearingDaily",
         "tagline": "Build a look in 30 seconds",
         "description": "Consumer fashion app for fast outfit generation using deterministic formulas, curated catalog completion, saved looks, packs twice a week, optional photo try-on, and video try-on as a paid premium feature.",
         "status": "MVP",
+        "url": "",
         "tags": [
           "Mobile app",
           "Catalog",
@@ -126,7 +128,8 @@
         "name": "Live-Drills",
         "tagline": "AI coaching for real training practice",
         "description": "AI training platform with video/voice avatar and guided role-play sessions for CX, sales/negotiation, and procedures/onboarding. Includes rounds, coaching pauses, re-runs, and bilingual coach responses (pt-BR/en-US). Uses customer manuals, documents, videos, and images as training source, supports media playback during sessions, runs on LiveKit Cloud for real-time events, and ships with multi-tenant + RBAC architecture, plan/feature controls, and prompt quality evaluation workflows.",
-        "status": "Building",
+        "status": "Active build",
+        "url": "",
         "tags": [
           "Role-play training",
           "LiveKit Cloud",
@@ -137,10 +140,11 @@
         ]
       },
       {
-        "name": "Platform Health.ai",
+        "name": "Sanu",
         "tagline": "Healthcare platform operations",
-        "description": "Multi-tenant healthcare operations platform with RBAC, documents, scheduling, billing events, and real-time session flows designed for clarity, trust, and measurable outcomes.",
-        "status": "Building",
+        "description": "Production healthcare operations platform available at trysanu.com, with multi-tenant foundations for RBAC, documents, scheduling, billing events, and real-time session flows designed for clarity, trust, and measurable outcomes.",
+        "status": "Production",
+        "url": "https://www.trysanu.com",
         "tags": [
           "RBAC",
           "Scheduling",
@@ -305,7 +309,7 @@
     },
     "products": {
       "kicker": "Portfolio",
-      "title": "Products in development",
+      "title": "Product portfolio",
       "description": "The current portfolio demonstrates how Yoten Labs applies the same AI-native delivery principles across consumer, training, and healthcare operations contexts."
     },
     "cta": {

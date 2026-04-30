@@ -48,7 +48,11 @@ describe("LandingPage", () => {
 
     expect(screen.getByText("WearingDaily")).toBeInTheDocument();
     expect(screen.getByText("Live-Drills")).toBeInTheDocument();
-    expect(screen.getByText("Platform Health.ai")).toBeInTheDocument();
+    expect(screen.getByText("Sanu")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Official site" })).toHaveAttribute(
+      "href",
+      "https://www.trysanu.com",
+    );
   });
 
   it("renders the Yoten meaning in both locales", () => {

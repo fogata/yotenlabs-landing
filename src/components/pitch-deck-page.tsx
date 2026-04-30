@@ -185,6 +185,16 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
                 <p className="mt-6 text-sm leading-7 text-[var(--muted)]">
                   {project.description}
                 </p>
+                {project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-6 inline-flex rounded-sm border border-[var(--border)] px-3 py-2 font-mono text-[10px] uppercase text-[var(--accent-cyan)] hover:border-[var(--accent-cyan)] hover:text-white"
+                  >
+                    {messages.projects.visitLabel}
+                  </a>
+                ) : null}
               </article>
             ))}
           </div>

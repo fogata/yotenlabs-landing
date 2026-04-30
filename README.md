@@ -100,10 +100,10 @@ Ela foi criada para conversas iniciais com investidores e parceiros, em formato 
 
 Estrutura atual:
 
-- Hero com tese de investimento e CTA direto por e-mail.
+- Hero com tese de investimento e CTA para o formulário de contato.
 - Problema, oportunidade, solução, diferenciação, modelo de negócio, roadmap e modelo operacional.
-- Portfólio com os projetos já cadastrados na landing: WearingDaily, Live-Drills e Platform Health.ai.
-- CTA final para e-mail direto ou formulário de contato da landing.
+- Portfólio com os projetos já cadastrados na landing: WearingDaily, Live-Drills e Sanu, incluindo link para `https://www.trysanu.com`.
+- CTA final para o formulário de contato da landing.
 
 Arquivos principais:
 
