@@ -21,6 +21,10 @@ describe("PitchDeckPage", () => {
         name: "Yoten Labs builds AI-native products where intelligence is the operating core.",
       }),
     ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Start a conversation" })).toHaveAttribute(
+      "href",
+      "/en#contact",
+    );
   });
 
   it("renders the investor deck hero in Portuguese", () => {

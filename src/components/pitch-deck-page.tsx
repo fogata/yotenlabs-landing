@@ -53,7 +53,7 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
               labels={messages.header.languageSwitcher}
             />
             <a
-              href={`mailto:${messages.contact.directValue}`}
+              href={`/${locale}#contact`}
               className="rounded-sm bg-[var(--accent-cyan)] px-4 py-2 text-[10px] font-semibold uppercase text-[#031014] hover:translate-y-[-1px]"
             >
               {pitchDeck.header.cta}
@@ -77,7 +77,7 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
-                href={`mailto:${messages.contact.directValue}`}
+                href={`/${locale}#contact`}
                 className="inline-flex items-center justify-center rounded-sm bg-[var(--accent-cyan)] px-6 py-3 text-xs font-semibold text-[#031014] hover:translate-y-[-1px]"
               >
                 {pitchDeck.hero.primaryCta}
@@ -204,7 +204,7 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
           </div>
           <div className="flex flex-col gap-4">
             <a
-              href={`mailto:${messages.contact.directValue}`}
+              href={`/${locale}#contact`}
               className="inline-flex items-center justify-center rounded-sm bg-[var(--accent-cyan)] px-6 py-3 text-xs font-semibold text-[#031014] hover:translate-y-[-1px]"
             >
               {pitchDeck.cta.primary}
