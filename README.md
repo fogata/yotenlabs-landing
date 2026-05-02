@@ -100,10 +100,11 @@ Ela foi criada para conversas iniciais com investidores e parceiros, em formato 
 
 Estrutura atual:
 
-- Hero com tese de investimento e CTA para o formulário de contato.
-- Problema, oportunidade, solução, diferenciação, modelo de negócio, roadmap e modelo operacional.
-- Portfólio com os projetos já cadastrados na landing: WearingDaily, Live-Drills e Sanu, incluindo link para `https://www.trysanu.com`.
-- CTA final para o formulário de contato da landing.
+- Hero reposicionado para comunicar a Yoten Labs como AI Product Studio que constrói produtos próprios de IA, começando pelo Sanu.
+- Problema, solução e abordagem técnica, com ênfase em workflows reais, LLMs, RAG, agentes, pipelines, avaliação, guardrails e stack de produção.
+- Seção protagonista do Sanu, com link para `https://www.trysanu.com` e descrição pública baseada em evidências dos repositórios `Platform Health.ai`: SaaS multi-tenant para operação clínica, teleconsulta LiveKit, agenda, documentos com gates LGPD, RBAC/Casbin, billing/entitlements, guest flow, RAG clínico, serviço de IA separado, observabilidade e deploy Docker.
+- Modelo, diferencial, roadmap e time fundador, posicionando serviços como acelerador de produtos próprios e destacando a complementaridade entre engenharia de IA/arquitetura e comunicação/mercado.
+- CTA final para investidores e parceiros via formulário da landing.
 
 Arquivos principais:
 
@@ -112,7 +113,7 @@ Arquivos principais:
 - `src/i18n/messages/en.json` e `src/i18n/messages/pt-br.json`: conteúdo bilíngue na chave `pitchDeck`.
 - `src/components/pitch-deck-page.test.tsx`: cobertura de renderização das seções e projetos.
 
-Ao adicionar dados sensíveis no futuro, prefira uma versão privada ou protegida por acesso. A página atual é pública e indexável via sitemap.
+Ao adicionar dados sensíveis no futuro, prefira uma versão privada ou protegida por acesso. A página atual é pública e indexável via sitemap. Mantenha afirmações públicas sobre tração, produção, clientes, receita ou capacidades do Sanu baseadas em produto/código verificável; não adicione clientes, números financeiros, valuation, cap table, projeções ou valor de captação nesta rota pública.
 
 ## Identidade visual
 

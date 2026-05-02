@@ -11,12 +11,15 @@ type PitchDeckPageProps = {
   messages: Messages;
 };
 
-const deckSections = [
+const leadDeckSections = [
   "problem",
-  "opportunity",
   "solution",
-  "differentiation",
+  "approach",
+] as const;
+
+const closingDeckSections = [
   "businessModel",
+  "differentiation",
   "roadmap",
   "team",
 ] as const;
@@ -109,7 +112,7 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
         </section>
 
         <div className="grid gap-6">
-          {deckSections.map((sectionKey, index) => {
+          {leadDeckSections.map((sectionKey, index) => {
             const section = pitchDeck.sections[sectionKey];
 
             return (
@@ -155,50 +158,135 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
         </div>
 
         <section
-          id="products"
+          id="sanu"
           className="scroll-mt-24 py-24"
-          aria-labelledby="products-title"
+          aria-labelledby="sanu-title"
         >
-          <div className="mb-12 max-w-3xl">
-            <p className="font-mono text-[10px] uppercase text-[var(--accent-purple)]">
-              {pitchDeck.products.kicker}
-            </p>
-            <h2 id="products-title" className="mt-4 text-4xl font-semibold text-white">
-              {pitchDeck.products.title}
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-[var(--muted)]">
-              {pitchDeck.products.description}
-            </p>
+          <div className="mb-12 grid gap-8 lg:grid-cols-[minmax(0,0.88fr)_minmax(300px,0.42fr)] lg:items-end">
+            <div>
+              <p className="font-mono text-[10px] uppercase text-[var(--accent-purple)]">
+                04 // {pitchDeck.sanu.kicker}
+              </p>
+              <h2 id="sanu-title" className="mt-4 text-4xl font-semibold text-white">
+                {pitchDeck.sanu.title}
+              </h2>
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--muted)]">
+                {pitchDeck.sanu.description}
+              </p>
+            </div>
+            <a
+              href={pitchDeck.sanu.url}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-sm border border-[var(--accent-cyan)] bg-[rgba(107,243,255,0.08)] px-4 py-3 font-mono text-[10px] uppercase text-[var(--accent-cyan)] hover:bg-[var(--accent-cyan)] hover:text-[#031014]"
+            >
+              {pitchDeck.sanu.statusLabel}
+            </a>
           </div>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {messages.projects.cards.map((project) => (
-              <article key={project.name} className="rounded-sm bg-[var(--surface-low)] p-7">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-2xl font-semibold text-white">{project.name}</h3>
-                  <span className="rounded-sm bg-[rgba(124,60,255,0.14)] px-2 py-1 font-mono text-[9px] uppercase text-[var(--accent-purple)]">
-                    {project.status}
-                  </span>
-                </div>
-                <p className="mt-3 font-mono text-[10px] uppercase text-[var(--muted-dim)]">
-                  {project.tagline}
+          <div className="grid gap-6 lg:grid-cols-5">
+            {pitchDeck.sanu.cards.map((card) => (
+              <article
+                key={card.title}
+                className="rounded-sm border border-[var(--border)] bg-[var(--surface-low)] p-5 lg:col-span-1"
+              >
+                <p className="font-mono text-[10px] uppercase text-[var(--accent-cyan)]">
+                  {card.label}
                 </p>
-                <p className="mt-6 text-sm leading-7 text-[var(--muted)]">
-                  {project.description}
+                <h3 className="mt-4 text-xl font-semibold text-white">{card.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-[var(--muted)]">
+                  {card.description}
                 </p>
-                {project.url ? (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-6 inline-flex rounded-sm border border-[var(--border)] px-3 py-2 font-mono text-[10px] uppercase text-[var(--accent-cyan)] hover:border-[var(--accent-cyan)] hover:text-white"
-                  >
-                    {messages.projects.visitLabel}
-                  </a>
-                ) : null}
               </article>
             ))}
           </div>
+          <ul className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {pitchDeck.sanu.capabilities.map((capability) => (
+              <li
+                key={capability}
+                className="rounded-sm border border-[var(--border)] bg-[#0b1117]/70 px-4 py-3 text-sm leading-6 text-white/86"
+              >
+                {capability}
+              </li>
+            ))}
+          </ul>
         </section>
+
+        <div className="grid gap-6">
+          {closingDeckSections.map((sectionKey, index) => {
+            const section = pitchDeck.sections[sectionKey];
+
+            return (
+              <section
+                key={sectionKey}
+                id={sectionKey}
+                className="scroll-mt-24 rounded-sm bg-[var(--surface-low)] p-7 md:p-10"
+                aria-labelledby={`${sectionKey}-title`}
+              >
+                <div className="grid gap-10 lg:grid-cols-[220px_minmax(0,1fr)]">
+                  <div>
+                    <p className="font-mono text-[10px] uppercase text-[var(--muted-dim)]">
+                      {String(index + 5).padStart(2, "0")}
+                      {" // "}
+                      {section.kicker}
+                    </p>
+                    <h2
+                      id={`${sectionKey}-title`}
+                      className="mt-4 text-3xl font-semibold text-white md:text-4xl"
+                    >
+                      {section.title}
+                    </h2>
+                  </div>
+                  <div>
+                    <p className="max-w-3xl text-sm leading-7 text-[var(--muted)]">
+                      {section.description}
+                    </p>
+                    {sectionKey === "team" ? (
+                      <div className="mt-8 grid gap-4 md:grid-cols-2">
+                        {pitchDeck.team.founders.map((founder) => (
+                          <article
+                            key={founder.name}
+                            className="rounded-sm border border-[var(--border)] bg-[#0b1117]/70 p-5"
+                          >
+                            <p className="font-mono text-[10px] uppercase text-[var(--accent-purple)]">
+                              {founder.role}
+                            </p>
+                            <h3 className="mt-3 text-2xl font-semibold text-white">
+                              {founder.name}
+                            </h3>
+                            <p className="mt-4 text-sm leading-7 text-[var(--muted)]">
+                              {founder.description}
+                            </p>
+                            <ul className="mt-5 grid gap-2">
+                              {founder.highlights.map((highlight) => (
+                                <li
+                                  key={highlight}
+                                  className="border-l border-[var(--border)] pl-3 text-sm leading-6 text-white/86"
+                                >
+                                  {highlight}
+                                </li>
+                              ))}
+                            </ul>
+                          </article>
+                        ))}
+                      </div>
+                    ) : (
+                      <ul className="mt-8 grid gap-3 md:grid-cols-2">
+                        {section.points.map((point) => (
+                          <li
+                            key={point}
+                            className="rounded-sm border border-[var(--border)] bg-[#0b1117]/70 px-4 py-3 text-sm leading-6 text-white/86"
+                          >
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              </section>
+            );
+          })}
+        </div>
 
         <section className="grid gap-10 bg-[#101725] px-6 py-16 md:px-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.6fr)] lg:items-center">
           <div>

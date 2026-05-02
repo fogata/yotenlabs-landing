@@ -206,8 +206,8 @@
   },
   "pitchDeck": {
     "metadata": {
-      "title": "Pitch Deck Yoten Labs | Estúdio de produtos AI-native",
-      "description": "Pitch deck para investidores da Yoten Labs, um estúdio de produtos AI-native que constrói sistemas confiáveis em torno de IA."
+      "title": "Pitch Deck Yoten Labs | AI Product Studio",
+      "description": "Pitch deck para investidores da Yoten Labs, um AI Product Studio que constrói produtos próprios com aplicações reais de IA, começando pelo Sanu."
     },
     "header": {
       "back": "Voltar ao site",
@@ -215,109 +215,166 @@
     },
     "hero": {
       "eyebrow": "Pitch deck para investidores",
-      "title": "A Yoten Labs constrói produtos AI-native onde a inteligência é o núcleo operacional.",
-      "description": "Desenhamos, construímos e operamos sistemas de IA confiáveis para fluxos B2C e B2B, unindo estratégia de produto, engenharia de produção, avaliação, guardrails e entrega disciplinada.",
+      "title": "Construímos produtos de IA que resolvem problemas reais, começando pelo Sanu.",
+      "description": "A Yoten Labs é um AI Product Studio focado em criar ativos próprios com aplicações reais de IA. Combinamos engenharia profunda, visão de produto e comunicação estratégica para tirar sistemas AI-native do conceito e colocá-los em produção.",
       "primaryCta": "Iniciar conversa",
-      "secondaryCta": "Ler a tese",
-      "panelLabel": "Tese de investimento",
+      "secondaryCta": "Ver a tese",
+      "panelLabel": "Tese de execução",
       "signals": [
         {
-          "value": "AI-native",
-          "label": "Produtos desenhados em torno de inteligência desde o primeiro dia."
+          "value": "Produtos",
+          "label": "Construímos produtos de IA, não apenas projetos ou demos isoladas."
         },
         {
-          "value": "Produção",
-          "label": "Arquitetura, monitoramento, controle de custo e confiabilidade dentro da entrega."
+          "value": "Sanu",
+          "label": "Plataforma de saúde em produção, com workflows reais e arquitetura multi-tenant."
         },
         {
-          "value": "Portfólio",
-          "label": "Múltiplas superfícies de produto avançando em ciclos focados de construção."
+          "value": "Velocidade",
+          "label": "Serviços, componentes reutilizáveis e stack própria aceleram novos ativos."
         }
       ]
     },
     "sections": {
       "problem": {
         "kicker": "Problema",
-        "title": "Features com IA não são suficientes.",
-        "description": "A maioria das empresas adiciona IA como uma camada fina sobre fluxos existentes. O resultado é qualidade inconsistente, responsabilidade difusa, custos sem controle e pouca confiança na experiência final.",
+        "title": "IA ainda fica presa em POCs e camadas superficiais.",
+        "description": "Empresas conseguem testar modelos, mas têm dificuldade para transformar IA em workflows operacionais com impacto real. Sem integração com produto, dados, permissões, avaliação e operação, a IA vira experimento caro e pouco confiável.",
         "points": [
-          "Times precisam de sistemas que raciocinem, recuperem contexto, gerem e atuem com controles operacionais.",
-          "Confiabilidade, avaliação e segurança precisam fazer parte da arquitetura do produto.",
-          "A lacuna não é acesso a modelos; é colocar workflows úteis de IA em produção."
-        ]
-      },
-      "opportunity": {
-        "kicker": "Oportunidade",
-        "title": "A próxima onda de software será construída com IA como infraestrutura.",
-        "description": "Produtos B2C e B2B estão saindo de interfaces estáticas para fluxos adaptativos com retrieval, geração, agentes, mídia em tempo real e automação. Quem entregar sistemas AI-native confiáveis tende a acumular vantagem mais rápido.",
-        "points": [
-          "Produtos verticais ficam mais úteis quando a inteligência faz parte do fluxo central.",
-          "Compradores enterprise precisam de prova de que sistemas de IA podem ser governados, medidos e operados.",
-          "Estúdios que unem julgamento de produto e engenharia de produção conseguem avançar mais rápido que modelos tradicionais."
+          "Projetos de IA frequentemente param antes de chegar ao workflow real do usuário.",
+          "Falta arquitetura para conectar LLMs, dados, permissões, observabilidade e custos.",
+          "O valor aparece quando IA passa a operar dentro do produto, não como recurso periférico."
         ]
       },
       "solution": {
         "kicker": "Solução",
-        "title": "A Yoten Labs constrói o sistema central, não a camada de demo.",
-        "description": "Conectamos estratégia, UX, arquitetura, orquestração de modelos, retrieval, avaliação e operação em um mesmo movimento de entrega. O resultado é software que pode lançar, aprender e escalar com responsabilidade.",
+        "title": "Não fazemos apenas projetos: criamos produtos de IA reutilizáveis.",
+        "description": "A Yoten Labs transforma problemas reais em produtos próprios, com componentes, padrões e infraestrutura que podem ser reaproveitados entre verticais. Cada entrega aumenta a velocidade do próximo ativo.",
         "points": [
-          "O enquadramento de produto começa por resultados de usuário e restrições operacionais.",
-          "A engenharia inclui fluxos de dados, prompts, ferramentas, permissões e caminhos de fallback.",
-          "O lançamento já nasce com monitoramento, checks de qualidade e ownership definido."
+          "IA aplicada diretamente em workflows de negócio, atendimento, operação e decisão.",
+          "Construção iterativa com ciclos curtos de produto, engenharia, teste e operação.",
+          "Reuso de arquitetura, componentes de IA, integrações, guardrails e padrões de entrega."
         ]
       },
-      "differentiation": {
-        "kicker": "Diferenciação",
-        "title": "A vantagem está na entrega disciplinada de IA.",
-        "description": "A Yoten Labs foca nos detalhes de produção que tornam produtos com IA utilizáveis: ciclos de avaliação, guardrails, controle de custo, atenção a latência e arquitetura pragmática.",
+      "approach": {
+        "kicker": "Como construímos",
+        "title": "A vantagem está na engenharia de IA colocada em produção.",
+        "description": "Construímos com stack pragmática e foco em sistemas que funcionam sob restrições reais: latência, custo, segurança, tenant isolation, qualidade de resposta e experiência de uso.",
         "points": [
-          "Mantemos o escopo focado enquanto desenhamos o sistema central para pressão de produção.",
-          "Tratamos qualidade, segurança e confiabilidade como requisitos de produto.",
-          "Construímos para polimento B2C e padrões operacionais enterprise."
+          "Arquitetura com LLMs, RAG, agentes, pipelines, embeddings, avaliação e guardrails.",
+          "Stack com OpenAI, DSPy, FastAPI, Go, Next.js, PostgreSQL/pgvector, Redis, LiveKit e Docker.",
+          "Princípios KISS, DRY, DDD, Clean Architecture e Ports and Adapters para manter velocidade sem perder manutenibilidade."
         ]
       },
       "businessModel": {
-        "kicker": "Modelo de negócio",
-        "title": "Modelo de estúdio com caminho para ativos próprios.",
-        "description": "A empresa pode gerar valor por builds de produto, parcerias estratégicas e produtos proprietários desenvolvidos dentro do estúdio. Este deck v1 evita intencionalmente projeções de receita ou números de captação.",
+        "kicker": "Modelo",
+        "title": "Serviços financiam e aceleram produtos próprios de IA.",
+        "description": "O modelo de estúdio continua, mas com foco claro: projetos e serviços criam caixa, contato com problemas reais e componentes reutilizáveis; os ativos próprios capturam valor de longo prazo.",
         "points": [
-          "Serviços e builds de produto criam contato de mercado e alavancagem técnica no curto prazo.",
-          "Produtos internos criam sistemas reutilizáveis, padrões e propriedade intelectual.",
-          "Parcerias podem transformar workflows provados em oportunidades escaláveis de produto."
+          "Builds e serviços geram aprendizado de mercado e validam workflows reais.",
+          "Produtos próprios acumulam propriedade intelectual, infraestrutura e distribuição futura.",
+          "A cada ciclo, a Yoten Labs aumenta sua biblioteca de componentes e sua velocidade de construção."
+        ]
+      },
+      "differentiation": {
+        "kicker": "Diferencial",
+        "title": "Time fundador combina IA profunda com narrativa e mercado.",
+        "description": "A Yoten Labs une experiência técnica em sistemas críticos, LLMs e arquitetura de software com comunicação estratégica, PR, audiovisual e clareza de posicionamento. Isso reduz a distância entre produto construído, mercado entendido e história bem contada.",
+        "points": [
+          "Experiência em sistemas distribuídos, pagamentos, bancos, cloud, mensageria e produtos críticos.",
+          "Capacidade de transformar problema em produto, com IA integrada ao workflow central.",
+          "Força de comunicação e go-to-market para explicar produtos complexos com clareza."
         ]
       },
       "roadmap": {
         "kicker": "Roadmap",
-        "title": "Construir produtos focados, validar workflows e acumular sistemas reutilizáveis.",
-        "description": "O roadmap é qualitativo: lançar superfícies de produto focadas, provar workflows centrais, reforçar camadas de confiabilidade e expandir o portfólio quando uso e demanda de parceiros justificarem.",
+        "title": "Evoluir o Sanu e ampliar o portfólio de ativos AI-native.",
+        "description": "A prioridade é consolidar o Sanu como prova de execução, fortalecer infraestrutura reutilizável de IA e criar novos produtos próprios onde workflows reais precisem de inteligência aplicada.",
         "points": [
-          "Curto prazo: afinar posicionamento de produto e fluxos prontos para lançamento.",
-          "Médio prazo: aprofundar avaliação, monitoramento e infraestrutura reutilizável de IA.",
-          "Longo prazo: expandir produtos próprios e distribuição via parceiros."
+          "Curto prazo: reforçar Sanu, demonstrações, qualidade operacional e narrativa de produto.",
+          "Médio prazo: ampliar módulos de IA, avaliação, automação e componentes reutilizáveis.",
+          "Longo prazo: formar portfólio de produtos próprios apoiado por serviços, parcerias e distribuição."
         ]
       },
       "team": {
-        "kicker": "Modelo operacional",
-        "title": "Um time enxuto para clareza de produto e profundidade de engenharia.",
-        "description": "A Yoten Labs opera como um estúdio focado de produto e engenharia, priorizando ownership claro, iteração rápida e decisões arquiteturais que reduzem atrito de longo prazo.",
-        "points": [
-          "Times pequenos mantêm comunicação direta e entrega responsável.",
-          "Decisões de arquitetura favorecem KISS, DRY, manutenibilidade e visibilidade em produção.",
-          "A execução equilibra critério de produto com qualidade técnica mensurável."
-        ]
+        "kicker": "Time",
+        "title": "Dois fundadores complementares para construir e posicionar ativos de IA.",
+        "description": "Para uma empresa early stage, o time é a principal evidência. A Yoten Labs nasce com profundidade técnica para construir produtos complexos e capacidade de comunicação para transformar tecnologia em narrativa, confiança e mercado.",
+        "points": []
       }
     },
-    "products": {
-      "kicker": "Portfólio",
-      "title": "Portfólio de produtos",
-      "description": "O portfólio atual mostra como a Yoten Labs aplica os mesmos princípios de entrega AI-native em contextos de consumo, treinamento e operações em saúde."
+    "sanu": {
+      "kicker": "Produto protagonista",
+      "title": "Sanu: plataforma de operações em saúde já em produção.",
+      "description": "O Sanu é a primeira prova concreta da tese: um produto SaaS multi-tenant para operação clínica, conectando agenda, teleconsulta, documentos, suporte, billing, acesso por perfil e IA assistiva em uma experiência operacional única.",
+      "statusLabel": "Sanu em produção - trysanu.com",
+      "url": "https://www.trysanu.com",
+      "cards": [
+        {
+          "label": "O que é",
+          "title": "SaaS clínico multi-tenant",
+          "description": "Uma plataforma para organizar operações clínicas com fronteiras por tenant, organização, subunidade e perfis de acesso."
+        },
+        {
+          "label": "Para quem",
+          "title": "Clínicas e times de saúde",
+          "description": "Atende médicos, administradores, secretarias, pacientes e operadores de plataforma em fluxos separados por papel."
+        },
+        {
+          "label": "Problema",
+          "title": "Operação fragmentada",
+          "description": "Reduz a distância entre agenda, teleconsulta, documentos, suporte, billing, compliance e IA clínica."
+        },
+        {
+          "label": "Hoje",
+          "title": "Produto rodando",
+          "description": "Já existem fluxos implementados para autenticação, agenda, sala LiveKit, documentos, guest access, billing e suporte."
+        },
+        {
+          "label": "IA",
+          "title": "RAG e automação clínica",
+          "description": "Serviço de IA separado com RAG clínico, embeddings, guardrails, sumarização, extração e trilha de otimização."
+        }
+      ],
+      "capabilities": [
+        "Teleconsulta com LiveKit para médico, paciente e convidado",
+        "RBAC com Casbin, tenant isolation e domínios platform/tenant",
+        "Documentos clínicos e administrativos com gates LGPD",
+        "RAG clínico com PostgreSQL/pgvector e serviço FastAPI separado",
+        "Billing, planos, entitlements e eventos de ciclo de vida",
+        "Observabilidade com logs estruturados, métricas e deploy Docker"
+      ]
+    },
+    "team": {
+      "founders": [
+        {
+          "name": "Felipe Cavalcante Ogata",
+          "role": "Fundador | IA e arquitetura",
+          "description": "Engenheiro de IA e arquiteto de software com mais de 15 anos em backend, sistemas distribuídos, cloud e plataformas críticas. Lidera a construção técnica dos produtos da Yoten Labs.",
+          "highlights": [
+            "Experiência com RAG, LLMs, agentes, DSPy, OpenAI Realtime API e engenharia de prompts.",
+            "Passagens por DOT Digital Group, Grupo Casas Bahia, Banco Mercantil, Getnet, Deloitte, Farfetch, Superdigital/Santander e Zurich.",
+            "Base forte em DDD, Clean Architecture, Ports and Adapters, microsserviços, mensageria e sistemas críticos."
+          ]
+        },
+        {
+          "name": "Roberta Silveira",
+          "role": "Fundadora | Comunicação e mercado",
+          "description": "Especialista em comunicação estratégica, PR, jornalismo, audiovisual e mercado. Traz clareza narrativa, relações públicas e capacidade de go-to-market para produtos complexos.",
+          "highlights": [
+            "Experiência em comunicação para o agronegócio, mercado financeiro, mídia nacional e posicionamento público.",
+            "Atuação como PR Manager na Máquina Cohn & Wolfe e como apresentadora e repórter no Canal Rural.",
+            "Formação em Jornalismo, Comunicação Audiovisual, Mercado de Capitais, Cibersegurança e Filosofia."
+          ]
+        }
+      ]
     },
     "cta": {
       "kicker": "Contato para investidores e parceiros",
-      "title": "Vamos conversar sobre a oportunidade por trás de produtos AI-native confiáveis.",
-      "description": "Para conversas com investidores, parceiros ou estratégia, fale diretamente com a Yoten Labs. Este deck público evita intencionalmente detalhes financeiros sensíveis.",
+      "title": "Vamos conversar sobre a criação de ativos próprios com IA aplicada.",
+      "description": "A Yoten Labs está construindo produtos de IA com foco em execução, reuso técnico e problemas reais. O Sanu é o primeiro ativo em produção dessa tese.",
       "primary": "Abrir formulário",
-      "secondary": "Usar o formulário"
+      "secondary": "Falar com a Yoten Labs"
     }
   },
   "footer": {

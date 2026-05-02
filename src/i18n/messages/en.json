@@ -206,8 +206,8 @@
   },
   "pitchDeck": {
     "metadata": {
-      "title": "Yoten Labs Pitch Deck | AI-native product studio",
-      "description": "Investor-focused pitch deck for Yoten Labs, an AI-native product studio building reliable software systems around AI."
+      "title": "Yoten Labs Pitch Deck | AI Product Studio",
+      "description": "Investor-focused pitch deck for Yoten Labs, an AI Product Studio building owned products with real AI applications, starting with Sanu."
     },
     "header": {
       "back": "Back to site",
@@ -215,109 +215,166 @@
     },
     "hero": {
       "eyebrow": "Investor pitch deck",
-      "title": "Yoten Labs builds AI-native products where intelligence is the operating core.",
-      "description": "We design, build, and operate reliable AI systems for consumer and enterprise workflows, combining product strategy, production engineering, evaluation, guardrails, and disciplined delivery.",
+      "title": "We build AI products that solve real problems, starting with Sanu.",
+      "description": "Yoten Labs is an AI Product Studio focused on building owned assets with real AI applications. We combine deep engineering, product judgment, and strategic communication to move AI-native systems from concept into production.",
       "primaryCta": "Start a conversation",
-      "secondaryCta": "Read the thesis",
-      "panelLabel": "Investment thesis",
+      "secondaryCta": "See the thesis",
+      "panelLabel": "Execution thesis",
       "signals": [
         {
-          "value": "AI-native",
-          "label": "Products designed around intelligence from day one."
+          "value": "Products",
+          "label": "We build AI products, not just projects or isolated demos."
         },
         {
-          "value": "Production-grade",
-          "label": "Architecture, monitoring, cost controls, and reliability built into delivery."
+          "value": "Sanu",
+          "label": "A healthcare platform in production, with real workflows and multi-tenant architecture."
         },
         {
-          "value": "Portfolio",
-          "label": "Multiple product surfaces moving through focused build cycles."
+          "value": "Speed",
+          "label": "Services, reusable components, and owned stack accelerate new assets."
         }
       ]
     },
     "sections": {
       "problem": {
         "kicker": "Problem",
-        "title": "AI features are not enough.",
-        "description": "Most companies are adding AI as a thin layer on top of existing workflows. The result is inconsistent quality, unclear ownership, unmanaged costs, and limited trust in the final user experience.",
+        "title": "AI is still trapped in POCs and superficial layers.",
+        "description": "Companies can test models, but struggle to turn AI into operational workflows with real impact. Without product integration, data, permissions, evaluation, and operations, AI becomes an expensive and unreliable experiment.",
         "points": [
-          "Teams need systems that can reason, retrieve, generate, and act with operational controls.",
-          "Reliability, evaluation, and safety must be part of the product architecture.",
-          "The gap is not access to models; it is shipping useful AI workflows into production."
-        ]
-      },
-      "opportunity": {
-        "kicker": "Opportunity",
-        "title": "The next wave of software will be built around AI as infrastructure.",
-        "description": "Consumer and enterprise products are shifting from static interfaces to adaptive workflows powered by retrieval, generation, agents, real-time media, and automation. Teams that ship trustworthy AI-native systems will compound faster.",
-        "points": [
-          "Vertical products can become more useful when intelligence is embedded in the core workflow.",
-          "Enterprise buyers need proof that AI systems can be governed, measured, and operated.",
-          "Studios that combine product judgment with production engineering can move faster than traditional delivery models."
+          "AI projects often stop before reaching the user workflow that matters.",
+          "Teams lack architecture that connects LLMs, data, permissions, observability, and cost controls.",
+          "Value appears when AI operates inside the product, not as a peripheral feature."
         ]
       },
       "solution": {
         "kicker": "Solution",
-        "title": "Yoten Labs builds the core system, not the demo layer.",
-        "description": "We connect strategy, UX, architecture, model orchestration, retrieval, evaluation, and operations into one delivery motion. The outcome is software that can launch, learn, and scale responsibly.",
+        "title": "We do not just deliver projects: we create reusable AI products.",
+        "description": "Yoten Labs turns real problems into owned products, with components, patterns, and infrastructure that can be reused across verticals. Each delivery increases the speed of the next asset.",
         "points": [
-          "Product framing starts with user outcomes and operational constraints.",
-          "Engineering includes data flows, prompts, tools, permissions, and fallback paths.",
-          "Launch plans include monitoring, quality checks, and ownership from the start."
+          "AI applied directly inside business, support, operations, and decision workflows.",
+          "Iterative build cycles across product, engineering, testing, and operations.",
+          "Reuse of architecture, AI components, integrations, guardrails, and delivery patterns."
+        ]
+      },
+      "approach": {
+        "kicker": "How we build",
+        "title": "The advantage is AI engineering shipped to production.",
+        "description": "We build with a pragmatic stack and focus on systems that work under real constraints: latency, cost, security, tenant isolation, answer quality, and user experience.",
+        "points": [
+          "Architecture with LLMs, RAG, agents, pipelines, embeddings, evaluation, and guardrails.",
+          "Stack with OpenAI, DSPy, FastAPI, Go, Next.js, PostgreSQL/pgvector, Redis, LiveKit, and Docker.",
+          "KISS, DRY, DDD, Clean Architecture, and Ports and Adapters keep speed without sacrificing maintainability."
+        ]
+      },
+      "businessModel": {
+        "kicker": "Model",
+        "title": "Services fund and accelerate owned AI products.",
+        "description": "The studio model remains, but with sharper focus: projects and services create cash flow, market contact, and reusable components; owned assets capture long-term value.",
+        "points": [
+          "Builds and services generate market learning and validate real workflows.",
+          "Owned products compound intellectual property, infrastructure, and future distribution.",
+          "Each cycle grows Yoten Labs' component library and build speed."
         ]
       },
       "differentiation": {
         "kicker": "Differentiation",
-        "title": "The advantage is disciplined AI delivery.",
-        "description": "Yoten Labs focuses on the production details that make AI products usable: evaluation loops, guardrails, cost controls, latency awareness, and pragmatic architecture.",
+        "title": "The founding team combines deep AI with narrative and market strength.",
+        "description": "Yoten Labs combines experience in critical systems, LLMs, and software architecture with strategic communication, PR, audiovisual, and positioning clarity. That reduces the distance between product built, market understood, and story told well.",
         "points": [
-          "We keep scope focused while designing the core system for production pressure.",
-          "We treat quality, safety, and reliability as product requirements.",
-          "We build for both consumer polish and enterprise operating standards."
-        ]
-      },
-      "businessModel": {
-        "kicker": "Business model",
-        "title": "A studio model with paths to owned assets.",
-        "description": "The company can generate value through product builds, strategic partnerships, and proprietary products developed inside the studio. This v1 deck intentionally avoids revenue projections or fundraising numbers.",
-        "points": [
-          "Service and product-build work creates near-term market contact and technical leverage.",
-          "Internal products create reusable systems, patterns, and intellectual property.",
-          "Partnerships can turn proven workflows into scalable product opportunities."
+          "Experience across distributed systems, payments, banking, cloud, messaging, and critical products.",
+          "Ability to turn problems into products, with AI integrated into the core workflow.",
+          "Communication and go-to-market strength to explain complex products clearly."
         ]
       },
       "roadmap": {
         "kicker": "Roadmap",
-        "title": "Build focused products, validate workflows, compound reusable systems.",
-        "description": "The roadmap is qualitative: ship focused product surfaces, prove core workflows, strengthen reliability layers, and expand the portfolio where usage and partner demand justify it.",
+        "title": "Evolve Sanu and expand the portfolio of AI-native assets.",
+        "description": "The priority is to consolidate Sanu as execution proof, strengthen reusable AI infrastructure, and create new owned products where real workflows need applied intelligence.",
         "points": [
-          "Near term: sharpen product positioning and launch-ready flows.",
-          "Mid term: deepen evaluation, monitoring, and reusable AI infrastructure.",
-          "Long term: expand owned products and partner-led distribution."
+          "Near term: strengthen Sanu, demos, operational quality, and product narrative.",
+          "Mid term: expand AI modules, evaluation, automation, and reusable components.",
+          "Long term: build a portfolio of owned products supported by services, partnerships, and distribution."
         ]
       },
       "team": {
-        "kicker": "Operating model",
-        "title": "A lean team built for product clarity and engineering depth.",
-        "description": "Yoten Labs operates as a focused product and engineering studio, prioritizing clear ownership, fast iteration, and architecture decisions that reduce long-term friction.",
-        "points": [
-          "Small teams keep communication direct and delivery accountable.",
-          "Architecture choices favor KISS, DRY, maintainability, and production visibility.",
-          "Execution balances product taste with measurable technical quality."
-        ]
+        "kicker": "Team",
+        "title": "Two complementary founders to build and position AI assets.",
+        "description": "For an early-stage company, the team is the core proof point. Yoten Labs starts with the technical depth to build complex products and the communication strength to turn technology into narrative, trust, and market.",
+        "points": []
       }
     },
-    "products": {
-      "kicker": "Portfolio",
-      "title": "Product portfolio",
-      "description": "The current portfolio demonstrates how Yoten Labs applies the same AI-native delivery principles across consumer, training, and healthcare operations contexts."
+    "sanu": {
+      "kicker": "Lead product",
+      "title": "Sanu: a healthcare operations platform already in production.",
+      "description": "Sanu is the first concrete proof of the thesis: a multi-tenant SaaS product for clinical operations, connecting scheduling, teleconsultation, documents, support, billing, role-based access, and assistive AI into one operational experience.",
+      "statusLabel": "Sanu in production - trysanu.com",
+      "url": "https://www.trysanu.com",
+      "cards": [
+        {
+          "label": "What it is",
+          "title": "Multi-tenant clinical SaaS",
+          "description": "A platform for organizing clinical operations with tenant, organization, subunit, and role-based boundaries."
+        },
+        {
+          "label": "Audience",
+          "title": "Clinics and healthcare teams",
+          "description": "Serves doctors, admins, secretaries, patients, and platform operators through role-specific workflows."
+        },
+        {
+          "label": "Problem",
+          "title": "Fragmented operations",
+          "description": "Reduces the gap between scheduling, teleconsultation, documents, support, billing, compliance, and clinical AI."
+        },
+        {
+          "label": "Today",
+          "title": "Running product",
+          "description": "Flows exist for authentication, scheduling, LiveKit rooms, documents, guest access, billing, and support."
+        },
+        {
+          "label": "AI",
+          "title": "Clinical RAG and automation",
+          "description": "Separate AI service with clinical RAG, embeddings, guardrails, summarization, extraction, and optimization track."
+        }
+      ],
+      "capabilities": [
+        "LiveKit teleconsultation for doctor, patient, and guest access",
+        "RBAC with Casbin, tenant isolation, and platform/tenant domains",
+        "Clinical and administrative documents with LGPD-style gates",
+        "Clinical RAG with PostgreSQL/pgvector and a separate FastAPI service",
+        "Billing, plans, entitlements, and lifecycle events",
+        "Observability with structured logs, metrics, and Docker deployment"
+      ]
+    },
+    "team": {
+      "founders": [
+        {
+          "name": "Felipe Cavalcante Ogata",
+          "role": "Founder | AI and architecture",
+          "description": "AI engineer and software architect with 15+ years in backend, distributed systems, cloud, and critical platforms. Leads the technical construction of Yoten Labs products.",
+          "highlights": [
+            "Experience with RAG, LLMs, agents, DSPy, OpenAI Realtime API, and prompt engineering.",
+            "Worked across DOT Digital Group, Grupo Casas Bahia, Banco Mercantil, Getnet, Deloitte, Farfetch, Superdigital/Santander, and Zurich.",
+            "Strong foundation in DDD, Clean Architecture, Ports and Adapters, microservices, messaging, and critical systems."
+          ]
+        },
+        {
+          "name": "Roberta Silveira",
+          "role": "Founder | Communication and market",
+          "description": "Specialist in strategic communication, PR, journalism, audiovisual, and market context. Brings narrative clarity, public relations, and go-to-market capacity to complex products.",
+          "highlights": [
+            "Experience in agribusiness communication, financial markets, national media, and public positioning.",
+            "Worked as PR Manager at Máquina Cohn & Wolfe and as anchor/reporter at Canal Rural.",
+            "Background in Journalism, Audiovisual Communication, Capital Markets, Cybersecurity, and Philosophy."
+          ]
+        }
+      ]
     },
     "cta": {
       "kicker": "Investor and partner contact",
-      "title": "Let's discuss the opportunity behind reliable AI-native products.",
-      "description": "For investor, partner, or strategic conversations, contact Yoten Labs directly. This public deck intentionally avoids sensitive financial details.",
+      "title": "Let's discuss the creation of owned assets with applied AI.",
+      "description": "Yoten Labs is building AI products with a focus on execution, technical reuse, and real problems. Sanu is the first production asset in this thesis.",
       "primary": "Open contact form",
-      "secondary": "Use the contact form"
+      "secondary": "Talk to Yoten Labs"
     }
   },
   "footer": {

@@ -18,7 +18,7 @@ describe("PitchDeckPage", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: "Yoten Labs builds AI-native products where intelligence is the operating core.",
+        name: "We build AI products that solve real problems, starting with Sanu.",
       }),
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Start a conversation" })).toHaveAttribute(
@@ -32,29 +32,33 @@ describe("PitchDeckPage", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: "A Yoten Labs constrói produtos AI-native onde a inteligência é o núcleo operacional.",
+        name: "Construímos produtos de IA que resolvem problemas reais, começando pelo Sanu.",
       }),
     ).toBeInTheDocument();
   });
 
-  it("renders the key deck sections and portfolio products", () => {
+  it("renders the key deck sections, Sanu, and founders", () => {
     render(<PitchDeckPage locale="en" messages={enMessages} />);
 
-    expect(screen.getByRole("heading", { name: "AI features are not enough." })).toBeInTheDocument();
     expect(
       screen.getByRole("heading", {
-        name: "The next wave of software will be built around AI as infrastructure.",
+        name: "AI is still trapped in POCs and superficial layers.",
       }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", {
-        name: "A studio model with paths to owned assets.",
+        name: "The advantage is AI engineering shipped to production.",
       }),
     ).toBeInTheDocument();
-    expect(screen.getByText("WearingDaily")).toBeInTheDocument();
-    expect(screen.getByText("Live-Drills")).toBeInTheDocument();
-    expect(screen.getByText("Sanu")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Official site" })).toHaveAttribute(
+    expect(
+      screen.getByRole("heading", {
+        name: "Sanu: a healthcare operations platform already in production.",
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("Clinical RAG and automation")).toBeInTheDocument();
+    expect(screen.getByText("Felipe Cavalcante Ogata")).toBeInTheDocument();
+    expect(screen.getByText("Roberta Silveira")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Sanu in production - trysanu.com" })).toHaveAttribute(
       "href",
       "https://www.trysanu.com",
     );
