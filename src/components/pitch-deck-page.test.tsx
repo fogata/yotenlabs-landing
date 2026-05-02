@@ -37,7 +37,7 @@ describe("PitchDeckPage", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        "Sistema operacional AI-native para profissionais de saúde independentes. Felipe Ogata, Founder, e Roberta Silveira, Co-founder. Construído pela Yoten Labs.",
+        "O sistema operacional do profissional de saúde autônomo. Sanu centraliza agenda, teleconsulta, pacientes, documentos, comunicação e IA em uma única plataforma simples. Felipe Ogata, Founder, e Roberta Silveira, Co-founder. Construído pela Yoten Labs.",
       ),
     ).toBeInTheDocument();
   });
@@ -47,12 +47,17 @@ describe("PitchDeckPage", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: "Independent healthcare professionals operate in a fragmented way.",
+        name: "Independent professionals live in operational chaos.",
       }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", {
-        name: "Sanu centralizes clinical operations in an AI-native platform.",
+        name: "Today operations happen across WhatsApp + calendar + loose documents.",
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", {
+        name: "Sanu turns clinical operations into a simple, automated flow.",
       }),
     ).toBeInTheDocument();
     expect(
@@ -61,11 +66,22 @@ describe("PitchDeckPage", () => {
       }),
     ).toBeInTheDocument();
     expect(screen.getByText("Premium (AI): R$199/month.")).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "Strategy: low-friction entry for fast adoption, expansion through AI premium and automation.",
+      ),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "Execution metric: functional product with 6 core modules implemented and running in production.",
+      ),
+    ).toBeInTheDocument();
+    expect(screen.getByText("Sanu replaces 4 to 5 tools with one simple platform.")).toBeInTheDocument();
     expect(screen.getByText("Pre-seed raise of R$500,000.")).toBeInTheDocument();
     expect(screen.getByText("Felipe Ogata — Founder")).toBeInTheDocument();
     expect(screen.getByText("Roberta Silveira — Co-founder")).toBeInTheDocument();
     expect(
-      screen.getByText("Product running. Next step: distribution, validation, and scale."),
+      screen.getByText("Product running. Clear pain. Next step: distribution, validation, and scale."),
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Start a conversation" })).toHaveAttribute(
       "href",

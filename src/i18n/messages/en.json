@@ -216,18 +216,18 @@
     "hero": {
       "eyebrow": "Sanu — Pre-seed Pitch Deck",
       "title": "Sanu",
-      "description": "AI-native operating system for independent healthcare professionals. Felipe Ogata, Founder, and Roberta Silveira, Co-founder. Built by Yoten Labs.",
+      "description": "The operating system for independent healthcare professionals. Sanu centralizes scheduling, teleconsultation, patients, documents, communication, and AI in one simple platform. Felipe Ogata, Founder, and Roberta Silveira, Co-founder. Built by Yoten Labs.",
       "primaryCta": "Start a conversation",
       "secondaryCta": "See the problem",
       "panelLabel": "Investor summary",
       "signals": [
         {
           "value": "Pre-seed",
-          "label": "R$500,000 raise for validation, acquisition, and stability."
+          "label": "R$500,000 raise for acquisition, validation, and stability."
         },
         {
-          "value": "Production",
-          "label": "Functional product running in production environment."
+          "value": "6 modules",
+          "label": "Functional product with scheduling, patients, teleconsultation, documents, RBAC, and billing-ready foundation."
         },
         {
           "value": "Clear ICP",
@@ -239,15 +239,30 @@
       {
         "id": "problem",
         "kicker": "Problem",
-        "title": "Independent healthcare professionals operate in a fragmented way.",
-        "description": "Clinical operations still rely on disconnected tools, manual processes, and almost no operational intelligence.",
+        "title": "Independent professionals live in operational chaos.",
+        "description": "A psychologist or independent doctor needs to see patients, answer messages, remember appointments, organize documents, keep patient history, and still manage operations alone.",
         "points": [
-          "Scheduling tools disconnected from consultations.",
-          "Patient data spread across WhatsApp, documents, and systems.",
-          "Teleconsultation separated from clinical workflow.",
-          "No operational intelligence or automation."
+          "Uses WhatsApp for confirmations, questions, and document exchange.",
+          "Manages scheduling in a separate tool or manually.",
+          "Loses clinical and operational history across chats and loose files.",
+          "Opens multiple tools to make a single consultation happen."
         ],
-        "callout": "Result: time wasted, disorganization, and poor patient experience."
+        "callout": "Result: missed appointments, lost history, weak financial visibility, and poor patient experience."
+      },
+      {
+        "id": "user-reality",
+        "kicker": "User reality",
+        "title": "Today operations happen across WhatsApp + calendar + loose documents.",
+        "description": "The pain is not lack of software. The pain is stitching together several pieces of the operation every day, without a simple view of the patient and routine.",
+        "points": [
+          "Appointment confirmation on WhatsApp.",
+          "Scheduling separated from teleconsultation.",
+          "Documents sent through links, email, or messages.",
+          "Patient history without one source of context.",
+          "Billing and financial status outside the clinical flow.",
+          "No automation to reduce repetitive work."
+        ],
+        "callout": "Sanu replaces 4 to 5 tools with one simple platform."
       },
       {
         "id": "target-customer",
@@ -277,8 +292,8 @@
       {
         "id": "solution",
         "kicker": "Solution",
-        "title": "Sanu centralizes clinical operations in an AI-native platform.",
-        "description": "One system to organize the clinical routine, reduce fragmentation, and create the foundation for AI automation.",
+        "title": "Sanu turns clinical operations into a simple, automated flow.",
+        "description": "One system to reduce operational complexity and create the foundation for AI automation.",
         "points": [
           "Scheduling.",
           "Teleconsultation.",
@@ -287,13 +302,13 @@
           "Communication.",
           "AI-assisted workflows."
         ],
-        "callout": "Everything in one place, designed for real-world usage."
+        "callout": "Sanu is the operating system for independent healthcare professionals."
       },
       {
         "id": "product",
         "kicker": "Product",
         "title": "Sanu is already functional and running in production environment.",
-        "description": "The technical foundation was built to scale from day one, with core modules already implemented.",
+        "description": "The technical foundation was built to scale from day one, with 6 core modules already implemented.",
         "points": [
           "Multi-tenant architecture.",
           "Patient and appointment management.",
@@ -302,32 +317,32 @@
           "Role-based access control (RBAC).",
           "Billing-ready structure."
         ],
-        "callout": "Built to scale from day one."
+        "callout": "Execution metric: functional product with 6 core modules implemented and running in production."
       },
       {
         "id": "ai-layer",
         "kicker": "AI layer",
-        "title": "AI is integrated directly into workflows, not isolated as a separate tool.",
-        "description": "Sanu is designed to use AI inside clinical operations, with automation that reduces manual work and increases context.",
+        "title": "AI reduces operational work, not just adds another feature.",
+        "description": "The AI layer enters where professionals lose time: summarizing, extracting, contextualizing, and preparing next steps from the clinical flow.",
         "points": [
           "Clinical summarization.",
           "Information extraction.",
           "Context-aware assistance.",
           "Future: decision support and operational automation."
         ],
-        "callout": "AI embedded in the operation, not a separate layer."
+        "callout": "Commercial differential: fewer tools, less rework, and more context per patient."
       },
       {
         "id": "why-now",
         "kicker": "Why now",
-        "title": "The market is ready for an AI-native clinical solution.",
+        "title": "AI, operational pressure, and legacy software created the right window.",
         "points": [
-          "AI is finally usable in real workflows.",
-          "Healthcare professionals are overloaded.",
-          "Existing tools are fragmented and outdated.",
-          "Small clinics are underserved by modern software."
+          "AI is finally useful in daily tasks, not only in demos.",
+          "Operational cost and administrative load keep increasing for professionals.",
+          "Independent professionals need to look organized without hiring a team.",
+          "Existing tools are fragmented, old, or too complex for small clinics."
         ],
-        "callout": "The window is open for a simple, reliable, AI-native product."
+        "callout": "The opportunity is to deliver practical automation to a segment that already feels the pain every day."
       },
       {
         "id": "business-model",
@@ -350,7 +365,9 @@
               "Advanced automation."
             ]
           }
-        ]
+        ],
+        "description": "Accessible pricing reduces entry friction and accelerates validation. Expansion comes from higher tiers, AI, automation, and deeper usage inside the clinical routine.",
+        "callout": "Strategy: low-friction entry for fast adoption, expansion through AI premium and automation."
       },
       {
         "id": "go-to-market",
@@ -402,14 +419,15 @@
       {
         "id": "market-opportunity",
         "kicker": "Market opportunity",
-        "title": "A large, underserved, and growing opportunity.",
-        "description": "In Brazil alone, millions of independent healthcare professionals and thousands of small clinics operate without modern systems.",
+        "title": "Large, fragmented market with low modern software penetration.",
+        "description": "In Brazil, millions of healthcare professionals work independently or in small clinics. Most still operate with generic tools, manual processes, and little automation.",
         "points": [
-          "Initial focus on psychologists and independent doctors.",
-          "Expansion into multi-specialty clinics.",
-          "Potential to enter broader healthcare verticals."
+          "Millions of independent professionals in Brazil.",
+          "Thousands of small clinics without a modern operating system.",
+          "Fragmented market with low adoption of simple, AI-native solutions.",
+          "Initial wedge in psychologists and independent doctors, expanding to multi-specialty clinics."
         ],
-        "callout": "Large market, low operational sophistication, and growing demand for efficiency."
+        "callout": "Large user base, recurring pain, and low operational sophistication."
       },
       {
         "id": "competition",
@@ -439,19 +457,20 @@
             ]
           ]
         },
-        "callout": "Sanu combines all layers into one system."
+        "callout": "Sanu wins by replacing multiple tools and centralizing clinical operations in one simple flow."
       },
       {
         "id": "competitive-advantage",
         "kicker": "Competitive advantage",
-        "title": "AI-native, full-stack, and driven by direct user feedback.",
+        "title": "The advantage is commercial: replace tools and reduce complexity.",
         "points": [
-          "AI-native from day one.",
-          "Built for real operational workflows.",
-          "Full-stack solution, not fragmented tools.",
-          "Modern architecture with scalable foundation.",
-          "Fast iteration driven by direct user feedback."
-        ]
+          "Replaces 4 to 5 tools with one simple platform.",
+          "Centralizes scheduling, teleconsultation, patients, documents, communication, and AI.",
+          "AI-native from day one, with automation embedded into the workflow.",
+          "Modern architecture and scalable foundation for plan and module expansion.",
+          "Fast iteration based on direct contact with early users."
+        ],
+        "callout": "Users switch because Sanu makes operations simpler, not because the technology sounds better."
       },
       {
         "id": "team",
@@ -516,15 +535,15 @@
       {
         "id": "closing",
         "kicker": "Closing",
-        "title": "We are building the operating system for independent healthcare professionals.",
+        "title": "Sanu is the operating system for independent healthcare professionals.",
         "description": "Sanu is already functional. Now the focus is distribution, validation, and scale.",
-        "callout": "Product running. Next step: distribution, validation, and scale."
+        "callout": "Product running. Clear pain. Next step: distribution, validation, and scale."
       }
     ],
     "cta": {
       "kicker": "Investor contact",
-      "title": "Sanu is already functional. Now the focus is distribution, validation, and scale.",
-      "description": "We are raising R$500,000 pre-seed for customer acquisition, sales, support, product improvement, and AI infrastructure.",
+      "title": "Sanu is the operating system for independent healthcare professionals.",
+      "description": "Functional product, 6 core modules implemented, and a R$500,000 pre-seed raise for acquisition, sales, support, stability, and AI infrastructure.",
       "primary": "Open contact form",
       "secondary": "Talk to Yoten Labs"
     }
