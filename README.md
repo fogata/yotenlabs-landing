@@ -96,24 +96,24 @@ A página pública de pitch deck fica em:
 - `/en/pitch-deck`
 - `/pt-br/pitch-deck`
 
-Ela foi criada para conversas iniciais com investidores e parceiros, em formato de deck web responsivo. A primeira versão evita números sensíveis como valuation, receita, cap table, CAC, LTV, projeções financeiras ou valor de captação.
+Ela foi ajustada para conversas pre-seed com investidores, em formato de deck web responsivo e direto, pronto para adaptação em Notion, PowerPoint, Figma ou PDF.
 
 Estrutura atual:
 
-- Hero reposicionado para comunicar a Yoten Labs como AI Product Studio que constrói produtos próprios de IA, começando pelo Sanu.
-- Problema, solução e abordagem técnica, com ênfase em workflows reais, LLMs, RAG, agentes, pipelines, avaliação, guardrails e stack de produção.
-- Seção protagonista do Sanu, com link para `https://www.trysanu.com` e descrição pública baseada em evidências dos repositórios `Platform Health.ai`: SaaS multi-tenant para operação clínica, teleconsulta LiveKit, agenda, documentos com gates LGPD, RBAC/Casbin, billing/entitlements, guest flow, RAG clínico, serviço de IA separado, observabilidade e deploy Docker.
-- Modelo, diferencial, roadmap e time fundador, posicionando serviços como acelerador de produtos próprios e destacando a complementaridade entre engenharia de IA/arquitetura e comunicação/mercado.
-- CTA final para investidores e parceiros via formulário da landing.
+- Title slide do Sanu como AI-native operating system para profissionais de saúde independentes.
+- Problema, ICP, solução, produto, camada de IA, timing de mercado, modelo de negócio, go-to-market, roadmap, mercado, competição, vantagem competitiva, time, visão, ask e closing.
+- Pricing inicial: Starter, Pro e Premium (AI).
+- Ask pre-seed de R$500.000 com uso de recursos e runway alvo.
+- Conteúdo bilíngue em pt-BR e en-US, com linguagem de investidor, direta e focada em conversão.
 
 Arquivos principais:
 
 - `src/app/[locale]/pitch-deck/page.tsx`: rota localizada e metadata da página.
-- `src/components/pitch-deck-page.tsx`: layout e composição visual do deck.
+- `src/components/pitch-deck-page.tsx`: renderer responsivo de slides do deck.
 - `src/i18n/messages/en.json` e `src/i18n/messages/pt-br.json`: conteúdo bilíngue na chave `pitchDeck`.
-- `src/components/pitch-deck-page.test.tsx`: cobertura de renderização das seções e projetos.
+- `src/components/pitch-deck-page.test.tsx`: cobertura de renderização dos slides principais, pricing, ask e time.
 
-Ao adicionar dados sensíveis no futuro, prefira uma versão privada ou protegida por acesso. A página atual é pública e indexável via sitemap. Mantenha afirmações públicas sobre tração, produção, clientes, receita ou capacidades do Sanu baseadas em produto/código verificável; não adicione clientes, números financeiros, valuation, cap table, projeções ou valor de captação nesta rota pública.
+Esta rota pública inclui ask e pricing por decisão de pitch pre-seed. Evite adicionar clientes, receita, valuation, cap table, CAC, LTV ou projeções financeiras sem validação explícita e sem revisar se a página deve continuar pública/indexável.
 
 ## Identidade visual
 

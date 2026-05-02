@@ -206,173 +206,325 @@
   },
   "pitchDeck": {
     "metadata": {
-      "title": "Yoten Labs Pitch Deck | AI Product Studio",
-      "description": "Investor-focused pitch deck for Yoten Labs, an AI Product Studio building owned products with real AI applications, starting with Sanu."
+      "title": "Sanu Pitch Deck | Pre-seed",
+      "description": "Pre-seed pitch deck for Sanu, an AI-native operating system for independent healthcare professionals."
     },
     "header": {
       "back": "Back to site",
       "cta": "Investor contact"
     },
     "hero": {
-      "eyebrow": "Investor pitch deck",
-      "title": "We build AI products that solve real problems, starting with Sanu.",
-      "description": "Yoten Labs is an AI Product Studio focused on building owned assets with real AI applications. We combine deep engineering, product judgment, and strategic communication to move AI-native systems from concept into production.",
+      "eyebrow": "Sanu — Pre-seed Pitch Deck",
+      "title": "Sanu",
+      "description": "AI-native operating system for independent healthcare professionals. Felipe Ogata, Founder, and Roberta Silveira, Co-founder. Built by Yoten Labs.",
       "primaryCta": "Start a conversation",
-      "secondaryCta": "See the thesis",
-      "panelLabel": "Execution thesis",
+      "secondaryCta": "See the problem",
+      "panelLabel": "Investor summary",
       "signals": [
         {
-          "value": "Products",
-          "label": "We build AI products, not just projects or isolated demos."
+          "value": "Pre-seed",
+          "label": "R$500,000 raise for validation, acquisition, and stability."
         },
         {
-          "value": "Sanu",
-          "label": "A healthcare platform in production, with real workflows and multi-tenant architecture."
+          "value": "Production",
+          "label": "Functional product running in production environment."
         },
         {
-          "value": "Speed",
-          "label": "Services, reusable components, and owned stack accelerate new assets."
+          "value": "Clear ICP",
+          "label": "Psychologists, independent doctors, and small clinics."
         }
       ]
     },
-    "sections": {
-      "problem": {
+    "slides": [
+      {
+        "id": "problem",
         "kicker": "Problem",
-        "title": "AI is still trapped in POCs and superficial layers.",
-        "description": "Companies can test models, but struggle to turn AI into operational workflows with real impact. Without product integration, data, permissions, evaluation, and operations, AI becomes an expensive and unreliable experiment.",
+        "title": "Independent healthcare professionals operate in a fragmented way.",
+        "description": "Clinical operations still rely on disconnected tools, manual processes, and almost no operational intelligence.",
         "points": [
-          "AI projects often stop before reaching the user workflow that matters.",
-          "Teams lack architecture that connects LLMs, data, permissions, observability, and cost controls.",
-          "Value appears when AI operates inside the product, not as a peripheral feature."
+          "Scheduling tools disconnected from consultations.",
+          "Patient data spread across WhatsApp, documents, and systems.",
+          "Teleconsultation separated from clinical workflow.",
+          "No operational intelligence or automation."
+        ],
+        "callout": "Result: time wasted, disorganization, and poor patient experience."
+      },
+      {
+        "id": "target-customer",
+        "kicker": "Target customer",
+        "title": "Initial focus on independent professionals and small clinics.",
+        "description": "Sanu starts with segments that have high operational overload, low adoption complexity, and a clear need for a simple solution.",
+        "groups": [
+          {
+            "title": "Target customers",
+            "points": [
+              "Psychologists.",
+              "Independent doctors.",
+              "Small clinics with 1 to 3 professionals."
+            ]
+          },
+          {
+            "title": "Characteristics",
+            "points": [
+              "Manual operations or basic tools.",
+              "Limited technical knowledge.",
+              "High operational overload.",
+              "Need for simple, reliable solutions."
+            ]
+          }
         ]
       },
-      "solution": {
+      {
+        "id": "solution",
         "kicker": "Solution",
-        "title": "We do not just deliver projects: we create reusable AI products.",
-        "description": "Yoten Labs turns real problems into owned products, with components, patterns, and infrastructure that can be reused across verticals. Each delivery increases the speed of the next asset.",
+        "title": "Sanu centralizes clinical operations in an AI-native platform.",
+        "description": "One system to organize the clinical routine, reduce fragmentation, and create the foundation for AI automation.",
         "points": [
-          "AI applied directly inside business, support, operations, and decision workflows.",
-          "Iterative build cycles across product, engineering, testing, and operations.",
-          "Reuse of architecture, AI components, integrations, guardrails, and delivery patterns."
+          "Scheduling.",
+          "Teleconsultation.",
+          "Patient records.",
+          "Document management.",
+          "Communication.",
+          "AI-assisted workflows."
+        ],
+        "callout": "Everything in one place, designed for real-world usage."
+      },
+      {
+        "id": "product",
+        "kicker": "Product",
+        "title": "Sanu is already functional and running in production environment.",
+        "description": "The technical foundation was built to scale from day one, with core modules already implemented.",
+        "points": [
+          "Multi-tenant architecture.",
+          "Patient and appointment management.",
+          "Teleconsultation with video sessions.",
+          "Document storage and retrieval.",
+          "Role-based access control (RBAC).",
+          "Billing-ready structure."
+        ],
+        "callout": "Built to scale from day one."
+      },
+      {
+        "id": "ai-layer",
+        "kicker": "AI layer",
+        "title": "AI is integrated directly into workflows, not isolated as a separate tool.",
+        "description": "Sanu is designed to use AI inside clinical operations, with automation that reduces manual work and increases context.",
+        "points": [
+          "Clinical summarization.",
+          "Information extraction.",
+          "Context-aware assistance.",
+          "Future: decision support and operational automation."
+        ],
+        "callout": "AI embedded in the operation, not a separate layer."
+      },
+      {
+        "id": "why-now",
+        "kicker": "Why now",
+        "title": "The market is ready for an AI-native clinical solution.",
+        "points": [
+          "AI is finally usable in real workflows.",
+          "Healthcare professionals are overloaded.",
+          "Existing tools are fragmented and outdated.",
+          "Small clinics are underserved by modern software."
+        ],
+        "callout": "The window is open for a simple, reliable, AI-native product."
+      },
+      {
+        "id": "business-model",
+        "kicker": "Business model",
+        "title": "SaaS subscription per professional.",
+        "groups": [
+          {
+            "title": "Initial plans",
+            "points": [
+              "Starter: R$39/month.",
+              "Pro: R$99/month.",
+              "Premium (AI): R$199/month."
+            ]
+          },
+          {
+            "title": "Future expansion",
+            "points": [
+              "AI add-ons.",
+              "Usage-based features.",
+              "Advanced automation."
+            ]
+          }
         ]
       },
-      "approach": {
-        "kicker": "How we build",
-        "title": "The advantage is AI engineering shipped to production.",
-        "description": "We build with a pragmatic stack and focus on systems that work under real constraints: latency, cost, security, tenant isolation, answer quality, and user experience.",
-        "points": [
-          "Architecture with LLMs, RAG, agents, pipelines, embeddings, evaluation, and guardrails.",
-          "Stack with OpenAI, DSPy, FastAPI, Go, Next.js, PostgreSQL/pgvector, Redis, LiveKit, and Docker.",
-          "KISS, DRY, DDD, Clean Architecture, and Ports and Adapters keep speed without sacrificing maintainability."
-        ]
+      {
+        "id": "go-to-market",
+        "kicker": "Go-to-market",
+        "title": "Start manual, validate channels, and scale with evidence.",
+        "groups": [
+          {
+            "title": "Phase 1",
+            "points": [
+              "Direct outreach to psychologists and independent doctors.",
+              "Assisted onboarding.",
+              "Early adopters as validation base."
+            ]
+          },
+          {
+            "title": "Phase 2",
+            "points": [
+              "Paid acquisition.",
+              "Referrals and word-of-mouth.",
+              "Content and niche positioning."
+            ]
+          }
+        ],
+        "callout": "Start manual, scale through validated channels."
       },
-      "businessModel": {
-        "kicker": "Model",
-        "title": "Services fund and accelerate owned AI products.",
-        "description": "The studio model remains, but with sharper focus: projects and services create cash flow, market contact, and reusable components; owned assets capture long-term value.",
-        "points": [
-          "Builds and services generate market learning and validate real workflows.",
-          "Owned products compound intellectual property, infrastructure, and future distribution.",
-          "Each cycle grows Yoten Labs' component library and build speed."
-        ]
-      },
-      "differentiation": {
-        "kicker": "Differentiation",
-        "title": "The founding team combines deep AI with narrative and market strength.",
-        "description": "Yoten Labs combines experience in critical systems, LLMs, and software architecture with strategic communication, PR, audiovisual, and positioning clarity. That reduces the distance between product built, market understood, and story told well.",
-        "points": [
-          "Experience across distributed systems, payments, banking, cloud, messaging, and critical products.",
-          "Ability to turn problems into products, with AI integrated into the core workflow.",
-          "Communication and go-to-market strength to explain complex products clearly."
-        ]
-      },
-      "roadmap": {
+      {
+        "id": "roadmap",
         "kicker": "Roadmap",
-        "title": "Evolve Sanu and expand the portfolio of AI-native assets.",
-        "description": "The priority is to consolidate Sanu as execution proof, strengthen reusable AI infrastructure, and create new owned products where real workflows need applied intelligence.",
-        "points": [
-          "Near term: strengthen Sanu, demos, operational quality, and product narrative.",
-          "Mid term: expand AI modules, evaluation, automation, and reusable components.",
-          "Long term: build a portfolio of owned products supported by services, partnerships, and distribution."
+        "title": "Next 12 months focused on validation, iteration, and initial scale.",
+        "groups": [
+          {
+            "title": "Milestones",
+            "points": [
+              "0 to 10 users: validation.",
+              "10 to 50 users: product iteration.",
+              "50 to 200 users: initial scale."
+            ]
+          },
+          {
+            "title": "Focus",
+            "points": [
+              "Improve usability.",
+              "Validate pricing.",
+              "Optimize acquisition channels."
+            ]
+          }
         ]
       },
-      "team": {
+      {
+        "id": "market-opportunity",
+        "kicker": "Market opportunity",
+        "title": "A large, underserved, and growing opportunity.",
+        "description": "In Brazil alone, millions of independent healthcare professionals and thousands of small clinics operate without modern systems.",
+        "points": [
+          "Initial focus on psychologists and independent doctors.",
+          "Expansion into multi-specialty clinics.",
+          "Potential to enter broader healthcare verticals."
+        ],
+        "callout": "Large market, low operational sophistication, and growing demand for efficiency."
+      },
+      {
+        "id": "competition",
+        "kicker": "Competition",
+        "title": "Current alternatives solve only parts of the problem.",
+        "table": {
+          "headers": [
+            "Category",
+            "Limitation"
+          ],
+          "rows": [
+            [
+              "Traditional clinical systems",
+              "Complex, outdated, low usability."
+            ],
+            [
+              "Telemedicine tools",
+              "Not integrated with operations."
+            ],
+            [
+              "Generic SaaS tools",
+              "Not healthcare-specific."
+            ],
+            [
+              "AI tools",
+              "Not embedded in workflows."
+            ]
+          ]
+        },
+        "callout": "Sanu combines all layers into one system."
+      },
+      {
+        "id": "competitive-advantage",
+        "kicker": "Competitive advantage",
+        "title": "AI-native, full-stack, and driven by direct user feedback.",
+        "points": [
+          "AI-native from day one.",
+          "Built for real operational workflows.",
+          "Full-stack solution, not fragmented tools.",
+          "Modern architecture with scalable foundation.",
+          "Fast iteration driven by direct user feedback."
+        ]
+      },
+      {
+        "id": "team",
         "kicker": "Team",
-        "title": "Two complementary founders to build and position AI assets.",
-        "description": "For an early-stage company, the team is the core proof point. Yoten Labs starts with the technical depth to build complex products and the communication strength to turn technology into narrative, trust, and market.",
-        "points": []
+        "title": "Technical execution and market positioning in the same founding team.",
+        "groups": [
+          {
+            "title": "Felipe Ogata — Founder",
+            "points": [
+              "AI Engineer.",
+              "Experience building production-grade systems.",
+              "Focus on scalable architecture and AI integration."
+            ]
+          },
+          {
+            "title": "Roberta Silveira — Co-founder",
+            "points": [
+              "Communication and market positioning.",
+              "Branding and growth support.",
+              "Narrative clarity for product and distribution."
+            ]
+          }
+        ],
+        "callout": "Technical execution + market positioning."
+      },
+      {
+        "id": "vision",
+        "kicker": "Vision",
+        "title": "Start with healthcare and expand into AI-native operating systems for services.",
+        "description": "The long-term thesis is to create vertical products that reuse the same infrastructure to solve fragmented operations in service-based professions.",
+        "points": [
+          "Build a portfolio of AI-native vertical products.",
+          "Reuse infrastructure across products.",
+          "Scale through product-led growth."
+        ],
+        "callout": "We start with healthcare. The vision expands to other service-based professions."
+      },
+      {
+        "id": "ask",
+        "kicker": "The ask",
+        "title": "Pre-seed raise of R$500,000.",
+        "groups": [
+          {
+            "title": "Use of funds",
+            "points": [
+              "Customer acquisition.",
+              "Sales and support structure.",
+              "Product improvement and stability.",
+              "AI infrastructure and iteration."
+            ]
+          },
+          {
+            "title": "Runway target",
+            "points": [
+              "12 to 18 months.",
+              "Commercial validation.",
+              "Initial scale through proven channels."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "closing",
+        "kicker": "Closing",
+        "title": "We are building the operating system for independent healthcare professionals.",
+        "description": "Sanu is already functional. Now the focus is distribution, validation, and scale.",
+        "callout": "Product running. Next step: distribution, validation, and scale."
       }
-    },
-    "sanu": {
-      "kicker": "Lead product",
-      "title": "Sanu: a healthcare operations platform already in production.",
-      "description": "Sanu is the first concrete proof of the thesis: a multi-tenant SaaS product for clinical operations, connecting scheduling, teleconsultation, documents, support, billing, role-based access, and assistive AI into one operational experience.",
-      "statusLabel": "Sanu in production - trysanu.com",
-      "url": "https://www.trysanu.com",
-      "cards": [
-        {
-          "label": "What it is",
-          "title": "Multi-tenant clinical SaaS",
-          "description": "A platform for organizing clinical operations with tenant, organization, subunit, and role-based boundaries."
-        },
-        {
-          "label": "Audience",
-          "title": "Clinics and healthcare teams",
-          "description": "Serves doctors, admins, secretaries, patients, and platform operators through role-specific workflows."
-        },
-        {
-          "label": "Problem",
-          "title": "Fragmented operations",
-          "description": "Reduces the gap between scheduling, teleconsultation, documents, support, billing, compliance, and clinical AI."
-        },
-        {
-          "label": "Today",
-          "title": "Running product",
-          "description": "Flows exist for authentication, scheduling, LiveKit rooms, documents, guest access, billing, and support."
-        },
-        {
-          "label": "AI",
-          "title": "Clinical RAG and automation",
-          "description": "Separate AI service with clinical RAG, embeddings, guardrails, summarization, extraction, and optimization track."
-        }
-      ],
-      "capabilities": [
-        "LiveKit teleconsultation for doctor, patient, and guest access",
-        "RBAC with Casbin, tenant isolation, and platform/tenant domains",
-        "Clinical and administrative documents with LGPD-style gates",
-        "Clinical RAG with PostgreSQL/pgvector and a separate FastAPI service",
-        "Billing, plans, entitlements, and lifecycle events",
-        "Observability with structured logs, metrics, and Docker deployment"
-      ]
-    },
-    "team": {
-      "founders": [
-        {
-          "name": "Felipe Cavalcante Ogata",
-          "role": "Founder | AI and architecture",
-          "description": "AI engineer and software architect with 15+ years in backend, distributed systems, cloud, and critical platforms. Leads the technical construction of Yoten Labs products.",
-          "highlights": [
-            "Experience with RAG, LLMs, agents, DSPy, OpenAI Realtime API, and prompt engineering.",
-            "Worked across DOT Digital Group, Grupo Casas Bahia, Banco Mercantil, Getnet, Deloitte, Farfetch, Superdigital/Santander, and Zurich.",
-            "Strong foundation in DDD, Clean Architecture, Ports and Adapters, microservices, messaging, and critical systems."
-          ]
-        },
-        {
-          "name": "Roberta Silveira",
-          "role": "Founder | Communication and market",
-          "description": "Specialist in strategic communication, PR, journalism, audiovisual, and market context. Brings narrative clarity, public relations, and go-to-market capacity to complex products.",
-          "highlights": [
-            "Experience in agribusiness communication, financial markets, national media, and public positioning.",
-            "Worked as PR Manager at Máquina Cohn & Wolfe and as anchor/reporter at Canal Rural.",
-            "Background in Journalism, Audiovisual Communication, Capital Markets, Cybersecurity, and Philosophy."
-          ]
-        }
-      ]
-    },
+    ],
     "cta": {
-      "kicker": "Investor and partner contact",
-      "title": "Let's discuss the creation of owned assets with applied AI.",
-      "description": "Yoten Labs is building AI products with a focus on execution, technical reuse, and real problems. Sanu is the first production asset in this thesis.",
+      "kicker": "Investor contact",
+      "title": "Sanu is already functional. Now the focus is distribution, validation, and scale.",
+      "description": "We are raising R$500,000 pre-seed for customer acquisition, sales, support, product improvement, and AI infrastructure.",
       "primary": "Open contact form",
       "secondary": "Talk to Yoten Labs"
     }

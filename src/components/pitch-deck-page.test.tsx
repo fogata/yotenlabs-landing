@@ -18,7 +18,7 @@ describe("PitchDeckPage", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: "We build AI products that solve real problems, starting with Sanu.",
+        name: "Sanu",
       }),
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Start a conversation" })).toHaveAttribute(
@@ -32,35 +32,44 @@ describe("PitchDeckPage", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: "Construímos produtos de IA que resolvem problemas reais, começando pelo Sanu.",
+        name: "Sanu",
       }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "Sistema operacional AI-native para profissionais de saúde independentes. Felipe Ogata, Founder, e Roberta Silveira, Co-founder. Construído pela Yoten Labs.",
+      ),
     ).toBeInTheDocument();
   });
 
-  it("renders the key deck sections, Sanu, and founders", () => {
+  it("renders the Sanu pre-seed deck sections, pricing, ask, and founders", () => {
     render(<PitchDeckPage locale="en" messages={enMessages} />);
 
     expect(
       screen.getByRole("heading", {
-        name: "AI is still trapped in POCs and superficial layers.",
+        name: "Independent healthcare professionals operate in a fragmented way.",
       }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", {
-        name: "The advantage is AI engineering shipped to production.",
+        name: "Sanu centralizes clinical operations in an AI-native platform.",
       }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", {
-        name: "Sanu: a healthcare operations platform already in production.",
+        name: "SaaS subscription per professional.",
       }),
     ).toBeInTheDocument();
-    expect(screen.getByText("Clinical RAG and automation")).toBeInTheDocument();
-    expect(screen.getByText("Felipe Cavalcante Ogata")).toBeInTheDocument();
-    expect(screen.getByText("Roberta Silveira")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Sanu in production - trysanu.com" })).toHaveAttribute(
+    expect(screen.getByText("Premium (AI): R$199/month.")).toBeInTheDocument();
+    expect(screen.getByText("Pre-seed raise of R$500,000.")).toBeInTheDocument();
+    expect(screen.getByText("Felipe Ogata — Founder")).toBeInTheDocument();
+    expect(screen.getByText("Roberta Silveira — Co-founder")).toBeInTheDocument();
+    expect(
+      screen.getByText("Product running. Next step: distribution, validation, and scale."),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Start a conversation" })).toHaveAttribute(
       "href",
-      "https://www.trysanu.com",
+      "/en#contact",
     );
   });
 });

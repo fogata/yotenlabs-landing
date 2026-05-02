@@ -206,173 +206,325 @@
   },
   "pitchDeck": {
     "metadata": {
-      "title": "Pitch Deck Yoten Labs | AI Product Studio",
-      "description": "Pitch deck para investidores da Yoten Labs, um AI Product Studio que constrói produtos próprios com aplicações reais de IA, começando pelo Sanu."
+      "title": "Sanu Pitch Deck | Pre-seed",
+      "description": "Pitch deck pre-seed do Sanu, sistema operacional AI-native para profissionais de saúde independentes."
     },
     "header": {
       "back": "Voltar ao site",
       "cta": "Contato investidor"
     },
     "hero": {
-      "eyebrow": "Pitch deck para investidores",
-      "title": "Construímos produtos de IA que resolvem problemas reais, começando pelo Sanu.",
-      "description": "A Yoten Labs é um AI Product Studio focado em criar ativos próprios com aplicações reais de IA. Combinamos engenharia profunda, visão de produto e comunicação estratégica para tirar sistemas AI-native do conceito e colocá-los em produção.",
+      "eyebrow": "Sanu — Pitch Deck Pre-seed",
+      "title": "Sanu",
+      "description": "Sistema operacional AI-native para profissionais de saúde independentes. Felipe Ogata, Founder, e Roberta Silveira, Co-founder. Construído pela Yoten Labs.",
       "primaryCta": "Iniciar conversa",
-      "secondaryCta": "Ver a tese",
-      "panelLabel": "Tese de execução",
+      "secondaryCta": "Ver problema",
+      "panelLabel": "Resumo investidor",
       "signals": [
         {
-          "value": "Produtos",
-          "label": "Construímos produtos de IA, não apenas projetos ou demos isoladas."
+          "value": "Pre-seed",
+          "label": "Captação de R$500.000 para validação, aquisição e estabilidade."
         },
         {
-          "value": "Sanu",
-          "label": "Plataforma de saúde em produção, com workflows reais e arquitetura multi-tenant."
+          "value": "Produção",
+          "label": "Produto funcional rodando em ambiente de produção."
         },
         {
-          "value": "Velocidade",
-          "label": "Serviços, componentes reutilizáveis e stack própria aceleram novos ativos."
+          "value": "ICP claro",
+          "label": "Psicólogos, médicos independentes e clínicas pequenas."
         }
       ]
     },
-    "sections": {
-      "problem": {
+    "slides": [
+      {
+        "id": "problem",
         "kicker": "Problema",
-        "title": "IA ainda fica presa em POCs e camadas superficiais.",
-        "description": "Empresas conseguem testar modelos, mas têm dificuldade para transformar IA em workflows operacionais com impacto real. Sem integração com produto, dados, permissões, avaliação e operação, a IA vira experimento caro e pouco confiável.",
+        "title": "Profissionais de saúde independentes operam de forma fragmentada.",
+        "description": "A rotina clínica ainda depende de ferramentas desconectadas, processos manuais e pouca inteligência operacional.",
         "points": [
-          "Projetos de IA frequentemente param antes de chegar ao workflow real do usuário.",
-          "Falta arquitetura para conectar LLMs, dados, permissões, observabilidade e custos.",
-          "O valor aparece quando IA passa a operar dentro do produto, não como recurso periférico."
+          "Agenda desconectada das consultas.",
+          "Dados de pacientes espalhados entre WhatsApp, documentos e sistemas.",
+          "Teleconsulta separada do workflow clínico.",
+          "Ausência de inteligência operacional e automação."
+        ],
+        "callout": "Resultado: tempo desperdiçado, desorganização e experiência ruim para o paciente."
+      },
+      {
+        "id": "target-customer",
+        "kicker": "ICP",
+        "title": "Foco inicial em profissionais independentes e clínicas pequenas.",
+        "description": "O Sanu começa por segmentos com alta sobrecarga operacional, baixa complexidade de adoção e necessidade clara de uma solução simples.",
+        "groups": [
+          {
+            "title": "Clientes-alvo",
+            "points": [
+              "Psicólogos.",
+              "Médicos independentes.",
+              "Clínicas pequenas com 1 a 3 profissionais."
+            ]
+          },
+          {
+            "title": "Características",
+            "points": [
+              "Operação manual ou com ferramentas básicas.",
+              "Conhecimento técnico limitado.",
+              "Alta sobrecarga operacional.",
+              "Necessidade de soluções simples e confiáveis."
+            ]
+          }
         ]
       },
-      "solution": {
+      {
+        "id": "solution",
         "kicker": "Solução",
-        "title": "Não fazemos apenas projetos: criamos produtos de IA reutilizáveis.",
-        "description": "A Yoten Labs transforma problemas reais em produtos próprios, com componentes, padrões e infraestrutura que podem ser reaproveitados entre verticais. Cada entrega aumenta a velocidade do próximo ativo.",
+        "title": "Sanu centraliza a operação clínica em uma plataforma AI-native.",
+        "description": "Um sistema único para organizar a rotina clínica, reduzir fragmentação e criar a base para automação com IA.",
         "points": [
-          "IA aplicada diretamente em workflows de negócio, atendimento, operação e decisão.",
-          "Construção iterativa com ciclos curtos de produto, engenharia, teste e operação.",
-          "Reuso de arquitetura, componentes de IA, integrações, guardrails e padrões de entrega."
+          "Agendamento.",
+          "Teleconsulta.",
+          "Prontuário e registros de pacientes.",
+          "Gestão de documentos.",
+          "Comunicação.",
+          "Workflows assistidos por IA."
+        ],
+        "callout": "Tudo em um só lugar, desenhado para uso real."
+      },
+      {
+        "id": "product",
+        "kicker": "Produto",
+        "title": "Sanu já é funcional e roda em ambiente de produção.",
+        "description": "A base técnica foi construída para escalar desde o primeiro dia, com módulos centrais já implementados.",
+        "points": [
+          "Arquitetura multi-tenant.",
+          "Gestão de pacientes e consultas.",
+          "Teleconsulta com sessões de vídeo.",
+          "Armazenamento e recuperação de documentos.",
+          "Controle de acesso por papéis (RBAC).",
+          "Estrutura pronta para billing."
+        ],
+        "callout": "Construído para escalar desde o primeiro dia."
+      },
+      {
+        "id": "ai-layer",
+        "kicker": "Diferencial de IA",
+        "title": "A IA está integrada ao workflow, não isolada como ferramenta externa.",
+        "description": "O Sanu foi desenhado para usar IA dentro da operação clínica, com automações que reduzem trabalho manual e aumentam contexto.",
+        "points": [
+          "Sumarização clínica.",
+          "Extração de informações.",
+          "Assistência contextual.",
+          "Futuro: suporte à decisão e automação operacional."
+        ],
+        "callout": "IA embutida na operação, não uma camada separada."
+      },
+      {
+        "id": "why-now",
+        "kicker": "Por que agora",
+        "title": "O mercado está pronto para uma solução clínica AI-native.",
+        "points": [
+          "IA finalmente é utilizável em workflows reais.",
+          "Profissionais de saúde estão sobrecarregados.",
+          "Ferramentas existentes são fragmentadas e desatualizadas.",
+          "Clínicas pequenas são mal atendidas por softwares modernos."
+        ],
+        "callout": "A janela está aberta para um produto simples, confiável e nativo em IA."
+      },
+      {
+        "id": "business-model",
+        "kicker": "Modelo de negócio",
+        "title": "Assinatura SaaS por profissional.",
+        "groups": [
+          {
+            "title": "Planos iniciais",
+            "points": [
+              "Starter: R$39/mês.",
+              "Pro: R$99/mês.",
+              "Premium (AI): R$199/mês."
+            ]
+          },
+          {
+            "title": "Expansão futura",
+            "points": [
+              "Add-ons de IA.",
+              "Recursos cobrados por uso.",
+              "Automação avançada."
+            ]
+          }
         ]
       },
-      "approach": {
-        "kicker": "Como construímos",
-        "title": "A vantagem está na engenharia de IA colocada em produção.",
-        "description": "Construímos com stack pragmática e foco em sistemas que funcionam sob restrições reais: latência, custo, segurança, tenant isolation, qualidade de resposta e experiência de uso.",
-        "points": [
-          "Arquitetura com LLMs, RAG, agentes, pipelines, embeddings, avaliação e guardrails.",
-          "Stack com OpenAI, DSPy, FastAPI, Go, Next.js, PostgreSQL/pgvector, Redis, LiveKit e Docker.",
-          "Princípios KISS, DRY, DDD, Clean Architecture e Ports and Adapters para manter velocidade sem perder manutenibilidade."
-        ]
+      {
+        "id": "go-to-market",
+        "kicker": "Go-to-market",
+        "title": "Começar manual, validar canais e escalar com evidência.",
+        "groups": [
+          {
+            "title": "Fase 1",
+            "points": [
+              "Outreach direto para psicólogos e médicos independentes.",
+              "Onboarding assistido.",
+              "Early adopters como base de validação."
+            ]
+          },
+          {
+            "title": "Fase 2",
+            "points": [
+              "Aquisição paga.",
+              "Indicações e boca a boca.",
+              "Conteúdo e posicionamento de nicho."
+            ]
+          }
+        ],
+        "callout": "Começar manualmente, escalar pelos canais validados."
       },
-      "businessModel": {
-        "kicker": "Modelo",
-        "title": "Serviços financiam e aceleram produtos próprios de IA.",
-        "description": "O modelo de estúdio continua, mas com foco claro: projetos e serviços criam caixa, contato com problemas reais e componentes reutilizáveis; os ativos próprios capturam valor de longo prazo.",
-        "points": [
-          "Builds e serviços geram aprendizado de mercado e validam workflows reais.",
-          "Produtos próprios acumulam propriedade intelectual, infraestrutura e distribuição futura.",
-          "A cada ciclo, a Yoten Labs aumenta sua biblioteca de componentes e sua velocidade de construção."
-        ]
-      },
-      "differentiation": {
-        "kicker": "Diferencial",
-        "title": "Time fundador combina IA profunda com narrativa e mercado.",
-        "description": "A Yoten Labs une experiência técnica em sistemas críticos, LLMs e arquitetura de software com comunicação estratégica, PR, audiovisual e clareza de posicionamento. Isso reduz a distância entre produto construído, mercado entendido e história bem contada.",
-        "points": [
-          "Experiência em sistemas distribuídos, pagamentos, bancos, cloud, mensageria e produtos críticos.",
-          "Capacidade de transformar problema em produto, com IA integrada ao workflow central.",
-          "Força de comunicação e go-to-market para explicar produtos complexos com clareza."
-        ]
-      },
-      "roadmap": {
+      {
+        "id": "roadmap",
         "kicker": "Roadmap",
-        "title": "Evoluir o Sanu e ampliar o portfólio de ativos AI-native.",
-        "description": "A prioridade é consolidar o Sanu como prova de execução, fortalecer infraestrutura reutilizável de IA e criar novos produtos próprios onde workflows reais precisem de inteligência aplicada.",
-        "points": [
-          "Curto prazo: reforçar Sanu, demonstrações, qualidade operacional e narrativa de produto.",
-          "Médio prazo: ampliar módulos de IA, avaliação, automação e componentes reutilizáveis.",
-          "Longo prazo: formar portfólio de produtos próprios apoiado por serviços, parcerias e distribuição."
+        "title": "Próximos 12 meses focados em validação, iteração e escala inicial.",
+        "groups": [
+          {
+            "title": "Marcos",
+            "points": [
+              "0 a 10 usuários: validação.",
+              "10 a 50 usuários: iteração de produto.",
+              "50 a 200 usuários: escala inicial."
+            ]
+          },
+          {
+            "title": "Foco",
+            "points": [
+              "Melhorar usabilidade.",
+              "Validar pricing.",
+              "Otimizar canais de aquisição."
+            ]
+          }
         ]
       },
-      "team": {
+      {
+        "id": "market-opportunity",
+        "kicker": "Mercado",
+        "title": "Uma oportunidade grande, mal atendida e em crescimento.",
+        "description": "Só no Brasil, há milhões de profissionais de saúde independentes e milhares de clínicas pequenas operando sem sistemas modernos.",
+        "points": [
+          "Foco inicial em psicólogos e médicos independentes.",
+          "Expansão para clínicas multi-especialidade.",
+          "Potencial de entrada em verticais mais amplas de saúde."
+        ],
+        "callout": "Grande mercado, baixa sofisticação operacional e demanda crescente por eficiência."
+      },
+      {
+        "id": "competition",
+        "kicker": "Competição",
+        "title": "As alternativas atuais resolvem partes do problema.",
+        "table": {
+          "headers": [
+            "Categoria",
+            "Limitação"
+          ],
+          "rows": [
+            [
+              "Sistemas clínicos tradicionais",
+              "Complexos, desatualizados e com baixa usabilidade."
+            ],
+            [
+              "Ferramentas de telemedicina",
+              "Não integradas à operação."
+            ],
+            [
+              "SaaS genéricos",
+              "Não específicos para saúde."
+            ],
+            [
+              "Ferramentas de IA",
+              "Não embutidas nos workflows."
+            ]
+          ]
+        },
+        "callout": "Sanu combina as camadas em um único sistema."
+      },
+      {
+        "id": "competitive-advantage",
+        "kicker": "Vantagem competitiva",
+        "title": "Produto AI-native, full-stack e orientado por feedback direto.",
+        "points": [
+          "AI-native desde o primeiro dia.",
+          "Construído para workflows operacionais reais.",
+          "Solução full-stack, não um conjunto fragmentado de ferramentas.",
+          "Arquitetura moderna e fundação escalável.",
+          "Iteração rápida baseada em feedback direto dos usuários."
+        ]
+      },
+      {
+        "id": "team",
         "kicker": "Time",
-        "title": "Dois fundadores complementares para construir e posicionar ativos de IA.",
-        "description": "Para uma empresa early stage, o time é a principal evidência. A Yoten Labs nasce com profundidade técnica para construir produtos complexos e capacidade de comunicação para transformar tecnologia em narrativa, confiança e mercado.",
-        "points": []
+        "title": "Execução técnica e posicionamento de mercado no mesmo time fundador.",
+        "groups": [
+          {
+            "title": "Felipe Ogata — Founder",
+            "points": [
+              "AI Engineer.",
+              "Experiência construindo sistemas production-grade.",
+              "Foco em arquitetura escalável e integração de IA."
+            ]
+          },
+          {
+            "title": "Roberta Silveira — Co-founder",
+            "points": [
+              "Comunicação e posicionamento de mercado.",
+              "Branding e suporte a crescimento.",
+              "Clareza narrativa para produto e distribuição."
+            ]
+          }
+        ],
+        "callout": "Execução técnica + posicionamento de mercado."
+      },
+      {
+        "id": "vision",
+        "kicker": "Visão",
+        "title": "Começar pela saúde e expandir para sistemas operacionais AI-native em serviços.",
+        "description": "A tese de longo prazo é criar produtos verticais que usem a mesma infraestrutura para resolver operações fragmentadas em profissões baseadas em serviço.",
+        "points": [
+          "Construir portfólio de produtos verticais AI-native.",
+          "Reutilizar infraestrutura entre produtos.",
+          "Escalar com product-led growth."
+        ],
+        "callout": "Começamos com saúde. A visão é ampliar para outras profissões de serviço."
+      },
+      {
+        "id": "ask",
+        "kicker": "The ask",
+        "title": "Captação pre-seed de R$500.000.",
+        "groups": [
+          {
+            "title": "Uso dos recursos",
+            "points": [
+              "Aquisição de clientes.",
+              "Estrutura de vendas e suporte.",
+              "Melhoria e estabilidade do produto.",
+              "Infraestrutura e iteração de IA."
+            ]
+          },
+          {
+            "title": "Runway alvo",
+            "points": [
+              "12 a 18 meses.",
+              "Validação comercial.",
+              "Escala inicial com canais comprovados."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "closing",
+        "kicker": "Closing",
+        "title": "Estamos construindo o sistema operacional para profissionais de saúde independentes.",
+        "description": "Sanu já é funcional. Agora o foco é distribuição, validação e escala.",
+        "callout": "Produto rodando. Próxima etapa: distribuição, validação e escala."
       }
-    },
-    "sanu": {
-      "kicker": "Produto protagonista",
-      "title": "Sanu: plataforma de operações em saúde já em produção.",
-      "description": "O Sanu é a primeira prova concreta da tese: um produto SaaS multi-tenant para operação clínica, conectando agenda, teleconsulta, documentos, suporte, billing, acesso por perfil e IA assistiva em uma experiência operacional única.",
-      "statusLabel": "Sanu em produção - trysanu.com",
-      "url": "https://www.trysanu.com",
-      "cards": [
-        {
-          "label": "O que é",
-          "title": "SaaS clínico multi-tenant",
-          "description": "Uma plataforma para organizar operações clínicas com fronteiras por tenant, organização, subunidade e perfis de acesso."
-        },
-        {
-          "label": "Para quem",
-          "title": "Clínicas e times de saúde",
-          "description": "Atende médicos, administradores, secretarias, pacientes e operadores de plataforma em fluxos separados por papel."
-        },
-        {
-          "label": "Problema",
-          "title": "Operação fragmentada",
-          "description": "Reduz a distância entre agenda, teleconsulta, documentos, suporte, billing, compliance e IA clínica."
-        },
-        {
-          "label": "Hoje",
-          "title": "Produto rodando",
-          "description": "Já existem fluxos implementados para autenticação, agenda, sala LiveKit, documentos, guest access, billing e suporte."
-        },
-        {
-          "label": "IA",
-          "title": "RAG e automação clínica",
-          "description": "Serviço de IA separado com RAG clínico, embeddings, guardrails, sumarização, extração e trilha de otimização."
-        }
-      ],
-      "capabilities": [
-        "Teleconsulta com LiveKit para médico, paciente e convidado",
-        "RBAC com Casbin, tenant isolation e domínios platform/tenant",
-        "Documentos clínicos e administrativos com gates LGPD",
-        "RAG clínico com PostgreSQL/pgvector e serviço FastAPI separado",
-        "Billing, planos, entitlements e eventos de ciclo de vida",
-        "Observabilidade com logs estruturados, métricas e deploy Docker"
-      ]
-    },
-    "team": {
-      "founders": [
-        {
-          "name": "Felipe Cavalcante Ogata",
-          "role": "Fundador | IA e arquitetura",
-          "description": "Engenheiro de IA e arquiteto de software com mais de 15 anos em backend, sistemas distribuídos, cloud e plataformas críticas. Lidera a construção técnica dos produtos da Yoten Labs.",
-          "highlights": [
-            "Experiência com RAG, LLMs, agentes, DSPy, OpenAI Realtime API e engenharia de prompts.",
-            "Passagens por DOT Digital Group, Grupo Casas Bahia, Banco Mercantil, Getnet, Deloitte, Farfetch, Superdigital/Santander e Zurich.",
-            "Base forte em DDD, Clean Architecture, Ports and Adapters, microsserviços, mensageria e sistemas críticos."
-          ]
-        },
-        {
-          "name": "Roberta Silveira",
-          "role": "Fundadora | Comunicação e mercado",
-          "description": "Especialista em comunicação estratégica, PR, jornalismo, audiovisual e mercado. Traz clareza narrativa, relações públicas e capacidade de go-to-market para produtos complexos.",
-          "highlights": [
-            "Experiência em comunicação para o agronegócio, mercado financeiro, mídia nacional e posicionamento público.",
-            "Atuação como PR Manager na Máquina Cohn & Wolfe e como apresentadora e repórter no Canal Rural.",
-            "Formação em Jornalismo, Comunicação Audiovisual, Mercado de Capitais, Cibersegurança e Filosofia."
-          ]
-        }
-      ]
-    },
+    ],
     "cta": {
-      "kicker": "Contato para investidores e parceiros",
-      "title": "Vamos conversar sobre a criação de ativos próprios com IA aplicada.",
-      "description": "A Yoten Labs está construindo produtos de IA com foco em execução, reuso técnico e problemas reais. O Sanu é o primeiro ativo em produção dessa tese.",
+      "kicker": "Contato para investidores",
+      "title": "Sanu já está funcional. Agora o foco é distribuição, validação e escala.",
+      "description": "Estamos captando R$500.000 pre-seed para aquisição de clientes, vendas, suporte, melhoria do produto e infraestrutura de IA.",
       "primary": "Abrir formulário",
       "secondary": "Falar com a Yoten Labs"
     }
