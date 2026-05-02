@@ -214,6 +214,7 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
         <div className="grid gap-6">
           {closingDeckSections.map((sectionKey, index) => {
             const section = pitchDeck.sections[sectionKey];
+            const isTeamSection = sectionKey === "team";
 
             return (
               <section
@@ -222,7 +223,13 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
                 className="scroll-mt-24 rounded-sm bg-[var(--surface-low)] p-7 md:p-10"
                 aria-labelledby={`${sectionKey}-title`}
               >
-                <div className="grid gap-10 lg:grid-cols-[220px_minmax(0,1fr)]">
+                <div
+                  className={
+                    isTeamSection
+                      ? "grid gap-8"
+                      : "grid gap-10 lg:grid-cols-[220px_minmax(0,1fr)]"
+                  }
+                >
                   <div>
                     <p className="font-mono text-[10px] uppercase text-[var(--muted-dim)]">
                       {String(index + 5).padStart(2, "0")}
@@ -231,7 +238,11 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
                     </p>
                     <h2
                       id={`${sectionKey}-title`}
-                      className="mt-4 text-3xl font-semibold text-white md:text-4xl"
+                      className={
+                        isTeamSection
+                          ? "mt-4 max-w-4xl text-3xl font-semibold text-white md:text-4xl"
+                          : "mt-4 text-3xl font-semibold text-white md:text-4xl"
+                      }
                     >
                       {section.title}
                     </h2>
@@ -240,7 +251,7 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
                     <p className="max-w-3xl text-sm leading-7 text-[var(--muted)]">
                       {section.description}
                     </p>
-                    {sectionKey === "team" ? (
+                    {isTeamSection ? (
                       <div className="mt-8 grid gap-4 md:grid-cols-2">
                         {pitchDeck.team.founders.map((founder) => (
                           <article
