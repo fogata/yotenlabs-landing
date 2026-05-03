@@ -73,7 +73,7 @@ describe("PitchDeckPage", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        "Execution metric: functional product with 6 core modules implemented and running in production.",
+        "Execution metric: functional product with core modules implemented and running in production; integrated billing remains a future implementation.",
       ),
     ).toBeInTheDocument();
     expect(screen.getByText("Sanu replaces 4 to 5 tools with one simple platform.")).toBeInTheDocument();

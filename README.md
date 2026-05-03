@@ -106,7 +106,7 @@ Estrutura atual:
 - Ask pre-seed de R$500.000 com uso de recursos e runway alvo.
 - Conteúdo bilíngue em pt-BR e en-US, com linguagem de investidor, direta e focada em conversão.
 - Hook recorrente: Sanu como sistema operacional do profissional de saúde autônomo, substituindo 4 a 5 ferramentas em uma plataforma simples.
-- Métrica pública de execução: produto funcional com 6 módulos core implementados e rodando em produção.
+- Métrica pública de execução: produto funcional com módulos core implementados e rodando em produção; cobrança e status financeiro integrados aparecem como implementação futura.
 
 Arquivos principais:
 

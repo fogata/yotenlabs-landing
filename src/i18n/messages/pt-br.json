@@ -142,14 +142,14 @@
       {
         "name": "Sanu",
         "tagline": "Operações de plataforma para saúde",
-        "description": "Plataforma de operações em saúde em produção em trysanu.com, com fundações multi-tenant para RBAC, documentos, agendamento, eventos de billing e fluxos de sessão em tempo real, desenhada para clareza, confiança e resultados mensuráveis.",
+        "description": "Plataforma de operações em saúde em produção em trysanu.com, com fundações multi-tenant para RBAC, documentos, agendamento e fluxos de sessão em tempo real, desenhada para clareza, confiança e resultados mensuráveis. Billing integrado está no roadmap.",
         "status": "Produção",
         "url": "https://www.trysanu.com",
         "tags": [
           "RBAC",
           "Agendamento",
           "Documentos",
-          "Eventos de billing",
+          "Roadmap de billing",
           "Sessões em tempo real"
         ]
       }
@@ -226,8 +226,8 @@
           "label": "Captação de R$500.000 para aquisição, validação e estabilidade."
         },
         {
-          "value": "6 módulos",
-          "label": "Produto funcional com agenda, pacientes, teleconsulta, documentos, RBAC e billing-ready."
+          "value": "5 módulos + roadmap",
+          "label": "Produto funcional com agenda, pacientes, teleconsulta, documentos e RBAC. Billing integrado é implementação futura."
         },
         {
           "value": "ICP claro",
@@ -259,7 +259,7 @@
           "Agenda separada da teleconsulta.",
           "Documentos enviados por links, e-mail ou mensagens.",
           "Histórico do paciente sem contexto único.",
-          "Cobrança e status financeiro fora do fluxo clínico.",
+          "Implementação futura: cobrança e status financeiro integrados ao fluxo clínico.",
           "Nenhuma automação para reduzir trabalho repetitivo."
         ],
         "callout": "O Sanu substitui 4 a 5 ferramentas em uma única plataforma simples."
@@ -308,16 +308,16 @@
         "id": "product",
         "kicker": "Produto",
         "title": "Sanu já é funcional e roda em ambiente de produção.",
-        "description": "A base técnica foi construída para escalar desde o primeiro dia, com 6 módulos core já implementados.",
+        "description": "A base técnica foi construída para escalar desde o primeiro dia, com módulos core já implementados e integração financeira planejada no roadmap.",
         "points": [
           "Arquitetura multi-tenant.",
           "Gestão de pacientes e consultas.",
           "Teleconsulta com sessões de vídeo.",
           "Armazenamento e recuperação de documentos.",
           "Controle de acesso por papéis (RBAC).",
-          "Estrutura pronta para billing."
+          "Roadmap para cobrança e status financeiro integrados."
         ],
-        "callout": "Métrica de execução: produto funcional com 6 módulos core implementados e rodando em produção."
+        "callout": "Métrica de execução: produto funcional com módulos core implementados e rodando em produção; billing integrado segue como implementação futura."
       },
       {
         "id": "ai-layer",
@@ -543,7 +543,7 @@
     "cta": {
       "kicker": "Contato para investidores",
       "title": "Sanu é o sistema operacional do profissional de saúde autônomo.",
-      "description": "Produto funcional, 6 módulos core implementados e captação pre-seed de R$500.000 para aquisição, vendas, suporte, estabilidade e infraestrutura de IA.",
+      "description": "Produto funcional, módulos core implementados, billing integrado no roadmap e captação pre-seed de R$500.000 para aquisição, vendas, suporte, estabilidade e infraestrutura de IA.",
       "primary": "Abrir formulário",
       "secondary": "Falar com a Yoten Labs"
     }

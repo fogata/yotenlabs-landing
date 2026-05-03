@@ -142,14 +142,14 @@
       {
         "name": "Sanu",
         "tagline": "Healthcare platform operations",
-        "description": "Production healthcare operations platform available at trysanu.com, with multi-tenant foundations for RBAC, documents, scheduling, billing events, and real-time session flows designed for clarity, trust, and measurable outcomes.",
+        "description": "Production healthcare operations platform available at trysanu.com, with multi-tenant foundations for RBAC, documents, scheduling, and real-time session flows designed for clarity, trust, and measurable outcomes. Integrated billing is on the roadmap.",
         "status": "Production",
         "url": "https://www.trysanu.com",
         "tags": [
           "RBAC",
           "Scheduling",
           "Docs",
-          "Billing events",
+          "Billing roadmap",
           "Realtime sessions"
         ]
       }
@@ -226,8 +226,8 @@
           "label": "R$500,000 raise for acquisition, validation, and stability."
         },
         {
-          "value": "6 modules",
-          "label": "Functional product with scheduling, patients, teleconsultation, documents, RBAC, and billing-ready foundation."
+          "value": "5 modules + roadmap",
+          "label": "Functional product with scheduling, patients, teleconsultation, documents, and RBAC. Integrated billing is a future implementation."
         },
         {
           "value": "Clear ICP",
@@ -259,7 +259,7 @@
           "Scheduling separated from teleconsultation.",
           "Documents sent through links, email, or messages.",
           "Patient history without one source of context.",
-          "Billing and financial status outside the clinical flow.",
+          "Future implementation: billing and financial status integrated into the clinical flow.",
           "No automation to reduce repetitive work."
         ],
         "callout": "Sanu replaces 4 to 5 tools with one simple platform."
@@ -308,16 +308,16 @@
         "id": "product",
         "kicker": "Product",
         "title": "Sanu is already functional and running in production environment.",
-        "description": "The technical foundation was built to scale from day one, with 6 core modules already implemented.",
+        "description": "The technical foundation was built to scale from day one, with core modules already implemented and financial integration planned on the roadmap.",
         "points": [
           "Multi-tenant architecture.",
           "Patient and appointment management.",
           "Teleconsultation with video sessions.",
           "Document storage and retrieval.",
           "Role-based access control (RBAC).",
-          "Billing-ready structure."
+          "Roadmap for integrated billing and financial status."
         ],
-        "callout": "Execution metric: functional product with 6 core modules implemented and running in production."
+        "callout": "Execution metric: functional product with core modules implemented and running in production; integrated billing remains a future implementation."
       },
       {
         "id": "ai-layer",
@@ -543,7 +543,7 @@
     "cta": {
       "kicker": "Investor contact",
       "title": "Sanu is the operating system for independent healthcare professionals.",
-      "description": "Functional product, 6 core modules implemented, and a R$500,000 pre-seed raise for acquisition, sales, support, stability, and AI infrastructure.",
+      "description": "Functional product, core modules implemented, integrated billing on the roadmap, and a R$500,000 pre-seed raise for acquisition, sales, support, stability, and AI infrastructure.",
       "primary": "Open contact form",
       "secondary": "Talk to Yoten Labs"
     }
