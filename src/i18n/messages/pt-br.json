@@ -336,6 +336,7 @@
         "id": "why-now",
         "kicker": "Por que agora",
         "title": "IA, pressão operacional e software legado criaram a janela certa.",
+        "description": "O mercado chegou a um ponto em que automação prática, usabilidade simples e operação integrada deixaram de ser diferenciais e passaram a ser necessidade.",
         "points": [
           "IA finalmente é útil em tarefas do dia a dia, não só em demonstrações.",
           "Custo operacional e carga administrativa dos profissionais continuam subindo.",
@@ -373,6 +374,7 @@
         "id": "go-to-market",
         "kicker": "Go-to-market",
         "title": "Começar manual, validar canais e escalar com evidência.",
+        "description": "A entrada no mercado prioriza aprendizado direto com usuários iniciais antes de ampliar aquisição paga e canais recorrentes.",
         "groups": [
           {
             "title": "Fase 1",
@@ -397,6 +399,7 @@
         "id": "roadmap",
         "kicker": "Roadmap",
         "title": "Próximos 12 meses focados em validação, iteração e escala inicial.",
+        "description": "O roadmap concentra energia em adoção real, melhoria contínua do produto e avanço gradual para escala comercial.",
         "groups": [
           {
             "title": "Marcos",
@@ -433,6 +436,7 @@
         "id": "competition",
         "kicker": "Competição",
         "title": "As alternativas atuais resolvem partes do problema.",
+        "description": "O mercado já tem ferramentas úteis, mas elas atacam pedaços isolados da rotina e deixam a operação fragmentada.",
         "table": {
           "headers": [
             "Categoria",
@@ -463,6 +467,7 @@
         "id": "competitive-advantage",
         "kicker": "Vantagem competitiva",
         "title": "A vantagem é comercial: substituir ferramentas e reduzir complexidade.",
+        "description": "O Sanu compete pela simplicidade operacional percebida pelo usuário, não apenas pela profundidade técnica da plataforma.",
         "points": [
           "Substitui 4 a 5 ferramentas em uma única plataforma simples.",
           "Centraliza agenda, teleconsulta, pacientes, documentos, comunicação e IA.",
@@ -476,6 +481,7 @@
         "id": "team",
         "kicker": "Time",
         "title": "Execução técnica e posicionamento de mercado no mesmo time fundador.",
+        "description": "O time fundador combina engenharia de produto, sistemas com IA e narrativa comercial para transformar uma dor operacional clara em adoção.",
         "groups": [
           {
             "title": "Felipe Ogata — Founder",
@@ -512,6 +518,7 @@
         "id": "ask",
         "kicker": "The ask",
         "title": "Captação pre-seed de R$500.000.",
+        "description": "A rodada busca financiar aquisição, validação comercial, estabilidade do produto e infraestrutura de IA para chegar aos próximos marcos.",
         "groups": [
           {
             "title": "Uso dos recursos",

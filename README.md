@@ -107,6 +107,7 @@ Estrutura atual:
 - Conteúdo bilíngue em pt-BR e en-US, com linguagem de investidor, direta e focada em conversão.
 - Hook recorrente: Sanu como sistema operacional do profissional de saúde autônomo, substituindo 4 a 5 ferramentas em uma plataforma simples.
 - Métrica pública de execução: produto funcional com módulos core implementados e rodando em produção; cobrança e status financeiro integrados aparecem como implementação futura.
+- Todos os slides narrativos do pitch deck devem manter uma frase introdutória (`description`) antes dos blocos de bullets, grupos ou tabelas, para consistência de leitura.
 
 Arquivos principais:
 

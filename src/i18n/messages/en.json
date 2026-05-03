@@ -336,6 +336,7 @@
         "id": "why-now",
         "kicker": "Why now",
         "title": "AI, operational pressure, and legacy software created the right window.",
+        "description": "The market has reached a point where practical automation, simple usability, and integrated operations are no longer nice-to-have advantages.",
         "points": [
           "AI is finally useful in daily tasks, not only in demos.",
           "Operational cost and administrative load keep increasing for professionals.",
@@ -373,6 +374,7 @@
         "id": "go-to-market",
         "kicker": "Go-to-market",
         "title": "Start manual, validate channels, and scale with evidence.",
+        "description": "The market entry prioritizes direct learning with early users before scaling paid acquisition and repeatable channels.",
         "groups": [
           {
             "title": "Phase 1",
@@ -397,6 +399,7 @@
         "id": "roadmap",
         "kicker": "Roadmap",
         "title": "Next 12 months focused on validation, iteration, and initial scale.",
+        "description": "The roadmap focuses energy on real adoption, continuous product improvement, and a gradual move toward commercial scale.",
         "groups": [
           {
             "title": "Milestones",
@@ -433,6 +436,7 @@
         "id": "competition",
         "kicker": "Competition",
         "title": "Current alternatives solve only parts of the problem.",
+        "description": "The market already has useful tools, but they solve isolated parts of the routine and leave operations fragmented.",
         "table": {
           "headers": [
             "Category",
@@ -463,6 +467,7 @@
         "id": "competitive-advantage",
         "kicker": "Competitive advantage",
         "title": "The advantage is commercial: replace tools and reduce complexity.",
+        "description": "Sanu competes through the operational simplicity users can feel, not only through the technical depth of the platform.",
         "points": [
           "Replaces 4 to 5 tools with one simple platform.",
           "Centralizes scheduling, teleconsultation, patients, documents, communication, and AI.",
@@ -476,6 +481,7 @@
         "id": "team",
         "kicker": "Team",
         "title": "Technical execution and market positioning in the same founding team.",
+        "description": "The founding team combines product engineering, AI systems, and commercial narrative to turn a clear operational pain into adoption.",
         "groups": [
           {
             "title": "Felipe Ogata — Founder",
@@ -512,6 +518,7 @@
         "id": "ask",
         "kicker": "The ask",
         "title": "Pre-seed raise of R$500,000.",
+        "description": "The round funds acquisition, commercial validation, product stability, and AI infrastructure to reach the next milestones.",
         "groups": [
           {
             "title": "Use of funds",
