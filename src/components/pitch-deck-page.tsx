@@ -33,6 +33,29 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
   const { pitchDeck } = messages;
   const slides = pitchDeck.slides as PitchSlide[];
   const contactSectionId = "pitch-contact";
+  const pitchContactLabels = {
+    ...messages.contact,
+    cta: locale === "pt-br" ? "Enviar contato investidor" : "Send investor contact",
+    fields: {
+      ...messages.contact.fields,
+      company: locale === "pt-br" ? "Fundo ou empresa" : "Fund or firm",
+      message:
+        locale === "pt-br"
+          ? "Contexto da conversa"
+          : "Conversation context",
+    },
+    placeholders: {
+      ...messages.contact.placeholders,
+      company:
+        locale === "pt-br"
+          ? "Fundo, family office ou empresa"
+          : "Fund, family office, or company",
+      message:
+        locale === "pt-br"
+          ? "Compartilhe seu perfil investidor, tese, dúvidas sobre a rodada ou próximos passos para uma conversa."
+          : "Share your investor profile, thesis, questions about the round, or next steps for a conversation.",
+    },
+  };
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[var(--background)]">
@@ -219,34 +242,6 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
           ))}
         </div>
 
-        <section className="grid gap-10 bg-[#101725] px-6 py-16 md:px-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.6fr)] lg:items-center">
-          <div>
-            <p className="font-mono text-[10px] uppercase text-[var(--accent-cyan)]">
-              {pitchDeck.cta.kicker}
-            </p>
-            <h2 className="mt-4 max-w-3xl text-4xl font-semibold text-white">
-              {pitchDeck.cta.title}
-            </h2>
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-[var(--muted)]">
-              {pitchDeck.cta.description}
-            </p>
-          </div>
-          <div className="flex flex-col gap-4">
-            <a
-              href={`#${contactSectionId}`}
-              className="inline-flex items-center justify-center rounded-sm bg-[var(--accent-cyan)] px-6 py-3 text-xs font-semibold text-[#031014] hover:translate-y-[-1px]"
-            >
-              {pitchDeck.cta.primary}
-            </a>
-            <Link
-              href={`#${contactSectionId}`}
-              className="inline-flex items-center justify-center rounded-sm border border-[var(--border)] bg-[#0d151d]/70 px-6 py-3 text-xs font-semibold text-white hover:border-[var(--accent-cyan)]"
-            >
-              {pitchDeck.cta.secondary}
-            </Link>
-          </div>
-        </section>
-
         <section
           id={contactSectionId}
           className="scroll-mt-24 py-16"
@@ -256,7 +251,7 @@ export function PitchDeckPage({ locale, messages }: PitchDeckPageProps) {
             titleId="pitch-contact-title"
             title={pitchDeck.cta.kicker}
             description={pitchDeck.cta.description}
-            labels={messages.contact}
+            labels={pitchContactLabels}
             protocolSteps={
               locale === "pt-br"
                 ? ["Contexto investidor Sanu", "Resposta direta dos founders"]

@@ -109,8 +109,15 @@ describe("PitchDeckPage", () => {
     ).toBeInTheDocument();
     expect(screen.getByLabelText("Your name")).toBeInTheDocument();
     expect(screen.getByLabelText("Work email")).toBeInTheDocument();
-    expect(screen.getByLabelText("Company")).toBeInTheDocument();
-    expect(screen.getByLabelText("What are you building?")).toBeInTheDocument();
+    expect(screen.getByLabelText("Fund or firm")).toBeInTheDocument();
+    expect(screen.getByLabelText("Conversation context")).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(
+        "Share your investor profile, thesis, questions about the round, or next steps for a conversation.",
+      ),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Open contact form" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Talk to Yoten Labs" })).not.toBeInTheDocument();
   });
 
   it.each([

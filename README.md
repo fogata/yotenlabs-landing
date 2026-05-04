@@ -108,7 +108,7 @@ Estrutura atual:
 - Hook recorrente: Sanu como sistema operacional do profissional de saúde autônomo, substituindo 4 a 5 ferramentas em uma plataforma simples.
 - Métrica pública de execução: produto funcional com módulos core implementados e rodando em produção; cobrança e status financeiro integrados aparecem como implementação futura.
 - Todos os slides narrativos do pitch deck devem manter uma frase introdutória (`description`) antes dos blocos de bullets, grupos ou tabelas, para consistência de leitura.
-- Formulário próprio na rota do pitch deck (`#pitch-contact`), usando o mesmo contrato do formulário principal: campos, honeypot, Turnstile e envio por `/api/contact`.
+- Formulário próprio na rota do pitch deck (`#pitch-contact`), agrupando o contato investidor na seção final e usando o mesmo contrato do formulário principal: campos, honeypot, Turnstile e envio por `/api/contact`.
 
 Arquivos principais:
 
