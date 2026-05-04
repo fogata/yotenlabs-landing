@@ -108,11 +108,13 @@ Estrutura atual:
 - Hook recorrente: Sanu como sistema operacional do profissional de saúde autônomo, substituindo 4 a 5 ferramentas em uma plataforma simples.
 - Métrica pública de execução: produto funcional com módulos core implementados e rodando em produção; cobrança e status financeiro integrados aparecem como implementação futura.
 - Todos os slides narrativos do pitch deck devem manter uma frase introdutória (`description`) antes dos blocos de bullets, grupos ou tabelas, para consistência de leitura.
+- Formulário próprio na rota do pitch deck (`#pitch-contact`), usando o mesmo contrato do formulário principal: campos, honeypot, Turnstile e envio por `/api/contact`.
 
 Arquivos principais:
 
 - `src/app/[locale]/pitch-deck/page.tsx`: rota localizada e metadata da página.
 - `src/components/pitch-deck-page.tsx`: renderer responsivo de slides do deck.
+- `src/components/contact-form.tsx`: formulário compartilhado entre landing e pitch deck, mantendo os mesmos parâmetros de envio.
 - `src/i18n/messages/en.json` e `src/i18n/messages/pt-br.json`: conteúdo bilíngue na chave `pitchDeck`.
 - `src/components/pitch-deck-page.test.tsx`: cobertura de renderização dos slides principais, pricing, ask e time.
 

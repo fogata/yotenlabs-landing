@@ -28,7 +28,7 @@ describe("PitchDeckPage", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Start a conversation" })).toHaveAttribute(
       "href",
-      "/en#contact",
+      "#pitch-contact",
     );
   });
 
@@ -100,8 +100,17 @@ describe("PitchDeckPage", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Start a conversation" })).toHaveAttribute(
       "href",
-      "/en#contact",
+      "#pitch-contact",
     );
+    expect(
+      screen.getByRole("heading", {
+        name: "Investor contact",
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByLabelText("Your name")).toBeInTheDocument();
+    expect(screen.getByLabelText("Work email")).toBeInTheDocument();
+    expect(screen.getByLabelText("Company")).toBeInTheDocument();
+    expect(screen.getByLabelText("What are you building?")).toBeInTheDocument();
   });
 
   it.each([
