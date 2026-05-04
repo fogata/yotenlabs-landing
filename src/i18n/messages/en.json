@@ -223,7 +223,7 @@
       "signals": [
         {
           "value": "Pre-seed",
-          "label": "R$500,000 raise for acquisition, validation, and stability."
+          "label": "R$500,000 raise for customer acquisition, validation, and stability."
         },
         {
           "value": "5 modules + roadmap",
@@ -518,7 +518,7 @@
         "id": "ask",
         "kicker": "The ask",
         "title": "Pre-seed raise of R$500,000.",
-        "description": "The round funds acquisition, commercial validation, product stability, and AI infrastructure to reach the next milestones.",
+        "description": "The round funds customer acquisition, commercial validation, product stability, and AI infrastructure to reach the next milestones.",
         "groups": [
           {
             "title": "Use of funds",
@@ -550,7 +550,7 @@
     "cta": {
       "kicker": "Investor contact",
       "title": "Sanu is the operating system for independent healthcare professionals.",
-      "description": "Functional product, core modules implemented, integrated billing on the roadmap, and a R$500,000 pre-seed raise for acquisition, sales, support, stability, and AI infrastructure.",
+      "description": "Functional product, core modules implemented, integrated billing on the roadmap, and a R$500,000 pre-seed raise for customer acquisition, sales, support, stability, and AI infrastructure.",
       "primary": "Open contact form",
       "secondary": "Talk to Yoten Labs"
     }

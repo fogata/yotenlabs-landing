@@ -92,7 +92,7 @@ describe("PitchDeckPage", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        "The round funds acquisition, commercial validation, product stability, and AI infrastructure to reach the next milestones.",
+        "The round funds customer acquisition, commercial validation, product stability, and AI infrastructure to reach the next milestones.",
       ),
     ).toBeInTheDocument();
     expect(

@@ -103,7 +103,7 @@ Estrutura atual:
 - Title slide do Sanu como AI-native operating system para profissionais de saúde independentes.
 - Problema com dor operacional concreta, realidade do usuário, ICP, solução, produto, camada de IA, timing de mercado, modelo de negócio, go-to-market, roadmap, mercado, competição, vantagem competitiva, time, visão, ask e closing.
 - Pricing inicial: Starter, Pro e Premium (AI).
-- Ask pre-seed de R$500.000 com uso de recursos e runway alvo.
+- Ask pre-seed de R$500.000 com uso de recursos, incluindo aquisição de clientes, e runway alvo.
 - Conteúdo bilíngue em pt-BR e en-US, com linguagem de investidor, direta e focada em conversão.
 - Hook recorrente: Sanu como sistema operacional do profissional de saúde autônomo, substituindo 4 a 5 ferramentas em uma plataforma simples.
 - Métrica pública de execução: produto funcional com módulos core implementados e rodando em produção; cobrança e status financeiro integrados aparecem como implementação futura.
